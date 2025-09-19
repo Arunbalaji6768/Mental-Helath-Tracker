@@ -2,6 +2,7 @@ flask
 flask-cors
 flask-bcrypt
 flask-jwt-extended
+Flask-Limiter==3.8.0
 psycopg2-binary
 flask-sqlalchemy
 transformers
