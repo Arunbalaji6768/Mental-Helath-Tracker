@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breathing Techniques - AI Mental Health Tracker | Stress Relief</title>
+  <meta name="description" content="Guided breathing exercises for stress relief, anxiety management, and relaxation. AI-powered breathing techniques with real-time timers and visual guides.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="mood-tracking.html">Mood Tracking</a></li>
+          <li><a href="journal.html">AI Journal</a></li>
+          <li><a href="progress.html">Analytics</a></li>
+          <li><a href="assessments.html">AI Assessments</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Breathing Hero -->
+  <section class="dashboard-hero">
+    <div class="container">
+      <div class="section-header">
+        <h1>💨 Breathing Techniques</h1>
+        <p>Guided breathing exercises for stress relief, anxiety management, and relaxation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breathing Categories -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-4">
+        <!-- 4-7-8 Breathing -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">4-7-8</div>
+          <h3>4-7-8 Breathing</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Calm & sleep</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #3b82f6;">5 min</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Duration</div>
+          </div>
+        </div>
+
+        <!-- Box Breathing -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">⬜</div>
+          <h3>Box Breathing</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Focus & clarity</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #10b981;">3 min</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Duration</div>
+          </div>
+        </div>
+
+        <!-- Belly Breathing -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🫁</div>
+          <h3>Belly Breathing</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Deep relaxation</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #f59e0b;">10 min</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Duration</div>
+          </div>
+        </div>
+
+        <!-- Alternate Nostril -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">👃</div>
+          <h3>Alternate Nostril</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Balance & calm</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #8b5cf6;">7 min</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Duration</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Breathing Exercises -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Interactive Breathing Exercises</h2>
+        <p>Practice breathing techniques with visual guides and real-time timers</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- 4-7-8 Breathing Exercise -->
+        <div class="card">
+          <div class="card-header">
+            <h3>4-7-8 Breathing Exercise</h3>
+            <p>Inhale for 4, hold for 7, exhale for 8 - perfect for sleep and calm</p>
+          </div>
+          <div class="card-body">
+            <div style="text-align: center;">
+              <div id="breathingCircle" style="width: 200px; height: 200px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 50%; margin: 0 auto var(--spacing-6); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-4xl); font-weight: 700; transition: all 0.5s ease;">
+                Ready
+              </div>
+              <div style="margin-bottom: var(--spacing-4);">
+                <div style="font-size: var(--font-size-lg); font-weight: 600; margin-bottom: var(--spacing-2);">Instructions:</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">
+                  Inhale through nose for 4 counts<br>
+                  Hold breath for 7 counts<br>
+                  Exhale through mouth for 8 counts
+                </div>
+              </div>
+              <div style="display: flex; gap: var(--spacing-4); justify-content: center;">
+                <button class="btn btn-primary" id="start478" onclick="start478Breathing()">Start Exercise</button>
+                <button class="btn btn-secondary" id="pause478" onclick="pauseBreathing()" disabled>Pause</button>
+                <button class="btn btn-accent" id="stop478" onclick="stopBreathing()" disabled>Stop</button>
+              </div>
+              <p id="breathingStatus" style="margin-top: var(--spacing-4); color: var(--text-secondary); font-size: var(--font-size-sm);">Ready to begin 4-7-8 breathing</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Box Breathing Exercise -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Box Breathing Exercise</h3>
+            <p>Equal counts for inhale, hold, exhale, hold - great for focus and stress relief</p>
+          </div>
+          <div class="card-body">
+            <div style="text-align: center;">
+              <div id="boxCircle" style="width: 200px; height: 200px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; margin: 0 auto var(--spacing-6); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-4xl); font-weight: 700; transition: all 0.5s ease;">
+                Ready
+              </div>
+              <div style="margin-bottom: var(--spacing-4);">
+                <div style="font-size: var(--font-size-lg); font-weight: 600; margin-bottom: var(--spacing-2);">Instructions:</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">
+                  Inhale for 4 counts<br>
+                  Hold for 4 counts<br>
+                  Exhale for 4 counts<br>
+                  Hold for 4 counts
+                </div>
+              </div>
+              <div style="display: flex; gap: var(--spacing-4); justify-content: center;">
+                <button class="btn btn-primary" id="startBox" onclick="startBoxBreathing()">Start Exercise</button>
+                <button class="btn btn-secondary" id="pauseBox" onclick="pauseBreathing()" disabled>Pause</button>
+                <button class="btn btn-accent" id="stopBox" onclick="stopBreathing()" disabled>Stop</button>
+              </div>
+              <p id="boxStatus" style="margin-top: var(--spacing-4); color: var(--text-secondary); font-size: var(--font-size-sm);">Ready to begin box breathing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breathing Techniques Library -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Breathing Techniques Library</h2>
+        <p>Learn different breathing methods for various situations and needs</p>
+      </div>
+      
+      <div class="grid grid-cols-3">
+        <!-- Belly Breathing -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🫁 Belly Breathing</h3>
+            <p>Deep diaphragmatic breathing for relaxation</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">How to practice:</div>
+              <ol style="font-size: var(--font-size-sm); color: var(--text-secondary); padding-left: var(--spacing-4);">
+                <li>Place hand on belly</li>
+                <li>Breathe in slowly through nose</li>
+                <li>Feel belly expand</li>
+                <li>Exhale slowly through mouth</li>
+                <li>Feel belly contract</li>
+              </ol>
+            </div>
+            <button class="btn btn-primary w-full" onclick="startBellyBreathing()">Start Practice</button>
+          </div>
+        </div>
+
+        <!-- Alternate Nostril -->
+        <div class="card">
+          <div class="card-header">
+            <h3>👃 Alternate Nostril</h3>
+            <p>Balancing breathing technique</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">How to practice:</div>
+              <ol style="font-size: var(--font-size-sm); color: var(--text-secondary); padding-left: var(--spacing-4);">
+                <li>Close right nostril with thumb</li>
+                <li>Inhale through left nostril</li>
+                <li>Close left nostril with ring finger</li>
+                <li>Exhale through right nostril</li>
+                <li>Repeat, alternating sides</li>
+              </ol>
+            </div>
+            <button class="btn btn-primary w-full" onclick="startAlternateNostril()">Start Practice</button>
+          </div>
+        </div>
+
+        <!-- Coherent Breathing -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🔄 Coherent Breathing</h3>
+            <p>Balanced breathing for stress relief</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">How to practice:</div>
+              <ol style="font-size: var(--font-size-sm); color: var(--text-secondary); padding-left: var(--spacing-4);">
+                <li>Breathe in for 5 counts</li>
+                <li>Breathe out for 5 counts</li>
+                <li>Maintain steady rhythm</li>
+                <li>Focus on smooth transitions</li>
+                <li>Continue for 5-10 minutes</li>
+              </ol>
+            </div>
+            <button class="btn btn-primary w-full" onclick="startCoherentBreathing()">Start Practice</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breathing Progress -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>📊 Your Breathing Practice</h2>
+          <p>Track your breathing exercises and stress reduction progress</p>
+        </div>
+        <div class="card-body">
+          <div class="grid grid-cols-4">
+            <div class="text-center">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--primary-color);">24</div>
+              <div style="color: var(--text-secondary);">Sessions This Week</div>
+            </div>
+            <div class="text-center">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--accent-color);">156</div>
+              <div style="color: var(--text-secondary);">Total Minutes</div>
+            </div>
+            <div class="text-center">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--secondary-color);">68%</div>
+              <div style="color: var(--text-secondary);">Stress Reduction</div>
+            </div>
+            <div class="text-center">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: #10b981;">7</div>
+              <div style="color: var(--text-secondary);">Day Streak</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="dashboard.html">Dashboard</a></p>
+          <p><a href="mood-tracking.html">Mood Tracking</a></p>
+          <p><a href="journal.html">AI Journal</a></p>
+          <p><a href="progress.html">Analytics</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>AI Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Breathing Exercise Variables
+    let breathingInterval;
+    let currentPhase = 0;
+    let currentCount = 0;
+    let isRunning = false;
+    let isPaused = false;
+    let currentTechnique = '';
+
+    // 4-7-8 Breathing
+    function start478Breathing() {
+      currentTechnique = '478';
+      currentPhase = 0; // 0: inhale, 1: hold, 2: exhale
+      currentCount = 0;
+      isRunning = true;
+      isPaused = false;
+      
+      document.getElementById('start478').disabled = true;
+      document.getElementById('pause478').disabled = false;
+      document.getElementById('stop478').disabled = false;
+      document.getElementById('breathingStatus').textContent = 'Starting 4-7-8 breathing...';
+      
+      breathingInterval = setInterval(update478Breathing, 1000);
+    }
+
+    function update478Breathing() {
+      const phases = ['Inhale', 'Hold', 'Exhale'];
+      const counts = [4, 7, 8];
+      
+      if (currentPhase < 3) {
+        currentCount++;
+        document.getElementById('breathingCircle').textContent = currentCount;
+        document.getElementById('breathingCircle').style.background = currentPhase === 0 ? 
+          'linear-gradient(135deg, #3b82f6, #1d4ed8)' : 
+          currentPhase === 1 ? 'linear-gradient(135deg, #f59e0b, #d97706)' : 
+          'linear-gradient(135deg, #10b981, #059669)';
+        
+        if (currentCount >= counts[currentPhase]) {
+          currentPhase++;
+          currentCount = 0;
+          if (currentPhase >= 3) {
+            currentPhase = 0; // Reset for next cycle
+            document.getElementById('breathingStatus').textContent = 'Cycle complete! Continue or stop.';
+          }
+        }
+      }
+    }
+
+    // Box Breathing
+    function startBoxBreathing() {
+      currentTechnique = 'box';
+      currentPhase = 0; // 0: inhale, 1: hold, 2: exhale, 3: hold
+      currentCount = 0;
+      isRunning = true;
+      isPaused = false;
+      
+      document.getElementById('startBox').disabled = true;
+      document.getElementById('pauseBox').disabled = false;
+      document.getElementById('stopBox').disabled = false;
+      document.getElementById('boxStatus').textContent = 'Starting box breathing...';
+      
+      breathingInterval = setInterval(updateBoxBreathing, 1000);
+    }
+
+    function updateBoxBreathing() {
+      const phases = ['Inhale', 'Hold', 'Exhale', 'Hold'];
+      const colors = [
+        'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+        'linear-gradient(135deg, #f59e0b, #d97706)',
+        'linear-gradient(135deg, #10b981, #059669)',
+        'linear-gradient(135deg, #8b5cf6, #7c3aed)'
+      ];
+      
+      currentCount++;
+      document.getElementById('boxCircle').textContent = currentCount;
+      document.getElementById('boxCircle').style.background = colors[currentPhase];
+      
+      if (currentCount >= 4) {
+        currentPhase = (currentPhase + 1) % 4;
+        currentCount = 0;
+        if (currentPhase === 0) {
+          document.getElementById('boxStatus').textContent = 'Box cycle complete! Continue or stop.';
+        }
+      }
+    }
+
+    function pauseBreathing() {
+      if (isPaused) {
+        isPaused = false;
+        if (currentTechnique === '478') {
+          breathingInterval = setInterval(update478Breathing, 1000);
+          document.getElementById('breathingStatus').textContent = '4-7-8 breathing resumed...';
+        } else if (currentTechnique === 'box') {
+          breathingInterval = setInterval(updateBoxBreathing, 1000);
+          document.getElementById('boxStatus').textContent = 'Box breathing resumed...';
+        }
+        document.getElementById('pause478').textContent = 'Pause';
+        document.getElementById('pauseBox').textContent = 'Pause';
+      } else {
+        isPaused = true;
+        clearInterval(breathingInterval);
+        document.getElementById('breathingStatus').textContent = '4-7-8 breathing paused...';
+        document.getElementById('boxStatus').textContent = 'Box breathing paused...';
+        document.getElementById('pause478').textContent = 'Resume';
+        document.getElementById('pauseBox').textContent = 'Resume';
+      }
+    }
+
+    function stopBreathing() {
+      isRunning = false;
+      isPaused = false;
+      clearInterval(breathingInterval);
+      currentPhase = 0;
+      currentCount = 0;
+      
+      document.getElementById('start478').disabled = false;
+      document.getElementById('pause478').disabled = true;
+      document.getElementById('stop478').disabled = true;
+      document.getElementById('startBox').disabled = false;
+      document.getElementById('pauseBox').disabled = true;
+      document.getElementById('stopBox').disabled = true;
+      
+      document.getElementById('breathingCircle').textContent = 'Ready';
+      document.getElementById('breathingCircle').style.background = 'linear-gradient(135deg, #3b82f6, #1d4ed8)';
+      document.getElementById('boxCircle').textContent = 'Ready';
+      document.getElementById('boxCircle').style.background = 'linear-gradient(135deg, #10b981, #059669)';
+      
+      document.getElementById('breathingStatus').textContent = '4-7-8 breathing completed! Great job!';
+      document.getElementById('boxStatus').textContent = 'Box breathing completed! Great job!';
+      
+      document.getElementById('pause478').textContent = 'Pause';
+      document.getElementById('pauseBox').textContent = 'Pause';
+    }
+
+    // Other breathing techniques
+    function startBellyBreathing() {
+      alert('Belly breathing exercise started! This would guide you through diaphragmatic breathing.');
+    }
+
+    function startAlternateNostril() {
+      alert('Alternate nostril breathing started! This would guide you through the balancing technique.');
+    }
+
+    function startCoherentBreathing() {
+      alert('Coherent breathing exercise started! This would guide you through balanced 5-5 breathing.');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBT Tools - AI Mental Health Tracker | Cognitive Behavioral Therapy</title>
+  <meta name="description" content="Interactive CBT tools and exercises for mental wellness. AI-powered cognitive behavioral therapy techniques for anxiety, depression, and stress management.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="mood-tracking.html">Mood Tracking</a></li>
+          <li><a href="journal.html">AI Journal</a></li>
+          <li><a href="progress.html">Analytics</a></li>
+          <li><a href="assessments.html">AI Assessments</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- CBT Tools Hero -->
+  <section class="dashboard-hero">
+    <div class="container">
+      <div class="section-header">
+        <h1>🧠 CBT Tools & Exercises</h1>
+        <p>Interactive cognitive behavioral therapy techniques for anxiety, depression, and stress management</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CBT Categories -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-4">
+        <!-- Thought Challenging -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">💭</div>
+          <h3>Thought Challenging</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Reframe negative thoughts</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #3b82f6;">3</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Exercises</div>
+          </div>
+        </div>
+
+        <!-- Behavioral Activation -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🎯</div>
+          <h3>Behavioral Activation</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Increase positive activities</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #10b981;">4</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Activities</div>
+          </div>
+        </div>
+
+        <!-- Exposure Therapy -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🌅</div>
+          <h3>Exposure Therapy</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Face fears gradually</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #f59e0b;">2</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Programs</div>
+          </div>
+        </div>
+
+        <!-- Problem Solving -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🔧</div>
+          <h3>Problem Solving</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Structured approach</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #8b5cf6;">3</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Methods</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive CBT Exercises -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Interactive CBT Exercises</h2>
+        <p>Practice cognitive behavioral therapy techniques with AI-powered guidance</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- Thought Challenging Exercise -->
+        <div class="card">
+          <div class="card-header">
+            <h3>💭 Thought Challenging Worksheet</h3>
+            <p>Identify and reframe negative thought patterns</p>
+          </div>
+          <div class="card-body">
+            <div id="thoughtChallengingForm">
+              <div class="form-group">
+                <label for="negativeThought">What negative thought are you having?</label>
+                <textarea id="negativeThought" class="form-input" rows="3" placeholder="Write down the negative thought that's bothering you..."></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="evidenceFor">Evidence FOR this thought:</label>
+                <textarea id="evidenceFor" class="form-input" rows="2" placeholder="What evidence supports this thought?"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="evidenceAgainst">Evidence AGAINST this thought:</label>
+                <textarea id="evidenceAgainst" class="form-input" rows="2" placeholder="What evidence contradicts this thought?"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="balancedThought">Balanced, realistic thought:</label>
+                <textarea id="balancedThought" class="form-input" rows="2" placeholder="What's a more balanced way to think about this?"></textarea>
+              </div>
+              
+              <button class="btn btn-primary w-full" onclick="analyzeThought()">Analyze with AI</button>
+              <div id="thoughtAnalysis" style="margin-top: var(--spacing-4); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); display: none;">
+                <h4>AI Analysis:</h4>
+                <p id="analysisResult"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Behavioral Activation -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🎯 Activity Planning</h3>
+            <p>Schedule positive activities to improve mood</p>
+          </div>
+          <div class="card-body">
+            <div id="activityPlanning">
+              <div class="form-group">
+                <label>Rate your current mood (1-10):</label>
+                <input type="range" min="1" max="10" value="5" id="moodRating" class="w-full" style="margin: var(--spacing-2) 0;">
+                <div style="display: flex; justify-content: space-between; font-size: var(--font-size-sm); color: var(--text-secondary);">
+                  <span>Very Low (1)</span>
+                  <span id="currentMood">5</span>
+                  <span>Very High (10)</span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>What activities make you feel good?</label>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-2); margin-bottom: var(--spacing-4);">
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-2); background: var(--background-secondary); border-radius: var(--radius-md); cursor: pointer;">
+                    <input type="checkbox" value="exercise"> Exercise
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-2); background: var(--background-secondary); border-radius: var(--radius-md); cursor: pointer;">
+                    <input type="checkbox" value="reading"> Reading
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-2); background: var(--background-secondary); border-radius: var(--radius-md); cursor: pointer;">
+                    <input type="checkbox" value="music"> Music
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-2); background: var(--background-secondary); border-radius: var(--radius-md); cursor: pointer;">
+                    <input type="checkbox" value="nature"> Nature
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-2); background: var(--background-secondary); border-radius: var(--radius-md); cursor: pointer;">
+                    <input type="checkbox" value="cooking"> Cooking
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-2); background: var(--background-secondary); border-radius: var(--radius-md); cursor: pointer;">
+                    <input type="checkbox" value="social"> Social Time
+                  </label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="plannedActivity">Plan one activity for today:</label>
+                <input type="text" id="plannedActivity" class="form-input" placeholder="What will you do today?">
+              </div>
+              
+              <button class="btn btn-primary w-full" onclick="createActivityPlan()">Create Activity Plan</button>
+              <div id="activityPlan" style="margin-top: var(--spacing-4); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); display: none;">
+                <h4>Your Activity Plan:</h4>
+                <p id="planResult"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CBT Techniques Library -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>CBT Techniques Library</h2>
+        <p>Learn and practice evidence-based cognitive behavioral therapy techniques</p>
+      </div>
+      
+      <div class="grid grid-cols-3">
+        <!-- ABC Model -->
+        <div class="card">
+          <div class="card-header">
+            <h3>📝 ABC Model</h3>
+            <p>Activating Event → Beliefs → Consequences</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); margin-bottom: var(--spacing-3);">
+                <strong>A - Activating Event:</strong> What happened?
+              </div>
+              <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); margin-bottom: var(--spacing-3);">
+                <strong>B - Beliefs:</strong> What did you think?
+              </div>
+              <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg);">
+                <strong>C - Consequences:</strong> How did you feel/act?
+              </div>
+            </div>
+            <button class="btn btn-primary w-full" onclick="startABCModel()">Practice ABC Model</button>
+          </div>
+        </div>
+
+        <!-- Cognitive Distortions -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🔍 Cognitive Distortions</h3>
+            <p>Identify common thinking errors</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Common distortions:</div>
+              <ul style="font-size: var(--font-size-sm); color: var(--text-secondary); padding-left: var(--spacing-4);">
+                <li>All-or-nothing thinking</li>
+                <li>Catastrophizing</li>
+                <li>Mind reading</li>
+                <li>Fortune telling</li>
+                <li>Personalization</li>
+              </ul>
+            </div>
+            <button class="btn btn-primary w-full" onclick="identifyDistortions()">Identify Your Distortions</button>
+          </div>
+        </div>
+
+        <!-- Problem Solving Steps -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🔧 Problem Solving</h3>
+            <p>Structured approach to challenges</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Steps:</div>
+              <ol style="font-size: var(--font-size-sm); color: var(--text-secondary); padding-left: var(--spacing-4);">
+                <li>Define the problem</li>
+                <li>Brainstorm solutions</li>
+                <li>Evaluate options</li>
+                <li>Choose and implement</li>
+                <li>Review results</li>
+              </ol>
+            </div>
+            <button class="btn btn-primary w-full" onclick="startProblemSolving()">Start Problem Solving</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Tracking -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>📊 Your CBT Progress</h2>
+          <p>Track your cognitive behavioral therapy practice and improvements</p>
+        </div>
+        <div class="card-body">
+          <div class="grid grid-cols-4">
+            <div class="text-center">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--primary-color);">12</div>
+              <div style="color: var(--text-secondary);">Exercises Completed</div>
+            </div>
+            <div class="text-center">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--accent-color);">8</div>
+              <div style="color: var(--text-secondary);">Days This Week</div>
+            </div>
+            <div class="text-center">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--secondary-color);">75%</div>
+              <div style="color: var(--text-secondary);">Mood Improvement</div>
+            </div>
+            <div class="text-center">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: #10b981;">5</div>
+              <div style="color: var(--text-secondary);">Streak Days</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="dashboard.html">Dashboard</a></p>
+          <p><a href="mood-tracking.html">Mood Tracking</a></p>
+          <p><a href="journal.html">AI Journal</a></p>
+          <p><a href="progress.html">Analytics</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>AI Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // CBT Tools Functionality
+    function analyzeThought() {
+      const negativeThought = document.getElementById('negativeThought').value;
+      const evidenceFor = document.getElementById('evidenceFor').value;
+      const evidenceAgainst = document.getElementById('evidenceAgainst').value;
+      const balancedThought = document.getElementById('balancedThought').value;
+      
+      if (!negativeThought) {
+        alert('Please enter a negative thought to analyze.');
+        return;
+      }
+      
+      // Simulate AI analysis
+      const analysis = `
+        <strong>AI Analysis:</strong><br>
+        Your negative thought: "${negativeThought}"<br><br>
+        <strong>Cognitive Patterns Detected:</strong><br>
+        • ${evidenceFor ? 'Evidence supporting the thought' : 'Limited evidence for this thought'}<br>
+        • ${evidenceAgainst ? 'Strong evidence against this thought' : 'Consider alternative perspectives'}<br><br>
+        <strong>Recommendation:</strong><br>
+        ${balancedThought || 'Try to find a more balanced perspective. Consider the evidence and alternative explanations.'}
+      `;
+      
+      document.getElementById('analysisResult').innerHTML = analysis;
+      document.getElementById('thoughtAnalysis').style.display = 'block';
+    }
+
+    function createActivityPlan() {
+      const mood = document.getElementById('moodRating').value;
+      const selectedActivities = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+      const plannedActivity = document.getElementById('plannedActivity').value;
+      
+      if (!plannedActivity) {
+        alert('Please plan at least one activity for today.');
+        return;
+      }
+      
+      const plan = `
+        <strong>Your Activity Plan:</strong><br>
+        Current mood: ${mood}/10<br>
+        Selected activities: ${selectedActivities.join(', ') || 'None selected'}<br>
+        Planned activity: ${plannedActivity}<br><br>
+        <strong>AI Suggestion:</strong><br>
+        Based on your mood level, consider starting with a simple, achievable activity. 
+        ${mood < 5 ? 'Focus on activities that bring you comfort and joy.' : 'Great! Try something new or challenging.'}
+      `;
+      
+      document.getElementById('planResult').innerHTML = plan;
+      document.getElementById('activityPlan').style.display = 'block';
+    }
+
+    function startABCModel() {
+      alert('ABC Model exercise started! This would open an interactive worksheet.');
+    }
+
+    function identifyDistortions() {
+      alert('Cognitive Distortions identification tool opened! This would help you identify your thinking patterns.');
+    }
+
+    function startProblemSolving() {
+      alert('Problem Solving exercise started! This would guide you through structured problem-solving steps.');
+    }
+
+    // Mood rating update
+    document.getElementById('moodRating').addEventListener('input', function() {
+      document.getElementById('currentMood').textContent = this.value;
+    });
+  </script>
+</body>
+</html>

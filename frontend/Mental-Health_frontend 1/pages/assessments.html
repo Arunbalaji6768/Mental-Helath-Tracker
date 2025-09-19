@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Assessments - Mental Health Tracker | BERT-Powered Analysis</title>
+  <meta name="description" content="AI-powered mental health assessments with BERT sentiment analysis. Get intelligent insights into your mental wellness through advanced psychological evaluations.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="mood-tracking.html">Mood Tracking</a></li>
+          <li><a href="journal.html">AI Journal</a></li>
+          <li><a href="progress.html">Analytics</a></li>
+          <li><a href="assessments.html" class="active">AI Assessments</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="profile.html">Profile</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- AI Assessments Hero -->
+  <section class="dashboard-hero">
+    <div class="container">
+      <div class="section-header">
+        <h1>AI-Powered Mental Health Assessments</h1>
+        <p>Advanced psychological evaluations enhanced with BERT sentiment analysis for deeper insights</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assessment Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-3">
+        <!-- Available Assessments -->
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">📋</div>
+          <h3>Available Tests</h3>
+          <p style="color: var(--text-secondary);">AI-Enhanced</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); margin-top: var(--spacing-4);">
+            <div style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--primary-color);">5</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Assessment Types</div>
+          </div>
+        </div>
+
+        <!-- Completed Assessments -->
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-color), var(--secondary-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">✅</div>
+          <h3>Completed</h3>
+          <p style="color: var(--text-secondary);">This Month</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); margin-top: var(--spacing-4);">
+            <div style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--accent-color);">12</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Tests Taken</div>
+          </div>
+        </div>
+
+        <!-- AI Accuracy -->
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">🎯</div>
+          <h3>AI Accuracy</h3>
+          <p style="color: var(--text-secondary);">BERT Analysis</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); margin-top: var(--spacing-4);">
+            <div style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--secondary-color);">94%</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Prediction Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assessment Types -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>AI-Enhanced Assessment Types</h2>
+        <p>Choose from our comprehensive range of AI-powered mental health evaluations</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- PHQ-9 Depression Assessment -->
+        <div class="card">
+          <div class="card-header">
+            <h3>😔 PHQ-9 Depression Assessment</h3>
+            <p>AI-enhanced depression screening with BERT sentiment analysis</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-4);">
+              <span style="color: var(--text-secondary);">Last taken: 3 days ago</span>
+              <span style="background: #d1fae5; color: #065f46; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-lg); font-size: var(--font-size-sm);">Mild</span>
+            </div>
+            <div style="background: var(--background-primary); padding: var(--spacing-4); border-radius: var(--radius-lg); margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-2);">AI Analysis Summary</div>
+              <div style="font-size: var(--font-size-sm);">"Your responses suggest mild depressive symptoms. AI detected positive coping strategies in your recent journal entries."</div>
+            </div>
+            <a class="btn btn-primary w-full" href="take-assessment.html?type=phq9">Take Assessment</a>
+          </div>
+        </div>
+
+        <!-- GAD-7 Anxiety Assessment -->
+        <div class="card">
+          <div class="card-header">
+            <h3>😰 GAD-7 Anxiety Assessment</h3>
+            <p>Comprehensive anxiety evaluation with machine learning insights</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-4);">
+              <span style="color: var(--text-secondary);">Last taken: 1 week ago</span>
+              <span style="background: #fef3c7; color: #92400e; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-lg); font-size: var(--font-size-sm);">Moderate</span>
+            </div>
+            <div style="background: var(--background-primary); padding: var(--spacing-4); border-radius: var(--radius-lg); margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-2);">AI Analysis Summary</div>
+              <div style="font-size: var(--font-size-sm);">"Moderate anxiety levels detected. AI recommends mindfulness exercises based on your stress patterns."</div>
+            </div>
+            <a class="btn btn-primary w-full" href="take-assessment.html?type=gad7">Take Assessment</a>
+          </div>
+        </div>
+
+        <!-- Stress Assessment -->
+        <div class="card">
+          <div class="card-header">
+            <h3>😤 Stress Level Assessment</h3>
+            <p>Real-time stress evaluation using BERT emotion detection</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-4);">
+              <span style="color: var(--text-secondary);">Last taken: Today</span>
+              <span style="background: #fee2e2; color: #991b1b; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-lg); font-size: var(--font-size-sm);">High</span>
+            </div>
+            <div style="background: var(--background-primary); padding: var(--spacing-4); border-radius: var(--radius-lg); margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-2);">AI Analysis Summary</div>
+              <div style="font-size: var(--font-size-sm);">"High stress detected in recent entries. AI suggests immediate stress reduction techniques."</div>
+            </div>
+            <a class="btn btn-primary w-full" href="take-assessment.html?type=stress">Take Assessment</a>
+          </div>
+        </div>
+
+        <!-- Wellness Check -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🌟 Overall Wellness Check</h3>
+            <p>Comprehensive mental wellness evaluation with AI insights</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-4);">
+              <span style="color: var(--text-secondary);">Last taken: 2 weeks ago</span>
+              <span style="background: #d1fae5; color: #065f46; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-lg); font-size: var(--font-size-sm);">Good</span>
+            </div>
+            <div style="background: var(--background-primary); padding: var(--spacing-4); border-radius: var(--radius-lg); margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-2);">AI Analysis Summary</div>
+              <div style="font-size: var(--font-size-sm);">"Overall wellness is good. AI detected positive trends in your mood and coping strategies."</div>
+            </div>
+            <a class="btn btn-primary w-full" href="take-assessment.html?type=wellness">Take Assessment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assessment Progress -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Your Assessment Progress</h2>
+        <p>Track your mental health journey with AI-powered insights</p>
+      </div>
+
+      <div class="grid grid-cols-2">
+        <!-- Progress Chart -->
+        <div class="card">
+          <div class="card-header">
+            <h3>📈 Assessment Trends</h3>
+            <p>Your mental health scores over time</p>
+          </div>
+          <div class="card-body">
+            <canvas id="assessmentChart" style="height: 300px;"></canvas>
+          </div>
+        </div>
+
+        <!-- AI Insights -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🤖 AI Insights & Recommendations</h3>
+            <p>Personalized suggestions based on your assessments</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="padding: var(--spacing-4); background: var(--background-secondary); border-radius: var(--radius-lg); border-left: 4px solid var(--accent-color);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2);">💡 Positive Trend Detected</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Your depression scores have improved by 15% over the last month. Keep up the great work!</div>
+              </div>
+              <div style="padding: var(--spacing-4); background: var(--background-secondary); border-radius: var(--radius-lg); border-left: 4px solid var(--primary-color);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2);">⚠️ Attention Needed</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Stress levels are elevated. AI recommends daily meditation and breathing exercises.</div>
+              </div>
+              <div style="padding: var(--spacing-4); background: var(--background-secondary); border-radius: var(--radius-lg); border-left: 4px solid var(--secondary-color);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2);">🎯 Next Steps</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Consider taking the anxiety assessment to get a complete picture of your mental health.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="dashboard.html">Dashboard</a></p>
+          <p><a href="mood-tracking.html">Mood Tracking</a></p>
+          <p><a href="journal.html">AI Journal</a></p>
+          <p><a href="progress.html">Analytics</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>AI Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

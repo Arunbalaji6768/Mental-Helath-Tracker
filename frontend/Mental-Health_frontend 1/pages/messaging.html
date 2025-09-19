@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messaging - MH Monitor | Professional Communication Hub</title>
+  <meta name="description" content="Secure messaging platform for mental health therapists to communicate with clients and colleagues.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+  <script>
+    // Messaging functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if user is logged in and is a therapist
+      if (localStorage.getItem('isLoggedIn') !== 'true' || localStorage.getItem('userType') !== 'therapist') {
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      // Logout functionality
+      const logoutBtn = document.querySelector('a[href="index.html"]');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (confirm('Are you sure you want to logout?')) {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userType');
+            localStorage.removeItem('rememberMe');
+            window.location.href = 'index.html';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="therapist-dashboard.html" class="logo">🧠 MH Monitor</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="therapist-dashboard.html">Dashboard</a></li>
+          <li><a href="client-reports.html">Client Reports</a></li>
+          <li><a href="appointments.html">Appointments</a></li>
+          <li><a href="messaging.html" class="active">Messaging</a></li>
+          <li><a href="index.html">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="padding: var(--spacing-8) 0; min-height: calc(100vh - 200px);">
+    <div class="container">
+      <!-- Unread Messages -->
+      <section style="margin-bottom: var(--spacing-12);">
+        <h1 style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--text-primary); margin-bottom: var(--spacing-6);">Unread Messages</h1>
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: var(--spacing-6); border-radius: var(--radius-lg);">
+          <p style="font-size: var(--font-size-lg); color: var(--text-primary); margin: 0;">
+            You have 3 unread messages requiring immediate attention
+          </p>
+        </div>
+      </section>
+
+      <!-- Message Threads -->
+      <section style="margin-bottom: var(--spacing-12);">
+        <h1 style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--text-primary); margin-bottom: var(--spacing-6);">Message Threads</h1>
+        <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead style="background: var(--background-secondary);">
+              <tr>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Client</th>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Last Message</th>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Time</th>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Priority</th>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color); background: #fef2f2;">
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary); font-weight: 600;">Arun</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">I'm feeling really anxious about tomorrow's session...</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">2 min ago</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">
+                  <span style="background: #fecaca; color: #991b1b; padding: var(--spacing-1) var(--spacing-3); border-radius: var(--radius-sm); font-size: var(--font-size-sm);">High</span>
+                </td>
+                <td style="padding: var(--spacing-4) var(--spacing-6);">
+                  <button class="btn btn-primary" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm);" onclick="openMessage('arun')">Reply</button>
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary); font-weight: 600;">Surya</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">Thank you for the breathing exercises, they really help</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">1 hour ago</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">
+                  <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-3); border-radius: var(--radius-sm); font-size: var(--font-size-sm);">Low</span>
+                </td>
+                <td style="padding: var(--spacing-4) var(--spacing-6);">
+                  <button class="btn btn-outline" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm);" onclick="openMessage('surya')">Reply</button>
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary); font-weight: 600;">Shanjeev</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">Can we reschedule our appointment for next week?</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">3 hours ago</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">
+                  <span style="background: #fef3c7; color: #92400e; padding: var(--spacing-1) var(--spacing-3); border-radius: var(--radius-sm); font-size: var(--font-size-sm);">Medium</span>
+                </td>
+                <td style="padding: var(--spacing-4) var(--spacing-6);">
+                  <button class="btn btn-outline" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm);" onclick="openMessage('shanjeev')">Reply</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary); font-weight: 600;">Rishi</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">I completed the homework you assigned</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">1 day ago</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">
+                  <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-3); border-radius: var(--radius-sm); font-size: var(--font-size-sm);">Low</span>
+                </td>
+                <td style="padding: var(--spacing-4) var(--spacing-6);">
+                  <button class="btn btn-outline" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm);" onclick="openMessage('rishi')">Reply</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Quick Actions -->
+      <section>
+        <h1 style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--text-primary); margin-bottom: var(--spacing-6);">Quick Actions</h1>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-6);">
+          <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--spacing-6); text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <div style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-4);">✉️</div>
+            <div style="font-size: var(--font-size-lg); font-weight: 600; color: var(--text-primary); margin-bottom: var(--spacing-2);">New Message</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-4);">Send a message to a client</div>
+            <button class="btn btn-primary" onclick="composeMessage()">Compose</button>
+          </div>
+          <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--spacing-6); text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <div style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-4);">📋</div>
+            <div style="font-size: var(--font-size-lg); font-weight: 600; color: var(--text-primary); margin-bottom: var(--spacing-2);">Message Templates</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-4);">Use pre-written responses</div>
+            <button class="btn btn-outline" onclick="viewTemplates()">View Templates</button>
+          </div>
+          <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--spacing-6); text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <div style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-4);">🔔</div>
+            <div style="font-size: var(--font-size-lg); font-weight: 600; color: var(--text-primary); margin-bottom: var(--spacing-2);">Notifications</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-4);">Manage message alerts</div>
+            <button class="btn btn-outline" onclick="manageNotifications()">Settings</button>
+          </div>
+          <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--spacing-6); text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <div style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-4);">📊</div>
+            <div style="font-size: var(--font-size-lg); font-weight: 600; color: var(--text-primary); margin-bottom: var(--spacing-2);">Message Analytics</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-4);">View communication stats</div>
+            <button class="btn btn-outline" onclick="viewAnalytics()">View Stats</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mental Health Monitor. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function openMessage(clientId) {
+      console.log('Opening message thread for:', clientId);
+      alert(`Opening conversation with ${clientId}...`);
+    }
+
+    function composeMessage() {
+      console.log('Composing new message');
+      alert('Opening message composer...');
+    }
+
+    function viewTemplates() {
+      console.log('Viewing message templates');
+      alert('Opening message templates...');
+    }
+
+    function manageNotifications() {
+      console.log('Managing notifications');
+      alert('Opening notification settings...');
+    }
+
+    function viewAnalytics() {
+      console.log('Viewing message analytics');
+      alert('Opening message analytics...');
+    }
+  </script>
+</body>
+</html>

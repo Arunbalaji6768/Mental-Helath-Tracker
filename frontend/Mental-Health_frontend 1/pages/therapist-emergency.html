@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapist Emergency Support - AI Mental Health Tracker | Crisis Management</title>
+  <meta name="description" content="Professional emergency support tools for therapists to manage client crises and provide immediate mental health assistance.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="therapist-dashboard.html">Dashboard</a></li>
+          <li><a href="client-reports.html">Client Reports</a></li>
+          <li><a href="content-moderation.html">Content Moderation</a></li>
+          <li><a href="system-analytics.html">Analytics</a></li>
+          <li><a href="assessments.html">AI Assessments</a></li>
+          <li><a href="therapist-resources.html">Resources</a></li>
+          <li><a href="user-management.html">Clients</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Therapist Emergency Hero -->
+  <section class="dashboard-hero" style="background: linear-gradient(135deg, #fee2e2, #fecaca);">
+    <div class="container">
+      <div class="section-header">
+        <h1 style="color: #991b1b;">🆘 Therapist Emergency Support</h1>
+        <p style="color: #7f1d1d;">Professional crisis intervention tools and emergency protocols for client safety</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crisis Management Tools -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-4">
+        <!-- High Risk Clients -->
+        <div class="card text-center" style="border-left: 4px solid #ef4444;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">⚠️</div>
+          <h3>High Risk Clients</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Immediate attention</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #ef4444;">3</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Clients</div>
+          </div>
+        </div>
+
+        <!-- Crisis Protocols -->
+        <div class="card text-center" style="border-left: 4px solid #f59e0b;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">📋</div>
+          <h3>Crisis Protocols</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Emergency procedures</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #f59e0b;">8</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Protocols</div>
+          </div>
+        </div>
+
+        <!-- Emergency Contacts -->
+        <div class="card text-center" style="border-left: 4px solid #3b82f6;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">📞</div>
+          <h3>Emergency Contacts</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Crisis helplines</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #3b82f6;">24/7</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Available</div>
+          </div>
+        </div>
+
+        <!-- Safety Planning -->
+        <div class="card text-center" style="border-left: 4px solid #10b981;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🛡️</div>
+          <h3>Safety Planning</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Client safety plans</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #10b981;">15</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Active Plans</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crisis Client Management -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Crisis Client Management</h2>
+        <p>Monitor and manage clients in crisis with AI-powered risk assessment</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- High Risk Client Alerts -->
+        <div class="card">
+          <div class="card-header">
+            <h3>⚠️ High Risk Client Alerts</h3>
+            <p>Clients requiring immediate attention and intervention</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: #fef2f2; border-radius: var(--radius-lg); border-left: 4px solid #ef4444;">
+                <div style="width: 50px; height: 50px; background: #ef4444; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">👤</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Emma L. - CRITICAL</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">AI detected severe depression patterns • 2 hours ago</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #fecaca; color: #991b1b; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">CRITICAL</span>
+                    <span style="background: #fce7f3; color: #be185d; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Immediate</span>
+                  </div>
+                </div>
+                <button class="btn btn-accent" onclick="handleCrisisClient('emma')">Intervene Now</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: #fef3c7; border-radius: var(--radius-lg); border-left: 4px solid #f59e0b;">
+                <div style="width: 50px; height: 50px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">👤</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">David K. - HIGH RISK</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Multiple concerning journal entries • 4 hours ago</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #fef3c7; color: #92400e; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">HIGH RISK</span>
+                    <span style="background: #fce7f3; color: #be185d; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Monitor</span>
+                  </div>
+                </div>
+                <button class="btn btn-secondary" onclick="handleCrisisClient('david')">Review & Contact</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: #fef3c7; border-radius: var(--radius-lg); border-left: 4px solid #f59e0b;">
+                <div style="width: 50px; height: 50px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">👤</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Lisa M. - MEDIUM RISK</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Increased anxiety levels detected • 6 hours ago</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #fef3c7; color: #92400e; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">MEDIUM</span>
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Schedule</span>
+                  </div>
+                </div>
+                <button class="btn btn-outline" onclick="handleCrisisClient('lisa')">Schedule Check-in</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Protocols -->
+        <div class="card">
+          <div class="card-header">
+            <h3>📋 Emergency Protocols</h3>
+            <p>Step-by-step crisis intervention procedures</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #ef4444;">
+                <div style="width: 50px; height: 50px; background: #ef4444; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🚨</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Immediate Crisis Response</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Emergency intervention for suicidal ideation</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #fecaca; color: #991b1b; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">URGENT</span>
+                    <span style="background: #fce7f3; color: #be185d; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">5 Steps</span>
+                  </div>
+                </div>
+                <button class="btn btn-accent" onclick="openCrisisProtocol('immediate')">View Protocol</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #f59e0b;">
+                <div style="width: 50px; height: 50px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">📞</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Emergency Contact Protocol</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">When and how to contact emergency services</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #fef3c7; color: #92400e; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">GUIDE</span>
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">3 Steps</span>
+                  </div>
+                </div>
+                <button class="btn btn-secondary" onclick="openCrisisProtocol('contact')">View Guide</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #3b82f6;">
+                <div style="width: 50px; height: 50px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🛡️</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Safety Planning</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Create and manage client safety plans</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">PLAN</span>
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">7 Steps</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="openCrisisProtocol('safety')">Create Plan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Contacts & Resources -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Emergency Contacts & Resources</h2>
+        <p>Quick access to crisis helplines and emergency services</p>
+      </div>
+      
+      <div class="grid grid-cols-3">
+        <!-- National Helplines -->
+        <div class="card" style="border-left: 4px solid #ef4444;">
+          <div class="card-header">
+            <h3>🇮🇳 National Helplines</h3>
+            <p>India mental health crisis support</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="text-align: center; margin-bottom: var(--spacing-4);">
+                <div style="font-size: var(--font-size-2xl); font-weight: 700; color: #ef4444; margin-bottom: var(--spacing-2);">022 2754 6669</div>
+                <div style="color: var(--text-secondary); margin-bottom: var(--spacing-4);">National Mental Health Helpline</div>
+                <button class="btn btn-primary w-full" onclick="callHelpline('022 2754 6669')">Call Now</button>
+              </div>
+              <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">
+                <strong>Additional Resources:</strong><br>
+                • KIRAN: 1800-599-0019<br>
+                • iCall: 9152987821<br>
+                • Sneha: 044-24640050
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- International Helplines -->
+        <div class="card" style="border-left: 4px solid #3b82f6;">
+          <div class="card-header">
+            <h3>🌍 International</h3>
+            <p>Global crisis support numbers</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="margin-bottom: var(--spacing-3);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">United States</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-2);">1-800-273-TALK (8255)</div>
+                <button class="btn btn-outline" style="padding: var(--spacing-1) var(--spacing-2); font-size: var(--font-size-xs);" onclick="callHelpline('1-800-273-TALK')">Call</button>
+              </div>
+              <div style="margin-bottom: var(--spacing-3);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">United Kingdom</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-2);">116 123 (Samaritans)</div>
+                <button class="btn btn-outline" style="padding: var(--spacing-1) var(--spacing-2); font-size: var(--font-size-xs);" onclick="callHelpline('116 123')">Call</button>
+              </div>
+              <div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Crisis Text Line</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-2);">Text HOME to 741741</div>
+                <button class="btn btn-outline" style="padding: var(--spacing-1) var(--spacing-2); font-size: var(--font-size-xs);" onclick="textCrisisLine()">Text</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Local Resources -->
+        <div class="card" style="border-left: 4px solid #10b981;">
+          <div class="card-header">
+            <h3>🏥 Local Resources</h3>
+            <p>Regional mental health services</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="margin-bottom: var(--spacing-3);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Emergency Room</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-2);">Nearest hospital emergency</div>
+                <button class="btn btn-outline" style="padding: var(--spacing-1) var(--spacing-2); font-size: var(--font-size-xs);" onclick="findNearestER()">Find ER</button>
+              </div>
+              <div style="margin-bottom: var(--spacing-3);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Crisis Team</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-2);">Local mental health crisis team</div>
+                <button class="btn btn-outline" style="padding: var(--spacing-1) var(--spacing-2); font-size: var(--font-size-xs);" onclick="contactCrisisTeam()">Contact</button>
+              </div>
+              <div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Police (Emergency)</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-2);">100 (India) / 911 (US)</div>
+                <button class="btn btn-accent" style="padding: var(--spacing-1) var(--spacing-2); font-size: var(--font-size-xs);" onclick="callEmergency()">Call 100/911</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Crisis Assessment -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>🤖 AI Crisis Assessment</h2>
+          <p>AI-powered risk assessment and crisis intervention recommendations</p>
+        </div>
+        <div class="card-body">
+          <div class="grid grid-cols-3">
+            <div class="text-center">
+              <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">⚠️</div>
+              <h3>Risk Assessment</h3>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-4);">AI-powered analysis of client risk factors</p>
+              <button class="btn btn-accent" onclick="runRiskAssessment()">Assess Risk</button>
+            </div>
+            
+            <div class="text-center">
+              <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">📊</div>
+              <h3>Crisis Patterns</h3>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-4);">Identify patterns in client crisis episodes</p>
+              <button class="btn btn-primary" onclick="analyzeCrisisPatterns()">Analyze Patterns</button>
+            </div>
+            
+            <div class="text-center">
+              <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">💡</div>
+              <h3>Intervention Plan</h3>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-4);">AI-recommended crisis intervention strategies</p>
+              <button class="btn btn-primary" onclick="generateInterventionPlan()">Generate Plan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="therapist-dashboard.html">Dashboard</a></p>
+          <p><a href="client-reports.html">Client Reports</a></p>
+          <p><a href="content-moderation.html">Content Moderation</a></p>
+          <p><a href="system-analytics.html">Analytics</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>AI Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Therapist Emergency Support Functionality
+    function handleCrisisClient(clientId) {
+      console.log('Handling crisis client:', clientId);
+      alert(`Initiating crisis intervention for ${clientId}...`);
+    }
+
+    function openCrisisProtocol(protocolType) {
+      console.log('Opening crisis protocol:', protocolType);
+      alert(`Opening ${protocolType} crisis protocol...`);
+    }
+
+    function callHelpline(number) {
+      if (confirm(`Call ${number}? This will open your phone dialer.`)) {
+        window.location.href = `tel:${number}`;
+      }
+    }
+
+    function textCrisisLine() {
+      alert('Opening text message to Crisis Text Line (741741)...');
+    }
+
+    function findNearestER() {
+      alert('Finding nearest emergency room...');
+    }
+
+    function contactCrisisTeam() {
+      alert('Contacting local crisis team...');
+    }
+
+    function callEmergency() {
+      if (confirm('Call emergency services (100/911)?')) {
+        window.location.href = 'tel:100';
+      }
+    }
+
+    function runRiskAssessment() {
+      alert('Running AI-powered risk assessment...');
+    }
+
+    function analyzeCrisisPatterns() {
+      alert('Analyzing crisis patterns with AI...');
+    }
+
+    function generateInterventionPlan() {
+      alert('Generating AI-recommended intervention plan...');
+    }
+  </script>
+</body>
+</html>

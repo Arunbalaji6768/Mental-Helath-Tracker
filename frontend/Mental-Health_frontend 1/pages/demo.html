@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Demo - AI Mental Health Tracker | Interactive Experience</title>
+  <meta name="description" content="Experience the AI Mental Health Tracker live demo with interactive BERT sentiment analysis, mood tracking, and wellness tools.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="project-showcase.html">Project Showcase</a></li>
+          <li><a href="demo.html" class="active">Live Demo</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" class="btn btn-outline">Login</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Demo Hero -->
+  <section class="dashboard-hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="container">
+      <div class="section-header">
+        <h1 style="color: white;">🎬 Live Demo</h1>
+        <p style="color: rgba(255,255,255,0.9); font-size: var(--font-size-xl);">Experience the power of AI-driven mental health monitoring</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Tabs -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--spacing-8);">
+        <div style="display: inline-flex; background: var(--background-secondary); border-radius: var(--radius-lg); padding: var(--spacing-1);">
+          <button class="btn btn-primary" id="userTab" onclick="switchTab('user')" style="margin: 0;">User Experience</button>
+          <button class="btn btn-outline" id="therapistTab" onclick="switchTab('therapist')" style="margin: 0;">Therapist Dashboard</button>
+          <button class="btn btn-outline" id="aiTab" onclick="switchTab('ai')" style="margin: 0;">AI Analysis</button>
+        </div>
+      </div>
+
+      <!-- User Experience Demo -->
+      <div id="userDemo" class="demo-section">
+        <div class="section-header">
+          <h2>👤 User Experience Demo</h2>
+          <p>Try out the core features that users interact with daily</p>
+        </div>
+        
+        <div class="grid grid-cols-2">
+          <!-- Journal Entry Demo -->
+          <div class="card">
+            <div class="card-header">
+              <h3>📝 AI Journal Entry</h3>
+              <p>Write a journal entry and see BERT sentiment analysis in action</p>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="demoJournal">How are you feeling today?</label>
+                <textarea id="demoJournal" class="form-input" rows="4" placeholder="Write about your day, thoughts, or feelings..."></textarea>
+              </div>
+              <button class="btn btn-primary w-full" onclick="analyzeJournal()">Analyze with AI</button>
+              <div id="journalAnalysis" style="margin-top: var(--spacing-4); padding: var(--spacing-4); background: var(--background-secondary); border-radius: var(--radius-lg); display: none;">
+                <h4>AI Analysis Results:</h4>
+                <div id="sentimentResult"></div>
+                <div id="recommendations"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mood Tracking Demo -->
+          <div class="card">
+            <div class="card-header">
+              <h3>😊 Mood Tracking</h3>
+              <p>Track your mood and see how it affects your mental health patterns</p>
+            </div>
+            <div class="card-body">
+              <div style="text-align: center; margin-bottom: var(--spacing-4);">
+                <div style="font-size: var(--font-size-lg); font-weight: 600; margin-bottom: var(--spacing-3);">Rate your current mood:</div>
+                <div style="display: flex; justify-content: center; gap: var(--spacing-2);">
+                  <button class="mood-btn" data-mood="1" onclick="selectMood(1)">😢</button>
+                  <button class="mood-btn" data-mood="2" onclick="selectMood(2)">😕</button>
+                  <button class="mood-btn" data-mood="3" onclick="selectMood(3)">😐</button>
+                  <button class="mood-btn" data-mood="4" onclick="selectMood(4)">😊</button>
+                  <button class="mood-btn" data-mood="5" onclick="selectMood(5)">😄</button>
+                </div>
+                <div id="moodDescription" style="margin-top: var(--spacing-3); color: var(--text-secondary);"></div>
+              </div>
+              <button class="btn btn-primary w-full" onclick="trackMood()">Track Mood</button>
+              <div id="moodResult" style="margin-top: var(--spacing-4); padding: var(--spacing-4); background: var(--background-secondary); border-radius: var(--radius-lg); display: none;">
+                <h4>Mood Analysis:</h4>
+                <div id="moodAnalysis"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wellness Tools Demo -->
+        <div class="card" style="margin-top: var(--spacing-6);">
+          <div class="card-header">
+            <h3>🧘‍♀️ Wellness Tools Demo</h3>
+            <p>Try out our meditation and breathing exercises</p>
+          </div>
+          <div class="card-body">
+            <div class="grid grid-cols-3">
+              <div style="text-align: center; padding: var(--spacing-4); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-3);">🧘‍♀️</div>
+                <h4 style="margin-bottom: var(--spacing-2);">Meditation</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-3);">5-minute guided meditation</p>
+                <button class="btn btn-primary" onclick="startMeditation()">Start</button>
+              </div>
+              <div style="text-align: center; padding: var(--spacing-4); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-3);">💨</div>
+                <h4 style="margin-bottom: var(--spacing-2);">Breathing</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-3);">4-7-8 breathing exercise</p>
+                <button class="btn btn-primary" onclick="startBreathing()">Start</button>
+              </div>
+              <div style="text-align: center; padding: var(--spacing-4); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-3);">🧠</div>
+                <h4 style="margin-bottom: var(--spacing-2);">CBT Tools</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-3);">Thought challenging exercise</p>
+                <button class="btn btn-primary" onclick="startCBT()">Start</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Therapist Dashboard Demo -->
+      <div id="therapistDemo" class="demo-section" style="display: none;">
+        <div class="section-header">
+          <h2>👩‍⚕️ Therapist Dashboard Demo</h2>
+          <p>Experience the professional tools for mental health practitioners</p>
+        </div>
+        
+        <div class="grid grid-cols-2">
+          <!-- Client Overview -->
+          <div class="card">
+            <div class="card-header">
+              <h3>👥 Client Overview</h3>
+              <p>Monitor client progress and AI insights</p>
+            </div>
+            <div class="card-body">
+              <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+                <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                  <div style="width: 40px; height: 40px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">👤</div>
+                  <div style="flex: 1;">
+                    <div style="font-weight: 600;">Sarah M.</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Anxiety levels decreased by 15%</div>
+                  </div>
+                  <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Improving</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                  <div style="width: 40px; height: 40px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">👤</div>
+                  <div style="flex: 1;">
+                    <div style="font-weight: 600;">Michael R.</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Needs attention - concerning patterns</div>
+                  </div>
+                  <span style="background: #fecaca; color: #991b1b; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Alert</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                  <div style="width: 40px; height: 40px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">👤</div>
+                  <div style="flex: 1;">
+                    <div style="font-weight: 600;">Emma L.</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Completed meditation session</div>
+                  </div>
+                  <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Active</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Insights -->
+          <div class="card">
+            <div class="card-header">
+              <h3>🤖 AI Insights</h3>
+              <p>AI-powered recommendations and risk assessment</p>
+            </div>
+            <div class="card-body">
+              <div style="margin-bottom: var(--spacing-4);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2);">Overall Client Sentiment</div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                  <span style="font-size: var(--font-size-sm);">Positive</span>
+                  <span style="font-weight: 600; color: #10b981;">68%</span>
+                </div>
+                <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); overflow: hidden;">
+                  <div style="width: 68%; height: 100%; background: linear-gradient(90deg, #10b981, #059669); border-radius: var(--radius-full);"></div>
+                </div>
+              </div>
+              <div style="margin-bottom: var(--spacing-4);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2);">Risk Assessment</div>
+                <div style="background: #fef2f2; padding: var(--spacing-3); border-radius: var(--radius-lg); border-left: 4px solid #ef4444;">
+                  <div style="font-size: var(--font-size-sm); font-weight: 600; color: #991b1b; margin-bottom: var(--spacing-1);">High Risk Client Detected</div>
+                  <div style="font-size: var(--font-size-xs); color: var(--text-secondary);">Michael R. shows concerning patterns requiring immediate attention</div>
+                </div>
+              </div>
+              <div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2);">AI Recommendations</div>
+                <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg);">
+                  <ul style="font-size: var(--font-size-sm); color: var(--text-secondary); padding-left: var(--spacing-4);">
+                    <li>Schedule immediate check-in with Michael R.</li>
+                    <li>Consider increasing session frequency for high-risk clients</li>
+                    <li>Group therapy shows 15% better outcomes for anxiety cases</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Analysis Demo -->
+      <div id="aiDemo" class="demo-section" style="display: none;">
+        <div class="section-header">
+          <h2>🤖 AI Analysis Demo</h2>
+          <p>See how BERT sentiment analysis works in real-time</p>
+        </div>
+        
+        <div class="grid grid-cols-2">
+          <!-- Text Analysis -->
+          <div class="card">
+            <div class="card-header">
+              <h3>📝 Text Analysis</h3>
+              <p>Enter text to see BERT sentiment analysis in action</p>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="aiTextInput">Enter text for analysis:</label>
+                <textarea id="aiTextInput" class="form-input" rows="4" placeholder="Type any text to analyze its emotional sentiment..."></textarea>
+              </div>
+              <button class="btn btn-primary w-full" onclick="analyzeText()">Analyze with BERT</button>
+              <div id="aiAnalysisResult" style="margin-top: var(--spacing-4); padding: var(--spacing-4); background: var(--background-secondary); border-radius: var(--radius-lg); display: none;">
+                <h4>BERT Analysis Results:</h4>
+                <div id="sentimentScore"></div>
+                <div id="confidenceLevel"></div>
+                <div id="emotionalKeywords"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sentiment Visualization -->
+          <div class="card">
+            <div class="card-header">
+              <h3>📊 Sentiment Visualization</h3>
+              <p>Visual representation of emotional patterns</p>
+            </div>
+            <div class="card-body">
+              <div style="height: 300px; display: flex; align-items: center; justify-content: center; background: var(--background-secondary); border-radius: var(--radius-lg); margin-bottom: var(--spacing-4);">
+                <canvas id="sentimentChart" width="400" height="200"></canvas>
+              </div>
+              <div style="text-align: center;">
+                <button class="btn btn-secondary" onclick="generateSampleData()">Generate Sample Data</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Model Information -->
+        <div class="card" style="margin-top: var(--spacing-6);">
+          <div class="card-header">
+            <h3>🧠 AI Model Information</h3>
+            <p>Technical details about our BERT implementation</p>
+          </div>
+          <div class="card-body">
+            <div class="grid grid-cols-3">
+              <div style="text-center; padding: var(--spacing-4); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">94.2%</div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Accuracy</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">BERT sentiment analysis</div>
+              </div>
+              <div style="text-center; padding: var(--spacing-4); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">1.2s</div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Response Time</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Average processing</div>
+              </div>
+              <div style="text-center; padding: var(--spacing-4); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">110M</div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Parameters</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">BERT-base model</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="container">
+      <div class="card" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);">
+        <div class="card-body" style="text-align: center;">
+          <h2 style="color: #667eea; margin-bottom: var(--spacing-4);">Ready to Get Started?</h2>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-lg); margin-bottom: var(--spacing-6);">Experience the full power of AI Mental Health Tracker</p>
+          <div style="display: flex; gap: var(--spacing-4); justify-content: center; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="window.location.href='login.html'">Create Account</button>
+            <button class="btn btn-outline" onclick="window.location.href='contact.html'">Contact Sales</button>
+            <button class="btn btn-secondary" onclick="window.location.href='project-showcase.html'">View Project Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="index.html">Home</a></p>
+          <p><a href="about.html">About</a></p>
+          <p><a href="project-showcase.html">Project Showcase</a></p>
+          <p><a href="demo.html">Live Demo</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="project-showcase.html">Technical Specs</a></p>
+          <p><a href="contact.html">Contact</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Demo functionality
+    let currentTab = 'user';
+    let selectedMood = 0;
+
+    function switchTab(tab) {
+      // Hide all demo sections
+      document.querySelectorAll('.demo-section').forEach(section => {
+        section.style.display = 'none';
+      });
+      
+      // Remove active class from all tabs
+      document.querySelectorAll('[id$="Tab"]').forEach(btn => {
+        btn.className = btn.className.replace('btn-primary', 'btn-outline');
+      });
+      
+      // Show selected demo section
+      document.getElementById(tab + 'Demo').style.display = 'block';
+      
+      // Add active class to selected tab
+      document.getElementById(tab + 'Tab').className = 'btn btn-primary';
+      
+      currentTab = tab;
+    }
+
+    function analyzeJournal() {
+      const text = document.getElementById('demoJournal').value;
+      if (!text.trim()) {
+        alert('Please enter some text to analyze.');
+        return;
+      }
+      
+      // Simulate AI analysis
+      const sentiment = Math.random() > 0.5 ? 'positive' : 'negative';
+      const confidence = (Math.random() * 0.3 + 0.7).toFixed(2);
+      
+      document.getElementById('sentimentResult').innerHTML = `
+        <div style="margin-bottom: var(--spacing-3);">
+          <strong>Sentiment:</strong> <span style="color: ${sentiment === 'positive' ? '#10b981' : '#ef4444'}">${sentiment.toUpperCase()}</span>
+        </div>
+        <div style="margin-bottom: var(--spacing-3);">
+          <strong>Confidence:</strong> ${(confidence * 100).toFixed(1)}%
+        </div>
+        <div>
+          <strong>Key Emotions:</strong> ${sentiment === 'positive' ? 'Joy, Hope, Gratitude' : 'Sadness, Anxiety, Concern'}
+        </div>
+      `;
+      
+      document.getElementById('recommendations').innerHTML = `
+        <div style="margin-top: var(--spacing-3); padding-top: var(--spacing-3); border-top: 1px solid var(--border-color);">
+          <strong>AI Recommendations:</strong>
+          <ul style="margin-top: var(--spacing-2); padding-left: var(--spacing-4); font-size: var(--font-size-sm);">
+            <li>${sentiment === 'positive' ? 'Great mood! Consider journaling about what made you feel good.' : 'Consider trying a breathing exercise or meditation.'}</li>
+            <li>${sentiment === 'positive' ? 'Share your positive energy with others today.' : 'Reach out to a friend or family member for support.'}</li>
+          </ul>
+        </div>
+      `;
+      
+      document.getElementById('journalAnalysis').style.display = 'block';
+    }
+
+    function selectMood(mood) {
+      selectedMood = mood;
+      document.querySelectorAll('.mood-btn').forEach(btn => {
+        btn.style.opacity = '0.5';
+      });
+      document.querySelector(`[data-mood="${mood}"]`).style.opacity = '1';
+      
+      const descriptions = ['Very Sad', 'Sad', 'Neutral', 'Happy', 'Very Happy'];
+      document.getElementById('moodDescription').textContent = descriptions[mood - 1];
+    }
+
+    function trackMood() {
+      if (selectedMood === 0) {
+        alert('Please select a mood first.');
+        return;
+      }
+      
+      const moodData = {
+        1: { color: '#ef4444', label: 'Very Sad', suggestion: 'Consider reaching out for support' },
+        2: { color: '#f59e0b', label: 'Sad', suggestion: 'Try a gentle activity you enjoy' },
+        3: { color: '#6b7280', label: 'Neutral', suggestion: 'A good day for reflection and planning' },
+        4: { color: '#10b981', label: 'Happy', suggestion: 'Great! Share your positive energy' },
+        5: { color: '#3b82f6', label: 'Very Happy', suggestion: 'Wonderful! Consider what contributed to this feeling' }
+      };
+      
+      const mood = moodData[selectedMood];
+      
+      document.getElementById('moodAnalysis').innerHTML = `
+        <div style="margin-bottom: var(--spacing-3);">
+          <strong>Mood Level:</strong> <span style="color: ${mood.color}">${mood.label}</span>
+        </div>
+        <div style="margin-bottom: var(--spacing-3);">
+          <strong>Suggestion:</strong> ${mood.suggestion}
+        </div>
+        <div>
+          <strong>Trend:</strong> ${selectedMood >= 4 ? 'Positive trend detected' : 'Consider mood-boosting activities'}
+        </div>
+      `;
+      
+      document.getElementById('moodResult').style.display = 'block';
+    }
+
+    function startMeditation() {
+      alert('Starting 5-minute guided meditation...');
+    }
+
+    function startBreathing() {
+      alert('Starting 4-7-8 breathing exercise...');
+    }
+
+    function startCBT() {
+      alert('Starting thought challenging exercise...');
+    }
+
+    function analyzeText() {
+      const text = document.getElementById('aiTextInput').value;
+      if (!text.trim()) {
+        alert('Please enter some text to analyze.');
+        return;
+      }
+      
+      // Simulate BERT analysis
+      const sentiment = Math.random() > 0.5 ? 'positive' : 'negative';
+      const confidence = (Math.random() * 0.2 + 0.8).toFixed(2);
+      
+      document.getElementById('sentimentScore').innerHTML = `
+        <div style="margin-bottom: var(--spacing-2);">
+          <strong>Sentiment Score:</strong> <span style="color: ${sentiment === 'positive' ? '#10b981' : '#ef4444'}">${sentiment.toUpperCase()}</span>
+        </div>
+      `;
+      
+      document.getElementById('confidenceLevel').innerHTML = `
+        <div style="margin-bottom: var(--spacing-2);">
+          <strong>Confidence Level:</strong> ${(confidence * 100).toFixed(1)}%
+        </div>
+      `;
+      
+      document.getElementById('emotionalKeywords').innerHTML = `
+        <div>
+          <strong>Detected Keywords:</strong> ${sentiment === 'positive' ? 'joy, happiness, excited, great' : 'sad, worried, stressed, difficult'}
+        </div>
+      `;
+      
+      document.getElementById('aiAnalysisResult').style.display = 'block';
+    }
+
+    function generateSampleData() {
+      const ctx = document.getElementById('sentimentChart').getContext('2d');
+      
+      // Destroy existing chart if it exists
+      if (window.sentimentChartInstance) {
+        window.sentimentChartInstance.destroy();
+      }
+      
+      const data = {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+          label: 'Positive Sentiment',
+          data: [65, 72, 68, 75],
+          borderColor: '#10b981',
+          backgroundColor: 'rgba(16, 185, 129, 0.1)',
+          tension: 0.4
+        }, {
+          label: 'Negative Sentiment',
+          data: [35, 28, 32, 25],
+          borderColor: '#ef4444',
+          backgroundColor: 'rgba(239, 68, 68, 0.1)',
+          tension: 0.4
+        }]
+      };
+      
+      window.sentimentChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100
+            }
+          }
+        }
+      });
+    }
+
+    // Initialize mood buttons
+    document.querySelectorAll('.mood-btn').forEach(btn => {
+      btn.style.opacity = '0.5';
+      btn.style.border = '2px solid transparent';
+      btn.style.borderRadius = '50%';
+      btn.style.padding = 'var(--spacing-2)';
+      btn.style.cursor = 'pointer';
+      btn.style.transition = 'all 0.3s ease';
+    });
+  </script>
+
+  <style>
+    .mood-btn:hover {
+      opacity: 1 !important;
+      border-color: var(--primary-color) !important;
+    }
+  </style>
+</body>
+</html>

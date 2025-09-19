@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Analytics - Mental Health Monitor</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">MH Monitor</div>
+    <nav>
+      <ul>
+        <li><a href="admin-dashboard.html">Dashboard</a></li>
+        <li><a href="user-management.html">User Management</a></li>
+        <li><a href="content-moderation.html">Content Moderation</a></li>
+        <li><a href="system-analytics.html" class="active">System Analytics</a></li>
+        <li><a href="logout.html" class="btn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Analytics Section -->
+  <section class="analytics-section">
+    <div class="analytics-container">
+      <h1>System Analytics</h1>
+
+      <!-- Usage Graph -->
+      <div class="graph-container">
+        <h3>Daily Active Users (Last 7 Days)</h3>
+        <div id="usageGraph" class="graph"></div>
+      </div>
+
+      <!-- Content Trends -->
+      <div class="graph-container">
+        <h3>Posts Submitted per Day</h3>
+        <div id="postsGraph" class="graph"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mental Health Monitor. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

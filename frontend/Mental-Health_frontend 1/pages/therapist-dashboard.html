@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapist Dashboard - MH Monitor | Professional Mental Health Management</title>
+  <meta name="description" content="Professional dashboard for mental health therapists to monitor client progress, manage appointments, and track high-risk alerts.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+  <script>
+    // Therapist Dashboard functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if user is logged in and is a therapist
+      if (localStorage.getItem('isLoggedIn') !== 'true' || localStorage.getItem('userType') !== 'therapist') {
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      // Update user name if available
+      const userName = localStorage.getItem('userName');
+      if (userName) {
+        console.log('Welcome, Dr. ' + userName);
+      }
+      
+      // Logout functionality
+      const logoutBtn = document.querySelector('a[href="index.html"]');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (confirm('Are you sure you want to logout?')) {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userType');
+            localStorage.removeItem('rememberMe');
+            window.location.href = 'index.html';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="therapist-dashboard.html" class="logo">🧠 MH Monitor</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="therapist-dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="client-reports.html">Client Reports</a></li>
+          <li><a href="appointments.html">Appointments</a></li>
+          <li><a href="messaging.html">Messaging</a></li>
+          <li><a href="index.html">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="padding: var(--spacing-8) 0; min-height: calc(100vh - 200px);">
+    <div class="container">
+      <!-- High-Risk Alerts Section -->
+      <section style="margin-bottom: var(--spacing-12);">
+        <h1 style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--text-primary); margin-bottom: var(--spacing-6);">High-Risk Alerts</h1>
+        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: var(--spacing-6); border-radius: var(--radius-lg);">
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="padding: var(--spacing-2) 0; font-size: var(--font-size-lg); color: var(--text-primary); border-bottom: 1px solid #fecaca;">
+              <strong>Client Arun</strong> - Mood score very low today
+            </li>
+            <li style="padding: var(--spacing-2) 0; font-size: var(--font-size-lg); color: var(--text-primary); border-bottom: 1px solid #fecaca;">
+              <strong>Client Surya</strong> - Missed 3 mood entries in a row
+            </li>
+            <li style="padding: var(--spacing-2) 0; font-size: var(--font-size-lg); color: var(--text-primary);">
+              <strong>Client Shanjeev</strong> - High anxiety score in last assessment
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Assigned Clients Section -->
+      <section>
+        <h1 style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--text-primary); margin-bottom: var(--spacing-6);">Assigned Clients</h1>
+        <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead style="background: var(--background-secondary);">
+              <tr>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Name</th>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Last Mood Entry</th>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Last Assessment</th>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">Arun</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">3/10</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">PHQ-9: 15</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6);">
+                  <button class="btn btn-outline" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm);" onclick="viewClient('arun')">View</button>
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">Surya</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">6/10</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">GAD-7: 8</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6);">
+                  <button class="btn btn-outline" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm);" onclick="viewClient('surya')">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">Shanjeev</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">4/10</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">PHQ-9: 12</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6);">
+                  <button class="btn btn-outline" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm);" onclick="viewClient('shanjeev')">View</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mental Health Monitor. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function viewClient(clientId) {
+      console.log('Viewing client:', clientId);
+      alert(`Opening detailed view for ${clientId}...`);
+    }
+  </script>
+</body>
+</html>

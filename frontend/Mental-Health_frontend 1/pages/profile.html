@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - AI Mental Health Tracker | Personal Dashboard</title>
+  <meta name="description" content="Manage your AI mental health profile, view analytics, and customize your BERT-powered wellness experience.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="mood-tracking.html">Mood Tracking</a></li>
+          <li><a href="journal.html">AI Journal</a></li>
+          <li><a href="progress.html">Analytics</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="profile.html" class="active">Profile</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Profile Hero -->
+  <section class="dashboard-hero">
+    <div class="container">
+      <div class="section-header">
+        <h1>Your AI Wellness Profile</h1>
+        <p>Manage your personal settings and view your AI-powered mental health analytics</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-3">
+        <!-- Profile Stats -->
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">👤</div>
+          <h3>John Doe</h3>
+          <p style="color: var(--text-secondary);">Member since Jan 2024</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); margin-top: var(--spacing-4);">
+            <div style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--primary-color);">47</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Days Active</div>
+          </div>
+        </div>
+
+        <!-- AI Analysis Stats -->
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-color), var(--secondary-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">🤖</div>
+          <h3>AI Insights</h3>
+          <p style="color: var(--text-secondary);">BERT Analysis</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); margin-top: var(--spacing-4);">
+            <div style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--accent-color);">156</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Journal Entries Analyzed</div>
+          </div>
+        </div>
+
+        <!-- Wellness Score -->
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">📊</div>
+          <h3>Wellness Score</h3>
+          <p style="color: var(--text-secondary);">Overall Health</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); margin-top: var(--spacing-4);">
+            <div style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--secondary-color);">78%</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Good</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile Settings -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="grid grid-cols-2">
+        <!-- Personal Information -->
+        <div class="card">
+          <div class="card-header">
+            <h2>👤 Personal Information</h2>
+            <p>Update your personal details and preferences</p>
+          </div>
+          <div class="card-body">
+            <form id="profileForm">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name" class="form-input" value="John Doe">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" class="form-input" value="john.doe@example.com">
+              </div>
+              <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" placeholder="Enter your age" class="form-input" value="28">
+              </div>
+              <div class="form-group">
+                <label for="password">Change Password</label>
+                <input type="password" id="password" placeholder="Enter new password" class="form-input">
+              </div>
+              <button type="submit" class="btn btn-primary w-full">Save Changes</button>
+              <p class="auth-status text-center" id="profileStatus"></p>
+            </form>
+          </div>
+        </div>
+
+        <!-- AI Preferences -->
+        <div class="card">
+          <div class="card-header">
+            <h2>🤖 AI Preferences</h2>
+            <p>Customize your AI analysis and recommendations</p>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>Analysis Frequency</label>
+              <select class="form-input">
+                <option>Real-time (Recommended)</option>
+                <option>Daily Summary</option>
+                <option>Weekly Report</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Privacy Level</label>
+              <select class="form-input">
+                <option>High (Local Processing)</option>
+                <option>Standard (Secure Cloud)</option>
+                <option>Research (Anonymized)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Notification Preferences</label>
+              <div style="display: flex; flex-direction: column; gap: var(--spacing-3);">
+                <label style="display: flex; align-items: center; gap: var(--spacing-2);">
+                  <input type="checkbox" checked> AI Insights & Recommendations
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--spacing-2);">
+                  <input type="checkbox" checked> Mood Pattern Alerts
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--spacing-2);">
+                  <input type="checkbox"> Weekly Progress Reports
+                </label>
+              </div>
+            </div>
+            <button class="btn btn-secondary w-full">Update AI Settings</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Activity -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Recent AI Activity</h2>
+        <p>Your latest AI-powered insights and analysis</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- Activity Timeline -->
+        <div class="card">
+          <div class="card-header">
+            <h3>📈 Activity Timeline</h3>
+            <p>Your recent mental health activities</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">📝</div>
+                <div>
+                  <div style="font-weight: 600;">Journal Entry Analyzed</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">2 hours ago - Positive sentiment detected</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">😊</div>
+                <div>
+                  <div style="font-weight: 600;">Mood Tracking</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Yesterday - Good mood pattern identified</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: var(--secondary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">🧠</div>
+                <div>
+                  <div style="font-weight: 600;">AI Recommendation</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">3 days ago - Suggested meditation practice</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wellness Chart -->
+        <div class="card">
+          <div class="card-header">
+            <h3>📊 7-Day Wellness Trend</h3>
+            <p>Your recent wellness score progression</p>
+          </div>
+          <div class="card-body">
+            <canvas id="wellnessChart" style="height: 200px;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="dashboard.html">Dashboard</a></p>
+          <p><a href="mood-tracking.html">Mood Tracking</a></p>
+          <p><a href="journal.html">AI Journal</a></p>
+          <p><a href="progress.html">Analytics</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>AI Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

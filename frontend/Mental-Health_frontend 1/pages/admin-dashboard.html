@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Mental Health Monitor</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">MH Monitor</div>
+    <nav>
+      <ul>
+        <li><a href="admin-dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="user-management.html">User Management</a></li>
+        <li><a href="content-moderation.html">Content Moderation</a></li>
+        <li><a href="logout.html" class="btn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="admin-dashboard-section">
+    <div class="dashboard-container">
+      <h1>Admin Dashboard</h1>
+      <div class="stats-cards">
+        <div class="card">
+          <h3>Total Users</h3>
+          <p id="totalUsers">0</p>
+        </div>
+        <div class="card">
+          <h3>High-Risk Users</h3>
+          <p id="highRiskUsers">0</p>
+        </div>
+        <div class="card">
+          <h3>Flagged Content</h3>
+          <p id="flaggedContent">0</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mental Health Monitor. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

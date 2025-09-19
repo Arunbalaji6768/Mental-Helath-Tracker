@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Support - AI Mental Health Tracker | Crisis Help</title>
+  <meta name="description" content="24/7 crisis support and emergency mental health resources. Immediate help for mental health emergencies with AI-powered guidance and professional support.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="mood-tracking.html">Mood Tracking</a></li>
+          <li><a href="journal.html">AI Journal</a></li>
+          <li><a href="progress.html">Analytics</a></li>
+          <li><a href="assessments.html">AI Assessments</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Emergency Hero -->
+  <section class="dashboard-hero" style="background: linear-gradient(135deg, #fee2e2, #fecaca);">
+    <div class="container">
+      <div class="section-header">
+        <h1 style="color: #991b1b;">🆘 Emergency Support</h1>
+        <p style="color: #7f1d1d;">If you're in immediate distress, please reach out for help. You are not alone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crisis Helplines -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>24/7 Crisis Helplines</h2>
+        <p>Immediate support available around the clock</p>
+      </div>
+      
+      <div class="grid grid-cols-3">
+        <!-- India -->
+        <div class="card" style="border-left: 4px solid #ef4444;">
+          <div class="card-header">
+            <h3>🇮🇳 India</h3>
+            <p>National Mental Health Helpline</p>
+          </div>
+          <div class="card-body">
+            <div style="text-align: center; margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: #ef4444; margin-bottom: var(--spacing-2);">022 2754 6669</div>
+              <div style="color: var(--text-secondary); margin-bottom: var(--spacing-4);">Available 24/7</div>
+              <button class="btn btn-primary w-full" onclick="callHelpline('022 2754 6669')">Call Now</button>
+            </div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">
+              <strong>Additional Resources:</strong><br>
+              • KIRAN: 1800-599-0019<br>
+              • iCall: 9152987821<br>
+              • Sneha: 044-24640050
+            </div>
+          </div>
+        </div>
+
+        <!-- United States -->
+        <div class="card" style="border-left: 4px solid #3b82f6;">
+          <div class="card-header">
+            <h3>🇺🇸 United States</h3>
+            <p>National Suicide Prevention Lifeline</p>
+          </div>
+          <div class="card-body">
+            <div style="text-align: center; margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: #3b82f6; margin-bottom: var(--spacing-2);">1-800-273-TALK</div>
+              <div style="color: var(--text-secondary); margin-bottom: var(--spacing-4);">Available 24/7</div>
+              <button class="btn btn-primary w-full" onclick="callHelpline('1-800-273-TALK')">Call Now</button>
+            </div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">
+              <strong>Additional Resources:</strong><br>
+              • Crisis Text Line: Text HOME to 741741<br>
+              • SAMHSA: 1-800-662-4357<br>
+              • Veterans Crisis Line: 1-800-273-8255
+            </div>
+          </div>
+        </div>
+
+        <!-- United Kingdom -->
+        <div class="card" style="border-left: 4px solid #10b981;">
+          <div class="card-header">
+            <h3>🇬🇧 United Kingdom</h3>
+            <p>Samaritans Helpline</p>
+          </div>
+          <div class="card-body">
+            <div style="text-align: center; margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: #10b981; margin-bottom: var(--spacing-2);">0800 1111</div>
+              <div style="color: var(--text-secondary); margin-bottom: var(--spacing-4);">Available 24/7</div>
+              <button class="btn btn-primary w-full" onclick="callHelpline('0800 1111')">Call Now</button>
+            </div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">
+              <strong>Additional Resources:</strong><br>
+              • Samaritans: 116 123<br>
+              • Crisis Text Line: Text SHOUT to 85258<br>
+              • Mind: 0300 123 3393
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Immediate Support Tools -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Immediate Support Tools</h2>
+        <p>Quick interventions and coping strategies for crisis moments</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- Grounding Techniques -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🌍 Grounding Techniques</h3>
+            <p>5-4-3-2-1 method to help you feel present and safe</p>
+          </div>
+          <div class="card-body">
+            <div id="groundingExercise">
+              <div style="margin-bottom: var(--spacing-4);">
+                <div style="font-size: var(--font-size-lg); font-weight: 600; margin-bottom: var(--spacing-3);">5-4-3-2-1 Grounding</div>
+                <div style="background: var(--background-primary); padding: var(--spacing-4); border-radius: var(--radius-lg); margin-bottom: var(--spacing-4);">
+                  <div id="groundingStep" style="font-size: var(--font-size-xl); font-weight: 700; color: var(--primary-color); margin-bottom: var(--spacing-2);">Ready to begin</div>
+                  <div id="groundingInstruction" style="color: var(--text-secondary);">Click "Start Grounding" to begin the 5-4-3-2-1 technique</div>
+                </div>
+              </div>
+              <button class="btn btn-primary w-full" id="startGrounding" onclick="startGrounding()">Start Grounding</button>
+              <button class="btn btn-secondary w-full" id="nextStep" onclick="nextGroundingStep()" style="display: none;">Next Step</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breathing for Crisis -->
+        <div class="card">
+          <div class="card-header">
+            <h3>💨 Crisis Breathing</h3>
+            <p>Immediate breathing exercise for panic and anxiety</p>
+          </div>
+          <div class="card-body">
+            <div style="text-align: center;">
+              <div id="crisisBreathingCircle" style="width: 150px; height: 150px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl); font-weight: 700; transition: all 0.5s ease;">
+                Ready
+              </div>
+              <div style="margin-bottom: var(--spacing-4);">
+                <div style="font-size: var(--font-size-lg); font-weight: 600; margin-bottom: var(--spacing-2);">4-7-8 Crisis Breathing</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">
+                  Inhale for 4, hold for 7, exhale for 8<br>
+                  Repeat until you feel calmer
+                </div>
+              </div>
+              <div style="display: flex; gap: var(--spacing-3); justify-content: center;">
+                <button class="btn btn-primary" id="startCrisisBreathing" onclick="startCrisisBreathing()">Start Breathing</button>
+                <button class="btn btn-secondary" id="stopCrisisBreathing" onclick="stopCrisisBreathing()" disabled>Stop</button>
+              </div>
+              <p id="crisisBreathingStatus" style="margin-top: var(--spacing-3); color: var(--text-secondary); font-size: var(--font-size-sm);">Ready to help you through this moment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety Planning -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Safety Planning</h2>
+        <p>Create a personalized safety plan for difficult moments</p>
+      </div>
+      
+      <div class="card">
+        <div class="card-body">
+          <div class="grid grid-cols-2">
+            <!-- Warning Signs -->
+            <div>
+              <h3 style="margin-bottom: var(--spacing-4);">⚠️ Warning Signs</h3>
+              <div style="margin-bottom: var(--spacing-4);">
+                <label style="display: block; margin-bottom: var(--spacing-2); font-weight: 600;">What are your warning signs?</label>
+                <textarea id="warningSigns" class="form-input" rows="3" placeholder="List signs that indicate you're in crisis (e.g., feeling hopeless, isolating, not sleeping)"></textarea>
+              </div>
+              
+              <div style="margin-bottom: var(--spacing-4);">
+                <label style="display: block; margin-bottom: var(--spacing-2); font-weight: 600;">Coping Strategies</label>
+                <textarea id="copingStrategies" class="form-input" rows="3" placeholder="What helps you feel better? (e.g., calling a friend, going for a walk, listening to music)"></textarea>
+              </div>
+              
+              <div style="margin-bottom: var(--spacing-4);">
+                <label style="display: block; margin-bottom: var(--spacing-2); font-weight: 600;">Support People</label>
+                <textarea id="supportPeople" class="form-input" rows="2" placeholder="Who can you call? (friends, family, therapist)"></textarea>
+              </div>
+            </div>
+
+            <!-- Emergency Contacts -->
+            <div>
+              <h3 style="margin-bottom: var(--spacing-4);">📞 Emergency Contacts</h3>
+              <div style="margin-bottom: var(--spacing-4);">
+                <label style="display: block; margin-bottom: var(--spacing-2); font-weight: 600;">Primary Contact</label>
+                <input type="text" id="primaryContact" class="form-input" placeholder="Name and phone number">
+              </div>
+              
+              <div style="margin-bottom: var(--spacing-4);">
+                <label style="display: block; margin-bottom: var(--spacing-2); font-weight: 600;">Secondary Contact</label>
+                <input type="text" id="secondaryContact" class="form-input" placeholder="Name and phone number">
+              </div>
+              
+              <div style="margin-bottom: var(--spacing-4);">
+                <label style="display: block; margin-bottom: var(--spacing-2); font-weight: 600;">Professional Help</label>
+                <input type="text" id="professionalContact" class="form-input" placeholder="Therapist, doctor, or counselor">
+              </div>
+              
+              <div style="margin-bottom: var(--spacing-4);">
+                <label style="display: block; margin-bottom: var(--spacing-2); font-weight: 600;">Safe Places</label>
+                <textarea id="safePlaces" class="form-input" rows="2" placeholder="Where can you go to feel safe?"></textarea>
+              </div>
+            </div>
+          </div>
+          
+          <div style="text-align: center; margin-top: var(--spacing-6);">
+            <button class="btn btn-primary" onclick="saveSafetyPlan()">Save Safety Plan</button>
+            <button class="btn btn-secondary" onclick="printSafetyPlan()">Print Safety Plan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Crisis Support -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>🤖 AI Crisis Support</h2>
+          <p>Immediate AI-powered guidance and support during difficult moments</p>
+        </div>
+        <div class="card-body">
+          <div class="grid grid-cols-3">
+            <div class="text-center">
+              <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">💬</div>
+              <h3>AI Chat Support</h3>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-4);">Talk to our AI for immediate emotional support and guidance</p>
+              <button class="btn btn-primary" onclick="startAIChat()">Start Chat</button>
+            </div>
+            
+            <div class="text-center">
+              <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">📊</div>
+              <h3>Crisis Assessment</h3>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-4);">AI-powered assessment to understand your current state</p>
+              <button class="btn btn-primary" onclick="startCrisisAssessment()">Take Assessment</button>
+            </div>
+            
+            <div class="text-center">
+              <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">🎯</div>
+              <h3>Personalized Help</h3>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-4);">Get personalized recommendations based on your patterns</p>
+              <button class="btn btn-primary" onclick="getPersonalizedHelp()">Get Help</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="dashboard.html">Dashboard</a></p>
+          <p><a href="mood-tracking.html">Mood Tracking</a></p>
+          <p><a href="journal.html">AI Journal</a></p>
+          <p><a href="progress.html">Analytics</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>AI Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Emergency Support Functionality
+    function callHelpline(number) {
+      if (confirm(`Call ${number}? This will open your phone dialer.`)) {
+        window.location.href = `tel:${number}`;
+      }
+    }
+
+    // Grounding Exercise
+    let groundingStep = 0;
+    const groundingSteps = [
+      { step: "5 Things You Can See", instruction: "Look around and name 5 things you can see. Take your time and really notice them." },
+      { step: "4 Things You Can Touch", instruction: "Name 4 things you can touch. Feel their texture, temperature, and weight." },
+      { step: "3 Things You Can Hear", instruction: "Listen carefully and name 3 things you can hear around you." },
+      { step: "2 Things You Can Smell", instruction: "Take a deep breath and name 2 things you can smell." },
+      { step: "1 Thing You Can Taste", instruction: "Focus on your mouth and name 1 thing you can taste." }
+    ];
+
+    function startGrounding() {
+      groundingStep = 0;
+      document.getElementById('startGrounding').style.display = 'none';
+      document.getElementById('nextStep').style.display = 'block';
+      nextGroundingStep();
+    }
+
+    function nextGroundingStep() {
+      if (groundingStep < groundingSteps.length) {
+        const current = groundingSteps[groundingStep];
+        document.getElementById('groundingStep').textContent = current.step;
+        document.getElementById('groundingInstruction').textContent = current.instruction;
+        groundingStep++;
+        
+        if (groundingStep >= groundingSteps.length) {
+          document.getElementById('nextStep').textContent = 'Complete';
+          document.getElementById('nextStep').onclick = function() {
+            document.getElementById('groundingStep').textContent = 'Grounding Complete';
+            document.getElementById('groundingInstruction').textContent = 'You\'ve completed the 5-4-3-2-1 grounding technique. How do you feel now?';
+            document.getElementById('nextStep').style.display = 'none';
+            document.getElementById('startGrounding').style.display = 'block';
+            document.getElementById('startGrounding').textContent = 'Start Again';
+          };
+        }
+      }
+    }
+
+    // Crisis Breathing
+    let crisisBreathingInterval;
+    let crisisPhase = 0;
+    let crisisCount = 0;
+    let crisisRunning = false;
+
+    function startCrisisBreathing() {
+      crisisPhase = 0;
+      crisisCount = 0;
+      crisisRunning = true;
+      
+      document.getElementById('startCrisisBreathing').disabled = true;
+      document.getElementById('stopCrisisBreathing').disabled = false;
+      document.getElementById('crisisBreathingStatus').textContent = 'Starting crisis breathing...';
+      
+      crisisBreathingInterval = setInterval(updateCrisisBreathing, 1000);
+    }
+
+    function updateCrisisBreathing() {
+      const phases = ['Inhale', 'Hold', 'Exhale'];
+      const counts = [4, 7, 8];
+      const colors = [
+        'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+        'linear-gradient(135deg, #f59e0b, #d97706)',
+        'linear-gradient(135deg, #10b981, #059669)'
+      ];
+      
+      crisisCount++;
+      document.getElementById('crisisBreathingCircle').textContent = crisisCount;
+      document.getElementById('crisisBreathingCircle').style.background = colors[crisisPhase];
+      
+      if (crisisCount >= counts[crisisPhase]) {
+        crisisPhase = (crisisPhase + 1) % 3;
+        crisisCount = 0;
+        if (crisisPhase === 0) {
+          document.getElementById('crisisBreathingStatus').textContent = 'Cycle complete. Continue if needed.';
+        }
+      }
+    }
+
+    function stopCrisisBreathing() {
+      crisisRunning = false;
+      clearInterval(crisisBreathingInterval);
+      
+      document.getElementById('startCrisisBreathing').disabled = false;
+      document.getElementById('stopCrisisBreathing').disabled = true;
+      document.getElementById('crisisBreathingCircle').textContent = 'Ready';
+      document.getElementById('crisisBreathingCircle').style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+      document.getElementById('crisisBreathingStatus').textContent = 'Crisis breathing completed. How are you feeling?';
+    }
+
+    // Safety Plan
+    function saveSafetyPlan() {
+      const plan = {
+        warningSigns: document.getElementById('warningSigns').value,
+        copingStrategies: document.getElementById('copingStrategies').value,
+        supportPeople: document.getElementById('supportPeople').value,
+        primaryContact: document.getElementById('primaryContact').value,
+        secondaryContact: document.getElementById('secondaryContact').value,
+        professionalContact: document.getElementById('professionalContact').value,
+        safePlaces: document.getElementById('safePlaces').value
+      };
+      
+      localStorage.setItem('safetyPlan', JSON.stringify(plan));
+      alert('Safety plan saved successfully!');
+    }
+
+    function printSafetyPlan() {
+      const plan = JSON.parse(localStorage.getItem('safetyPlan') || '{}');
+      const printContent = `
+        <h2>My Safety Plan</h2>
+        <h3>Warning Signs:</h3>
+        <p>${plan.warningSigns || 'Not specified'}</p>
+        
+        <h3>Coping Strategies:</h3>
+        <p>${plan.copingStrategies || 'Not specified'}</p>
+        
+        <h3>Support People:</h3>
+        <p>${plan.supportPeople || 'Not specified'}</p>
+        
+        <h3>Emergency Contacts:</h3>
+        <p><strong>Primary:</strong> ${plan.primaryContact || 'Not specified'}</p>
+        <p><strong>Secondary:</strong> ${plan.secondaryContact || 'Not specified'}</p>
+        <p><strong>Professional:</strong> ${plan.professionalContact || 'Not specified'}</p>
+        
+        <h3>Safe Places:</h3>
+        <p>${plan.safePlaces || 'Not specified'}</p>
+      `;
+      
+      const printWindow = window.open('', '_blank');
+      printWindow.document.write(printContent);
+      printWindow.document.close();
+      printWindow.print();
+    }
+
+    // AI Support Functions
+    function startAIChat() {
+      alert('AI Chat Support would open here. This would provide immediate emotional support and guidance.');
+    }
+
+    function startCrisisAssessment() {
+      alert('Crisis Assessment would start here. This would help evaluate your current mental state and provide appropriate recommendations.');
+    }
+
+    function getPersonalizedHelp() {
+      alert('Personalized Help would be generated here based on your BERT analysis and current crisis state.');
+    }
+
+    // Load saved safety plan
+    window.addEventListener('load', function() {
+      const savedPlan = JSON.parse(localStorage.getItem('safetyPlan') || '{}');
+      if (savedPlan.warningSigns) document.getElementById('warningSigns').value = savedPlan.warningSigns;
+      if (savedPlan.copingStrategies) document.getElementById('copingStrategies').value = savedPlan.copingStrategies;
+      if (savedPlan.supportPeople) document.getElementById('supportPeople').value = savedPlan.supportPeople;
+      if (savedPlan.primaryContact) document.getElementById('primaryContact').value = savedPlan.primaryContact;
+      if (savedPlan.secondaryContact) document.getElementById('secondaryContact').value = savedPlan.secondaryContact;
+      if (savedPlan.professionalContact) document.getElementById('professionalContact').value = savedPlan.professionalContact;
+      if (savedPlan.safePlaces) document.getElementById('safePlaces').value = savedPlan.safePlaces;
+    });
+  </script>
+</body>
+</html>

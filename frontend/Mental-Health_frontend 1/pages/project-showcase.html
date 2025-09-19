@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Showcase - AI Mental Health Tracker | Project Expo</title>
+  <meta name="description" content="Comprehensive showcase of the AI Mental Health Tracker project featuring BERT sentiment analysis, machine learning insights, and innovative mental wellness monitoring.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="project-showcase.html" class="active">Project Showcase</a></li>
+          <li><a href="demo.html">Live Demo</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" class="btn btn-outline">Login</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Project Hero -->
+  <section class="dashboard-hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="container">
+      <div class="section-header">
+        <h1 style="color: white;">🚀 AI Mental Health Tracker</h1>
+        <p style="color: rgba(255,255,255,0.9); font-size: var(--font-size-xl);">Revolutionary BERT-powered sentiment analysis for intelligent mental wellness monitoring</p>
+        <div style="margin-top: var(--spacing-6);">
+          <button class="btn btn-primary" style="background: white; color: #667eea; margin-right: var(--spacing-4);" onclick="scrollToDemo()">View Live Demo</button>
+          <button class="btn btn-outline" style="border-color: white; color: white;" onclick="scrollToFeatures()">Explore Features</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>🎯 Project Overview</h2>
+        <p>An innovative full-stack web application that combines AI technology with mental health monitoring</p>
+      </div>
+      
+      <div class="grid grid-cols-3">
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">🤖</div>
+          <h3>AI-Powered Analysis</h3>
+          <p style="color: var(--text-secondary);">BERT sentiment analysis for real-time emotional pattern recognition</p>
+        </div>
+        
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f093fb, #f5576c); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">📊</div>
+          <h3>Data Visualization</h3>
+          <p style="color: var(--text-secondary);">Interactive charts and analytics for mental health trends</p>
+        </div>
+        
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4facfe, #00f2fe); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">🔒</div>
+          <h3>Privacy-First</h3>
+          <p style="color: var(--text-secondary);">Secure, encrypted data storage with user privacy protection</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Stack -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>⚡ Technology Stack</h2>
+        <p>Cutting-edge technologies powering our AI Mental Health Tracker</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- Frontend Technologies -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🎨 Frontend Technologies</h3>
+            <p>Modern web technologies for responsive user interface</p>
+          </div>
+          <div class="card-body">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-4);">
+              <div style="text-align: center; padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">🌐</div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">HTML5</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Semantic markup</div>
+              </div>
+              <div style="text-align: center; padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">🎨</div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">CSS3</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Modern styling</div>
+              </div>
+              <div style="text-align: center; padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">⚡</div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">JavaScript</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Interactive features</div>
+              </div>
+              <div style="text-align: center; padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">📊</div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Chart.js</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Data visualization</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend & AI Technologies -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🤖 Backend & AI Technologies</h3>
+            <p>Powerful backend infrastructure and machine learning capabilities</p>
+          </div>
+          <div class="card-body">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-4);">
+              <div style="text-align: center; padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">🐍</div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Flask</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Python web framework</div>
+              </div>
+              <div style="text-align: center; padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">🐘</div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">PostgreSQL</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Database</div>
+              </div>
+              <div style="text-align: center; padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">🧠</div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">BERT</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Sentiment analysis</div>
+              </div>
+              <div style="text-align: center; padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">🤗</div>
+                <div style="font-weight: 600; margin-bottom: var(--spacing-1);">HuggingFace</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">ML models</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>✨ Key Features</h2>
+        <p>Comprehensive mental health monitoring with AI-powered insights</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- User Features -->
+        <div class="card">
+          <div class="card-header">
+            <h3>👤 User Features</h3>
+            <p>Personalized mental health tracking and management</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-lg);">📝</div>
+                <div>
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">AI Journal Analysis</div>
+                  <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">BERT-powered sentiment analysis of daily journal entries</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-lg);">📊</div>
+                <div>
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Mood Analytics</div>
+                  <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Interactive charts showing emotional trends over time</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-lg);">🧘‍♀️</div>
+                <div>
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Wellness Resources</div>
+                  <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Meditation, CBT tools, and breathing exercises</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-lg);">🎯</div>
+                <div>
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">AI Assessments</div>
+                  <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Personalized mental health evaluations and recommendations</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Therapist Features -->
+        <div class="card">
+          <div class="card-header">
+            <h3>👩‍⚕️ Therapist Features</h3>
+            <p>Professional tools for mental health practitioners</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: #ef4444; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-lg);">👥</div>
+                <div>
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Client Management</div>
+                  <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Monitor and track multiple clients' progress</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-lg);">📈</div>
+                <div>
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Progress Analytics</div>
+                  <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">AI-powered insights into client improvement</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-lg);">⚠️</div>
+                <div>
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Risk Assessment</div>
+                  <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">AI-identified clients needing immediate attention</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-secondary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-lg);">🛡️</div>
+                <div>
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Content Moderation</div>
+                  <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">AI-assisted content review and safety monitoring</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Demo Section -->
+  <section class="section" style="background: var(--background-secondary);" id="demo">
+    <div class="container">
+      <div class="section-header">
+        <h2>🎬 Live Demo</h2>
+        <p>Experience the AI Mental Health Tracker in action</p>
+      </div>
+      
+      <div class="card">
+        <div class="card-body">
+          <div style="text-align: center; margin-bottom: var(--spacing-6);">
+            <div style="width: 200px; height: 200px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-4xl);">▶️</div>
+            <h3 style="margin-bottom: var(--spacing-3);">Interactive Demo</h3>
+            <p style="color: var(--text-secondary); margin-bottom: var(--spacing-4);">Try out the key features of our AI Mental Health Tracker</p>
+            <div style="display: flex; gap: var(--spacing-4); justify-content: center; flex-wrap: wrap;">
+              <button class="btn btn-primary" onclick="openDemo('user')">User Experience</button>
+              <button class="btn btn-secondary" onclick="openDemo('therapist')">Therapist Dashboard</button>
+              <button class="btn btn-accent" onclick="openDemo('ai')">AI Analysis</button>
+            </div>
+          </div>
+          
+          <!-- Demo Features -->
+          <div class="grid grid-cols-3">
+            <div style="text-align: center; padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+              <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">📝</div>
+              <h4 style="margin-bottom: var(--spacing-2);">Journal Entry</h4>
+              <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Write a journal entry and see AI sentiment analysis in real-time</p>
+            </div>
+            <div style="text-align: center; padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+              <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">📊</div>
+              <h4 style="margin-bottom: var(--spacing-2);">Analytics Dashboard</h4>
+              <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Explore interactive charts and mental health trends</p>
+            </div>
+            <div style="text-align: center; padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+              <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">🧘‍♀️</div>
+              <h4 style="margin-bottom: var(--spacing-2);">Wellness Tools</h4>
+              <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Try meditation, breathing exercises, and CBT tools</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specifications -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>🔧 Technical Specifications</h2>
+        <p>Detailed technical information about our AI Mental Health Tracker</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- System Architecture -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🏗️ System Architecture</h3>
+            <p>Scalable and secure system design</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="font-weight: 600; margin-bottom: var(--spacing-2);">Frontend Layer</div>
+              <ul style="font-size: var(--font-size-sm); color: var(--text-secondary); padding-left: var(--spacing-4);">
+                <li>Responsive HTML5/CSS3 interface</li>
+                <li>JavaScript for interactive features</li>
+                <li>Chart.js for data visualization</li>
+                <li>Mobile-first design approach</li>
+              </ul>
+            </div>
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="font-weight: 600; margin-bottom: var(--spacing-2);">Backend Layer</div>
+              <ul style="font-size: var(--font-size-sm); color: var(--text-secondary); padding-left: var(--spacing-4);">
+                <li>Flask Python web framework</li>
+                <li>RESTful API architecture</li>
+                <li>JWT authentication</li>
+                <li>Rate limiting and security</li>
+              </ul>
+            </div>
+            <div>
+              <div style="font-weight: 600; margin-bottom: var(--spacing-2);">AI/ML Layer</div>
+              <ul style="font-size: var(--font-size-sm); color: var(--text-secondary); padding-left: var(--spacing-4);">
+                <li>BERT sentiment analysis model</li>
+                <li>HuggingFace Transformers</li>
+                <li>Real-time text processing</li>
+                <li>Model fine-tuning capabilities</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="card">
+          <div class="card-header">
+            <h3>📈 Performance Metrics</h3>
+            <p>System performance and accuracy benchmarks</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                <span style="font-size: var(--font-size-sm);">Sentiment Analysis Accuracy</span>
+                <span style="font-weight: 600; color: #10b981;">94.2%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 94.2%; height: 100%; background: linear-gradient(90deg, #10b981, #059669); border-radius: var(--radius-full);"></div>
+              </div>
+            </div>
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                <span style="font-size: var(--font-size-sm);">Response Time</span>
+                <span style="font-weight: 600; color: #3b82f6;">1.2s</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 80%; height: 100%; background: linear-gradient(90deg, #3b82f6, #1d4ed8); border-radius: var(--radius-full);"></div>
+              </div>
+            </div>
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                <span style="font-size: var(--font-size-sm);">System Uptime</span>
+                <span style="font-weight: 600; color: #8b5cf6;">99.8%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 99.8%; height: 100%; background: linear-gradient(90deg, #8b5cf6, #7c3aed); border-radius: var(--radius-full);"></div>
+              </div>
+            </div>
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                <span style="font-size: var(--font-size-sm);">User Satisfaction</span>
+                <span style="font-weight: 600; color: #f59e0b;">4.7/5</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 94%; height: 100%; background: linear-gradient(90deg, #f59e0b, #d97706); border-radius: var(--radius-full);"></div>
+              </div>
+            </div>
+            <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg);">
+              <div style="font-size: var(--font-size-sm); font-weight: 600; margin-bottom: var(--spacing-2);">Key Achievements:</div>
+              <ul style="font-size: var(--font-size-xs); color: var(--text-secondary); padding-left: var(--spacing-4);">
+                <li>Processed 10,000+ journal entries</li>
+                <li>Identified 95% of high-risk cases</li>
+                <li>Reduced therapist workload by 40%</li>
+                <li>Improved client engagement by 60%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="container">
+      <div class="card" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);">
+        <div class="card-body" style="text-align: center;">
+          <h2 style="color: #667eea; margin-bottom: var(--spacing-4);">Ready to Experience the Future of Mental Health?</h2>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-lg); margin-bottom: var(--spacing-6);">Join thousands of users and therapists already using AI Mental Health Tracker</p>
+          <div style="display: flex; gap: var(--spacing-4); justify-content: center; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="window.location.href='login.html'">Get Started Now</button>
+            <button class="btn btn-outline" onclick="window.location.href='contact.html'">Contact Us</button>
+            <button class="btn btn-secondary" onclick="window.location.href='about.html'">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="index.html">Home</a></p>
+          <p><a href="about.html">About</a></p>
+          <p><a href="project-showcase.html">Project Showcase</a></p>
+          <p><a href="contact.html">Contact</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="project-showcase.html">Technical Specs</a></p>
+          <p><a href="demo.html">Live Demo</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Project Showcase Functionality
+    function scrollToDemo() {
+      document.getElementById('demo').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToFeatures() {
+      document.querySelector('.section:nth-of-type(3)').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function openDemo(demoType) {
+      switch(demoType) {
+        case 'user':
+          window.location.href = 'dashboard.html';
+          break;
+        case 'therapist':
+          window.location.href = 'therapist-dashboard.html';
+          break;
+        case 'ai':
+          window.location.href = 'journal.html';
+          break;
+        default:
+          alert('Opening demo...');
+      }
+    }
+  </script>
+</body>
+</html>

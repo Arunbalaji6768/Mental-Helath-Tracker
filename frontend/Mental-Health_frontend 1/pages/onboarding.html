@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding - Mental Health Monitor</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">MH Monitor</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="login.html" class="btn">Login</a></li>
+        <li><a href="signup.html" class="btn btn-primary">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Onboarding Section -->
+  <section class="onboarding-section">
+    <div class="onboarding-container">
+      <h1>Welcome! Let’s Set Up Your Profile</h1>
+      <form id="onboardingForm">
+        <!-- Mental Health Check -->
+        <h2>Mental Health Check</h2>
+        <div class="form-group">
+          <label>How stressed do you feel today? (1-10)</label>
+          <input type="range" id="stress" name="stress" min="1" max="10" value="5">
+          <span id="stressValue">5</span>
+        </div>
+        <div class="form-group">
+          <label>How anxious do you feel today? (1-10)</label>
+          <input type="range" id="anxiety" name="anxiety" min="1" max="10" value="5">
+          <span id="anxietyValue">5</span>
+        </div>
+        <div class="form-group">
+          <label>How was your sleep last night? (1-10)</label>
+          <input type="range" id="sleep" name="sleep" min="1" max="10" value="5">
+          <span id="sleepValue">5</span>
+        </div>
+
+        <!-- Goals -->
+        <h2>Set Your Goals</h2>
+        <div class="form-group">
+          <label for="goal1">Goal 1</label>
+          <input type="text" id="goal1" name="goal1" placeholder="E.g., Reduce stress">
+        </div>
+        <div class="form-group">
+          <label for="goal2">Goal 2</label>
+          <input type="text" id="goal2" name="goal2" placeholder="E.g., Improve sleep">
+        </div>
+        <div class="form-group">
+          <label for="goal3">Goal 3</label>
+          <input type="text" id="goal3" name="goal3" placeholder="E.g., Daily journaling">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Complete Setup</button>
+        <p class="auth-status" id="onboardingStatus"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mental Health Monitor. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

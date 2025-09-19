@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Resources - Mental Health Tracker | Wellness Tools & Techniques</title>
+  <meta name="description" content="AI-curated mental health resources, guided meditations, CBT techniques, and personalized wellness tools powered by BERT analysis.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="mood-tracking.html">Mood Tracking</a></li>
+          <li><a href="journal.html">AI Journal</a></li>
+          <li><a href="progress.html">Analytics</a></li>
+          <li><a href="assessments.html">AI Assessments</a></li>
+        <li><a href="resources.html" class="active">Resources</a></li>
+        <li><a href="profile.html">Profile</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Resources Hero -->
+  <section class="dashboard-hero">
+    <div class="container">
+      <div class="section-header">
+        <h1>AI-Curated Wellness Resources</h1>
+        <p>Personalized mental health tools and techniques powered by BERT analysis and machine learning</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resource Categories -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-4">
+        <!-- Meditation & Mindfulness -->
+        <a href="meditation.html" class="card text-center" style="text-decoration: none; color: inherit; cursor: pointer;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🧘</div>
+          <h3>Meditation</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Guided sessions</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: var(--primary-color);">12</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Available</div>
+      </div>
+        </a>
+
+      <!-- CBT Techniques -->
+        <a href="cbt-tools.html" class="card text-center" style="text-decoration: none; color: inherit; cursor: pointer;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent-color), var(--secondary-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🧠</div>
+          <h3>CBT Tools</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Cognitive techniques</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: var(--accent-color);">8</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Exercises</div>
+          </div>
+        </a>
+
+        <!-- Breathing Exercises -->
+        <a href="breathing.html" class="card text-center" style="text-decoration: none; color: inherit; cursor: pointer;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">💨</div>
+          <h3>Breathing</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Stress relief</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: var(--secondary-color);">6</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Techniques</div>
+          </div>
+        </a>
+
+        <!-- Crisis Support -->
+        <a href="emergency.html" class="card text-center" style="text-decoration: none; color: inherit; cursor: pointer;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🆘</div>
+          <h3>Emergency</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Crisis support</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #ef4444;">24/7</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Available</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Resources -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>AI-Recommended Resources</h2>
+        <p>Personalized wellness tools based on your BERT analysis</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- Guided Meditation -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🧘‍♀️ Guided Meditation Sessions</h3>
+            <p>AI-curated meditation based on your stress patterns</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">▶️</div>
+                <div>
+                  <div style="font-weight: 600;">Mindfulness for Stress Relief</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">15 minutes • Recommended for you</div>
+                </div>
+                <button class="btn btn-sm btn-primary">Start</button>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">▶️</div>
+                <div>
+                  <div style="font-weight: 600;">Body Scan Meditation</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">20 minutes • For anxiety</div>
+                </div>
+                <button class="btn btn-sm btn-primary">Start</button>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="width: 40px; height: 40px; background: var(--secondary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">▶️</div>
+                <div>
+                  <div style="font-weight: 600;">Sleep Preparation</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">10 minutes • For better sleep</div>
+                </div>
+                <button class="btn btn-sm btn-primary">Start</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CBT Exercises -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🧠 CBT Techniques</h3>
+            <p>Cognitive behavioral tools for mental wellness</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid var(--primary-color);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2);">Thought Challenging</div>
+                <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-3);">Identify and challenge negative thought patterns</div>
+                <button class="btn btn-sm btn-primary">Practice</button>
+              </div>
+              <div style="padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid var(--accent-color);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2);">Behavioral Activation</div>
+                <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-3);">Increase positive activities and mood</div>
+                <button class="btn btn-sm btn-primary">Practice</button>
+              </div>
+              <div style="padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid var(--secondary-color);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2);">Graded Exposure</div>
+                <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-3);">Gradually face anxiety-provoking situations</div>
+                <button class="btn btn-sm btn-primary">Practice</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Tools -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Interactive Wellness Tools</h2>
+        <p>Real-time tools to help you manage stress and anxiety</p>
+      </div>
+
+      <div class="grid grid-cols-3">
+      <!-- Breathing Timer -->
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>💨 Breathing Timer</h3>
+            <p>4-7-8 breathing technique</p>
+          </div>
+          <div class="card-body">
+            <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl); font-weight: 700;" id="breathingCircle">
+              Ready
+            </div>
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-2);">Instructions:</div>
+              <div style="font-size: var(--font-size-sm);">Inhale for 4, Hold for 7, Exhale for 8</div>
+            </div>
+            <button class="btn btn-primary w-full" id="startBreathing">Start Breathing Exercise</button>
+            <p id="breathingStatus" style="margin-top: var(--spacing-2); color: var(--text-secondary); font-size: var(--font-size-sm);">Ready to begin</p>
+          </div>
+        </div>
+
+        <!-- Mood Check-in -->
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>😊 Quick Mood Check</h3>
+            <p>Rate your current mood</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-3);">😐</div>
+              <input type="range" min="1" max="10" value="5" class="w-full" id="moodSlider" style="margin-bottom: var(--spacing-3);">
+              <div style="display: flex; justify-content: space-between; font-size: var(--font-size-sm); color: var(--text-secondary);">
+                <span>Very Low</span>
+                <span>Very High</span>
+              </div>
+            </div>
+            <button class="btn btn-secondary w-full">Log Mood</button>
+            <p style="margin-top: var(--spacing-2); color: var(--text-secondary); font-size: var(--font-size-sm);">Current: Neutral (5/10)</p>
+          </div>
+      </div>
+
+        <!-- Gratitude Journal -->
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>🙏 Gratitude Practice</h3>
+            <p>Daily gratitude reflection</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-3);">✨</div>
+              <textarea placeholder="What are you grateful for today?" class="form-input" rows="3" style="margin-bottom: var(--spacing-3);"></textarea>
+            </div>
+            <button class="btn btn-accent w-full">Save Gratitude</button>
+            <p style="margin-top: var(--spacing-2); color: var(--text-secondary); font-size: var(--font-size-sm);">3 entries this week</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crisis Support -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="card" style="background: linear-gradient(135deg, #fee2e2, #fecaca); border: 1px solid #fca5a5;">
+        <div class="card-header" style="text-align: center;">
+          <h2 style="color: #991b1b;">🆘 Crisis Support</h2>
+          <p style="color: #7f1d1d;">If you're in immediate distress, please reach out for help</p>
+        </div>
+        <div class="card-body">
+          <div class="grid grid-cols-3">
+            <div style="text-align: center; padding: var(--spacing-4);">
+              <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">🇮🇳</div>
+              <div style="font-weight: 600; margin-bottom: var(--spacing-1);">India</div>
+              <div style="font-size: var(--font-size-lg); font-weight: 700; color: #991b1b;">022 2754 6669</div>
+              <div style="font-size: var(--font-size-sm); color: #7f1d1d;">24/7 Helpline</div>
+            </div>
+            <div style="text-align: center; padding: var(--spacing-4);">
+              <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">🇺🇸</div>
+              <div style="font-weight: 600; margin-bottom: var(--spacing-1);">United States</div>
+              <div style="font-size: var(--font-size-lg); font-weight: 700; color: #991b1b;">1-800-273-TALK</div>
+              <div style="font-size: var(--font-size-sm); color: #7f1d1d;">24/7 Helpline</div>
+            </div>
+            <div style="text-align: center; padding: var(--spacing-4);">
+              <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">🇬🇧</div>
+              <div style="font-weight: 600; margin-bottom: var(--spacing-1);">United Kingdom</div>
+              <div style="font-size: var(--font-size-lg); font-weight: 700; color: #991b1b;">0800 1111</div>
+              <div style="font-size: var(--font-size-sm); color: #7f1d1d;">24/7 Helpline</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="dashboard.html">Dashboard</a></p>
+          <p><a href="mood-tracking.html">Mood Tracking</a></p>
+          <p><a href="journal.html">AI Journal</a></p>
+          <p><a href="progress.html">Analytics</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>AI Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

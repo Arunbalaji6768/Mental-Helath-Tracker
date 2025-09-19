@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Mental Health Monitor | Get in Touch</title>
+  <meta name="description" content="Get in touch with Mental Health Monitor team. We're here to help with questions, support, and feedback about your wellness journey.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Mental Health Monitor</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="login.html" class="btn btn-outline">Login</a></li>
+          <li><a href="signup.html" class="btn btn-primary">Get Started</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Contact Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="animate-fade-in-up">Get in Touch</h1>
+        <p class="animate-fade-in-up">We're here to help with questions, support, and feedback about your wellness journey</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Information & Form -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-2">
+        <!-- Contact Information -->
+        <div>
+          <h2>Contact Information</h2>
+          <p>We're here to help you on your mental wellness journey. Reach out to us through any of the channels below.</p>
+          
+          <div class="card" style="margin-top: var(--spacing-6);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-4); margin-bottom: var(--spacing-4);">
+              <div class="feature-icon" style="background: var(--primary-color); margin: 0;">📧</div>
+              <div>
+                <h3>Email Support</h3>
+                <p>support@mentalhealthmonitor.com</p>
+                <small style="color: var(--text-secondary);">We respond within 24 hours</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: var(--spacing-4); margin-bottom: var(--spacing-4);">
+              <div class="feature-icon" style="background: var(--accent-color); margin: 0;">📞</div>
+              <div>
+                <h3>Phone Support</h3>
+                <p>+1 (555) 123-4567</p>
+                <small style="color: var(--text-secondary);">Mon-Fri, 9 AM - 6 PM EST</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: var(--spacing-4);">
+              <div class="feature-icon" style="background: var(--secondary-color); margin: 0;">💬</div>
+              <div>
+                <h3>Live Chat</h3>
+                <p>Available 24/7</p>
+                <small style="color: var(--text-secondary);">Click the chat icon in the bottom right</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <h2>Send us a Message</h2>
+              <p>Fill out the form below and we'll get back to you as soon as possible</p>
+            </div>
+            <div class="card-body">
+              <form id="contactForm">
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" required placeholder="Your full name" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required placeholder="you@example.com" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject *</label>
+                  <select id="subject" name="subject" required class="form-input">
+                    <option value="">Select a topic</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="technical">Technical Support</option>
+                    <option value="billing">Billing Question</option>
+                    <option value="feature">Feature Request</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" rows="5" required placeholder="Write your message here..." class="form-input"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">Send Message</button>
+                <p id="formStatus" class="form-status text-center"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Preview -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <h2 class="text-center">Frequently Asked Questions</h2>
+      <p class="text-center" style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-8);">Quick answers to common questions</p>
+      <div class="grid grid-cols-2">
+        <div class="card">
+          <h3>How do I reset my password?</h3>
+          <p>Click "Forgot Password?" on the login page and follow the instructions sent to your email.</p>
+        </div>
+        <div class="card">
+          <h3>Is my data secure?</h3>
+          <p>Yes, we use industry-standard encryption and never share your personal information.</p>
+        </div>
+        <div class="card">
+          <h3>Can I cancel my subscription?</h3>
+          <p>Yes, you can cancel anytime from your account settings or by contacting support.</p>
+        </div>
+        <div class="card">
+          <h3>Do you offer refunds?</h3>
+          <p>We offer a 30-day money-back guarantee for all new subscriptions.</p>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top: var(--spacing-8);">
+        <a href="faq.html" class="btn btn-outline">View All FAQs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Mental Health Monitor</h3>
+          <p>Your personal wellness companion for tracking and improving mental health.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="index.html">Home</a></p>
+          <p><a href="about.html">About Us</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <p><a href="privacy.html">Privacy Policy</a></p>
+          <p><a href="terms.html">Terms of Service</a></p>
+          <p><a href="contact.html">Help Center</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for mental health tips and updates</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mental Health Monitor. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

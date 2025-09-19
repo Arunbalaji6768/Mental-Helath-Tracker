@@ -1,0 +1,11 @@
+flask
+flask-cors
+flask-bcrypt
+flask-jwt-extended
+psycopg2-binary
+flask-sqlalchemy
+transformers
+torch
+datasets
+pandas
+scikit-learn

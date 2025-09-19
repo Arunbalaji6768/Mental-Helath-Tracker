@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' http://localhost:5000;">
+  <title>Login - Mental Health Monitor | Sign In to Your Account</title>
+  <meta name="description" content="Sign in to your Mental Health Monitor account to access your personal wellness dashboard and tracking tools.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/api.js"></script>
+  <script src="../js/common.js" defer></script>
+  <script src="../js/login.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Mental Health Monitor</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="login.html" class="active">Login</a></li>
+          <li><a href="signup.html" class="btn btn-primary">Get Started</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Login Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="animate-fade-in-up">Welcome Back</h1>
+        <p class="animate-fade-in-up">Sign in to continue your mental wellness journey</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Login Form Section -->
+  <section class="section">
+    <div class="container">
+      <div style="max-width: 500px; margin: 0 auto;">
+        <div class="card">
+          <div class="card-header text-center">
+            <h2>Sign In to Your Account</h2>
+            <p>Access your personal wellness dashboard and tracking tools</p>
+          </div>
+          <div class="card-body">
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password" class="form-input">
+              </div>
+              <div class="form-group" style="display: flex; align-items: center; gap: var(--spacing-2);">
+                <input type="checkbox" id="remember" name="remember" style="width: auto;">
+                <label for="remember" style="margin: 0;">Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-primary w-full">Sign In</button>
+              <p class="auth-status text-center" id="loginStatus"></p>
+            </form>
+          </div>
+          <div class="card-footer text-center">
+            <p><a href="reset-password.html" class="text-primary">Forgot your password?</a></p>
+            <p>Don't have an account? <a href="signup.html" class="text-primary">Sign up here</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Mental Health Monitor</h3>
+          <p>Your personal wellness companion for tracking and improving mental health.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="index.html">Home</a></p>
+          <p><a href="about.html">About Us</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <p><a href="privacy.html">Privacy Policy</a></p>
+          <p><a href="terms.html">Terms of Service</a></p>
+          <p><a href="contact.html">Help Center</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for mental health tips and updates</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mental Health Monitor. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

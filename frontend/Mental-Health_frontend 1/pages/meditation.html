@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guided Meditation - AI Mental Health Tracker | Mindfulness Sessions</title>
+  <meta name="description" content="AI-curated guided meditation sessions for stress relief, anxiety management, and mental wellness. Personalized mindfulness practices powered by BERT analysis.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="mood-tracking.html">Mood Tracking</a></li>
+          <li><a href="journal.html">AI Journal</a></li>
+          <li><a href="progress.html">Analytics</a></li>
+          <li><a href="assessments.html">AI Assessments</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Meditation Hero -->
+  <section class="dashboard-hero">
+    <div class="container">
+      <div class="section-header">
+        <h1>🧘‍♀️ Guided Meditation Sessions</h1>
+        <p>AI-curated mindfulness practices for stress relief, anxiety management, and mental wellness</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meditation Categories -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-4">
+        <!-- Stress Relief -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #10b981); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">😌</div>
+          <h3>Stress Relief</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Calm your mind</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #3b82f6;">5</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Sessions</div>
+          </div>
+        </div>
+
+        <!-- Sleep Preparation -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6, #3b82f6); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🌙</div>
+          <h3>Sleep Preparation</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Better rest</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #8b5cf6;">4</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Sessions</div>
+          </div>
+        </div>
+
+        <!-- Anxiety Relief -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f59e0b, #ef4444); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">💚</div>
+          <h3>Anxiety Relief</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Find peace</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #f59e0b;">6</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Sessions</div>
+          </div>
+        </div>
+
+        <!-- Focus & Clarity -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #06b6d4); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🎯</div>
+          <h3>Focus & Clarity</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Mental clarity</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #10b981;">3</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Sessions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Meditation Sessions -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>AI-Recommended Meditation Sessions</h2>
+        <p>Personalized mindfulness practices based on your BERT analysis and mood patterns</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- Stress Relief Sessions -->
+        <div class="card">
+          <div class="card-header">
+            <h3>😌 Stress Relief Sessions</h3>
+            <p>Calm your mind and reduce stress with guided meditation</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #3b82f6;">
+                <div style="width: 50px; height: 50px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">▶️</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">5-Minute Stress Relief</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Quick breathing exercise for immediate stress relief</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">5 min</span>
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Beginner</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="startMeditation('stress-5min')">Start</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #10b981;">
+                <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">▶️</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Body Scan Meditation</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Progressive relaxation for deep stress relief</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">15 min</span>
+                    <span style="background: #fef3c7; color: #92400e; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Intermediate</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="startMeditation('body-scan')">Start</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #8b5cf6;">
+                <div style="width: 50px; height: 50px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">▶️</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Mindful Breathing</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Focus on breath to center your mind</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">10 min</span>
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Beginner</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="startMeditation('breathing')">Start</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sleep Preparation Sessions -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🌙 Sleep Preparation Sessions</h3>
+            <p>Relaxing meditations to help you fall asleep faster</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #8b5cf6;">
+                <div style="width: 50px; height: 50px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">▶️</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Sleep Story</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Guided story to help you drift off to sleep</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">20 min</span>
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">All Levels</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="startMeditation('sleep-story')">Start</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #3b82f6;">
+                <div style="width: 50px; height: 50px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">▶️</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Progressive Muscle Relaxation</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Tense and release muscles for deep relaxation</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">15 min</span>
+                    <span style="background: #fef3c7; color: #92400e; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Intermediate</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="startMeditation('muscle-relaxation')">Start</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #10b981;">
+                <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">▶️</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">4-7-8 Breathing for Sleep</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Calming breathing technique for better sleep</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">8 min</span>
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Beginner</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="startMeditation('478-breathing')">Start</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meditation Timer -->
+  <section class="section">
+    <div class="container">
+      <div class="card text-center">
+        <div class="card-header">
+          <h2>🕐 Custom Meditation Timer</h2>
+          <p>Set your own meditation duration and practice at your own pace</p>
+        </div>
+        <div class="card-body">
+          <div style="max-width: 400px; margin: 0 auto;">
+            <div style="width: 200px; height: 200px; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); border-radius: 50%; margin: 0 auto var(--spacing-6); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-4xl); font-weight: 700;" id="meditationTimer">
+              00:00
+            </div>
+            <div style="margin-bottom: var(--spacing-6);">
+              <label style="display: block; margin-bottom: var(--spacing-2); font-weight: 600;">Set Duration (minutes)</label>
+              <input type="range" min="1" max="60" value="10" id="durationSlider" style="width: 100%; margin-bottom: var(--spacing-2);">
+              <div style="display: flex; justify-content: space-between; font-size: var(--font-size-sm); color: var(--text-secondary);">
+                <span>1 min</span>
+                <span id="selectedDuration">10 min</span>
+                <span>60 min</span>
+              </div>
+            </div>
+            <div style="display: flex; gap: var(--spacing-4); justify-content: center;">
+              <button class="btn btn-primary" id="startTimer" onclick="startCustomMeditation()">Start Meditation</button>
+              <button class="btn btn-secondary" id="pauseTimer" onclick="pauseMeditation()" disabled>Pause</button>
+              <button class="btn btn-accent" id="stopTimer" onclick="stopMeditation()" disabled>Stop</button>
+            </div>
+            <p id="timerStatus" style="margin-top: var(--spacing-4); color: var(--text-secondary); font-size: var(--font-size-sm);">Ready to begin your meditation practice</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="dashboard.html">Dashboard</a></p>
+          <p><a href="mood-tracking.html">Mood Tracking</a></p>
+          <p><a href="journal.html">AI Journal</a></p>
+          <p><a href="progress.html">Analytics</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>AI Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Meditation Timer Functionality
+    let meditationInterval;
+    let currentTime = 0;
+    let isRunning = false;
+    let isPaused = false;
+
+    function startMeditation(type) {
+      // This would integrate with your meditation audio system
+      console.log('Starting meditation:', type);
+      alert(`Starting ${type} meditation session...`);
+    }
+
+    function startCustomMeditation() {
+      const duration = document.getElementById('durationSlider').value;
+      currentTime = duration * 60; // Convert to seconds
+      isRunning = true;
+      isPaused = false;
+      
+      document.getElementById('startTimer').disabled = true;
+      document.getElementById('pauseTimer').disabled = false;
+      document.getElementById('stopTimer').disabled = false;
+      document.getElementById('timerStatus').textContent = 'Meditation in progress...';
+      
+      meditationInterval = setInterval(updateTimer, 1000);
+    }
+
+    function pauseMeditation() {
+      if (isPaused) {
+        isPaused = false;
+        meditationInterval = setInterval(updateTimer, 1000);
+        document.getElementById('pauseTimer').textContent = 'Pause';
+        document.getElementById('timerStatus').textContent = 'Meditation resumed...';
+      } else {
+        isPaused = true;
+        clearInterval(meditationInterval);
+        document.getElementById('pauseTimer').textContent = 'Resume';
+        document.getElementById('timerStatus').textContent = 'Meditation paused...';
+      }
+    }
+
+    function stopMeditation() {
+      isRunning = false;
+      isPaused = false;
+      clearInterval(meditationInterval);
+      currentTime = 0;
+      
+      document.getElementById('startTimer').disabled = false;
+      document.getElementById('pauseTimer').disabled = true;
+      document.getElementById('stopTimer').disabled = true;
+      document.getElementById('pauseTimer').textContent = 'Pause';
+      document.getElementById('timerStatus').textContent = 'Meditation completed! Great job!';
+      
+      updateTimerDisplay();
+    }
+
+    function updateTimer() {
+      if (currentTime > 0) {
+        currentTime--;
+        updateTimerDisplay();
+      } else {
+        stopMeditation();
+      }
+    }
+
+    function updateTimerDisplay() {
+      const minutes = Math.floor(currentTime / 60);
+      const seconds = currentTime % 60;
+      document.getElementById('meditationTimer').textContent = 
+        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    // Duration slider update
+    document.getElementById('durationSlider').addEventListener('input', function() {
+      document.getElementById('selectedDuration').textContent = this.value + ' min';
+    });
+  </script>
+</body>
+</html>

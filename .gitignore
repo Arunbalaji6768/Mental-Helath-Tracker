@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+backend/.venv/
+.env.*
+*.log
+app.log
+
+# Node / Frontend
+node_modules/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Build/cache
+.cache/
+*.tmp
+*.swp
+~$*
+
+# IDE
+.vscode/
+.idea/
+
+# Data/model outputs (if any)
+backend/**/model_out/
+backend/**/app.log
+
+# Misc
+*.sqlite3
+*.db
+dataset/
+dataset/model_out/
+*.safetensors
+*.pt
+*.bin

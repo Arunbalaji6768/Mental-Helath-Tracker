@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Reports - MH Monitor | Professional Analytics Dashboard</title>
+  <meta name="description" content="Comprehensive client reports and analytics for mental health therapists to track patient progress and treatment outcomes.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+  <script>
+    // Client Reports functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if user is logged in and is a therapist
+      if (localStorage.getItem('isLoggedIn') !== 'true' || localStorage.getItem('userType') !== 'therapist') {
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      // Logout functionality
+      const logoutBtn = document.querySelector('a[href="index.html"]');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (confirm('Are you sure you want to logout?')) {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userType');
+            localStorage.removeItem('rememberMe');
+            window.location.href = 'index.html';
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="therapist-dashboard.html" class="logo">🧠 MH Monitor</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="therapist-dashboard.html">Dashboard</a></li>
+          <li><a href="client-reports.html" class="active">Client Reports</a></li>
+          <li><a href="appointments.html">Appointments</a></li>
+          <li><a href="messaging.html">Messaging</a></li>
+          <li><a href="index.html">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="padding: var(--spacing-8) 0; min-height: calc(100vh - 200px);">
+    <div class="container">
+      <!-- Client Reports Overview -->
+      <section style="margin-bottom: var(--spacing-12);">
+        <h1 style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--text-primary); margin-bottom: var(--spacing-6);">Client Reports</h1>
+        <div style="background: #f0f9ff; border-left: 4px solid #3b82f6; padding: var(--spacing-6); border-radius: var(--radius-lg);">
+          <p style="font-size: var(--font-size-lg); color: var(--text-primary); margin: 0;">
+            Comprehensive analytics and progress reports for all assigned clients
+          </p>
+        </div>
+      </section>
+
+      <!-- Client Progress Summary -->
+      <section style="margin-bottom: var(--spacing-12);">
+        <h1 style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--text-primary); margin-bottom: var(--spacing-6);">Client Progress Summary</h1>
+        <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead style="background: var(--background-secondary);">
+              <tr>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Client Name</th>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Progress Status</th>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Last Session</th>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Mood Trend</th>
+                <th style="padding: var(--spacing-4) var(--spacing-6); text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 1px solid var(--border-color);">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">Arun</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">
+                  <span style="background: #fecaca; color: #991b1b; padding: var(--spacing-1) var(--spacing-3); border-radius: var(--radius-sm); font-size: var(--font-size-sm);">High Risk</span>
+                </td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">2 days ago</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">↘️ Declining</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6);">
+                  <button class="btn btn-outline" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm); margin-right: var(--spacing-2);" onclick="viewReport('arun')">View Report</button>
+                  <button class="btn btn-primary" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm);" onclick="scheduleSession('arun')">Schedule</button>
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">Surya</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">
+                  <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-3); border-radius: var(--radius-sm); font-size: var(--font-size-sm);">Improving</span>
+                </td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">1 week ago</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">↗️ Improving</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6);">
+                  <button class="btn btn-outline" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm); margin-right: var(--spacing-2);" onclick="viewReport('surya')">View Report</button>
+                  <button class="btn btn-primary" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm);" onclick="scheduleSession('surya')">Schedule</button>
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">Shanjeev</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">
+                  <span style="background: #fef3c7; color: #92400e; padding: var(--spacing-1) var(--spacing-3); border-radius: var(--radius-sm); font-size: var(--font-size-sm);">Stable</span>
+                </td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">3 days ago</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">➡️ Stable</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6);">
+                  <button class="btn btn-outline" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm); margin-right: var(--spacing-2);" onclick="viewReport('shanjeev')">View Report</button>
+                  <button class="btn btn-primary" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm);" onclick="scheduleSession('shanjeev')">Schedule</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">Rishi</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">
+                  <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-3); border-radius: var(--radius-sm); font-size: var(--font-size-sm);">Improving</span>
+                </td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">5 days ago</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6); font-size: var(--font-size-lg); color: var(--text-primary);">↗️ Improving</td>
+                <td style="padding: var(--spacing-4) var(--spacing-6);">
+                  <button class="btn btn-outline" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm); margin-right: var(--spacing-2);" onclick="viewReport('rishi')">View Report</button>
+                  <button class="btn btn-primary" style="padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm);" onclick="scheduleSession('rishi')">Schedule</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Analytics Overview -->
+      <section>
+        <h1 style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--text-primary); margin-bottom: var(--spacing-6);">Analytics Overview</h1>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-6);">
+          <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--spacing-6); text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <div style="font-size: var(--font-size-3xl); font-weight: 700; color: #3b82f6; margin-bottom: var(--spacing-2);">12</div>
+            <div style="font-size: var(--font-size-lg); color: var(--text-primary); margin-bottom: var(--spacing-1);">Active Clients</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Currently under treatment</div>
+          </div>
+          <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--spacing-6); text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <div style="font-size: var(--font-size-3xl); font-weight: 700; color: #10b981; margin-bottom: var(--spacing-2);">68%</div>
+            <div style="font-size: var(--font-size-lg); color: var(--text-primary); margin-bottom: var(--spacing-1);">Improvement Rate</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Average progress this month</div>
+          </div>
+          <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--spacing-6); text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <div style="font-size: var(--font-size-3xl); font-weight: 700; color: #f59e0b; margin-bottom: var(--spacing-2);">3</div>
+            <div style="font-size: var(--font-size-lg); color: var(--text-primary); margin-bottom: var(--spacing-1);">High Risk</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Clients needing attention</div>
+          </div>
+          <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: var(--spacing-6); text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <div style="font-size: var(--font-size-3xl); font-weight: 700; color: #8b5cf6; margin-bottom: var(--spacing-2);">24</div>
+            <div style="font-size: var(--font-size-lg); color: var(--text-primary); margin-bottom: var(--spacing-1);">Sessions This Week</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Completed appointments</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mental Health Monitor. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function viewReport(clientId) {
+      console.log('Viewing report for:', clientId);
+      alert(`Opening detailed report for ${clientId}...`);
+    }
+
+    function scheduleSession(clientId) {
+      console.log('Scheduling session for:', clientId);
+      alert(`Opening scheduling for ${clientId}...`);
+    }
+  </script>
+</body>
+</html>

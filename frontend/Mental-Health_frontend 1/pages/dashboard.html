@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' http://localhost:5000;">
+  <title>Dashboard - Mental Health Monitor | Your Wellness Hub</title>
+  <meta name="description" content="Your personal mental health dashboard with mood tracking, progress analytics, and wellness resources.">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/api.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Mental Health Monitor</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="mood-tracking.html">Mood Tracking</a></li>
+          <li><a href="journal.html">Journal</a></li>
+          <li><a href="progress.html">Progress</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Dashboard Hero -->
+  <section class="dashboard-hero">
+    <div class="container">
+      <h1>Welcome Back!</h1>
+      <p>Here's your personalized overview of your mental health journey.</p>
+    </div>
+  </section>
+
+  <!-- Summary Cards -->
+  <section class="section">
+    <div class="container">
+      <div class="dashboard-summary">
+        <div class="summary-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, var(--accent-color), var(--primary-color)); margin-bottom: var(--spacing-4);">😊</div>
+          <h2>Today's Mood</h2>
+          <p class="mood-value">7/10</p>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Good mood today!</p>
+        </div>
+        <div class="summary-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); margin-bottom: var(--spacing-4);">🔥</div>
+          <h2>Current Streak</h2>
+          <p class="streak-value">5 days</p>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Keep it up!</p>
+        </div>
+        <div class="summary-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); margin-bottom: var(--spacing-4);">📝</div>
+          <h2>Quick Journal</h2>
+          <button class="btn btn-primary" id="openJournalBtn">Write Entry</button>
+        </div>
+        <div class="summary-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, var(--accent-color), var(--primary-color)); margin-bottom: var(--spacing-4);">📊</div>
+          <h2>Weekly Progress</h2>
+          <p style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--primary-color); margin-bottom: var(--spacing-2);">+12%</p>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">vs last week</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Actions -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <h2 class="text-center">Quick Actions</h2>
+      <div class="grid grid-cols-4">
+        <div class="card text-center">
+          <div class="feature-icon" style="background: var(--primary-color); margin-bottom: var(--spacing-4);">📊</div>
+          <h3>Log Mood</h3>
+          <p>Track how you're feeling right now</p>
+          <a href="mood-tracking.html" class="btn btn-primary btn-sm">Log Now</a>
+        </div>
+        <div class="card text-center">
+          <div class="feature-icon" style="background: var(--accent-color); margin-bottom: var(--spacing-4);">🧘</div>
+          <h3>Meditation</h3>
+          <p>Take a moment to center yourself</p>
+          <a href="resources.html" class="btn btn-accent btn-sm">Start</a>
+        </div>
+        <div class="card text-center">
+          <div class="feature-icon" style="background: var(--secondary-color); margin-bottom: var(--spacing-4);">📈</div>
+          <h3>View Progress</h3>
+          <p>See your wellness trends</p>
+          <a href="progress.html" class="btn btn-secondary btn-sm">View</a>
+        </div>
+        <div class="card text-center">
+          <div class="feature-icon" style="background: var(--primary-color); margin-bottom: var(--spacing-4);">🎯</div>
+          <h3>Set Goals</h3>
+          <p>Define your wellness objectives</p>
+          <a href="goals.html" class="btn btn-outline btn-sm">Set Goals</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Activity & Notifications -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-2">
+        <div class="card">
+          <h2>Recent Activity</h2>
+          <div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-accent); border-radius: var(--radius-lg); margin-bottom: var(--spacing-3);">
+              <div style="width: 40px; height: 40px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">📝</div>
+              <div>
+                <p style="margin: 0; font-weight: 600;">Journal Entry</p>
+                <p style="margin: 0; color: var(--text-secondary); font-size: var(--font-size-sm);">2 hours ago</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-accent); border-radius: var(--radius-lg); margin-bottom: var(--spacing-3);">
+              <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">😊</div>
+              <div>
+                <p style="margin: 0; font-weight: 600;">Mood Logged</p>
+                <p style="margin: 0; color: var(--text-secondary); font-size: var(--font-size-sm);">Yesterday</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--background-accent); border-radius: var(--radius-lg);">
+              <div style="width: 40px; height: 40px; background: var(--secondary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">🧘</div>
+              <div>
+                <p style="margin: 0; font-weight: 600;">Meditation Completed</p>
+                <p style="margin: 0; color: var(--text-secondary); font-size: var(--font-size-sm);">2 days ago</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Notifications</h2>
+          <div id="notificationsList">
+            <div style="padding: var(--spacing-3); background: var(--background-accent); border-radius: var(--radius-lg); margin-bottom: var(--spacing-3); border-left: 4px solid var(--accent-color);">
+              <p style="margin: 0; font-weight: 600;">Time to log your mood!</p>
+              <p style="margin: 0; color: var(--text-secondary); font-size: var(--font-size-sm);">It's been 6 hours since your last entry</p>
+            </div>
+            <div style="padding: var(--spacing-3); background: var(--background-accent); border-radius: var(--radius-lg); margin-bottom: var(--spacing-3); border-left: 4px solid var(--primary-color);">
+              <p style="margin: 0; font-weight: 600;">New meditation available</p>
+              <p style="margin: 0; color: var(--text-secondary); font-size: var(--font-size-sm);">Check out our new guided session</p>
+            </div>
+            <div style="padding: var(--spacing-3); background: var(--background-accent); border-radius: var(--radius-lg); border-left: 4px solid var(--secondary-color);">
+              <p style="margin: 0; font-weight: 600;">Weekly report ready</p>
+              <p style="margin: 0; color: var(--text-secondary); font-size: var(--font-size-sm);">Your progress summary is available</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Mental Health Monitor</h3>
+          <p>Your personal wellness companion for tracking and improving mental health.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="mood-tracking.html">Mood Tracking</a></p>
+          <p><a href="journal.html">Journal</a></p>
+          <p><a href="progress.html">Progress</a></p>
+          <p><a href="resources.html">Resources</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <p><a href="contact.html">Contact Us</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+          <p><a href="profile.html">Profile Settings</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Account</h3>
+          <p><a href="profile.html">My Profile</a></p>
+          <p><a href="goals.html">My Goals</a></p>
+          <p><a href="index.html">Logout</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mental Health Monitor. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

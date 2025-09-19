@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' http://localhost:5000 http://127.0.0.1:5000;">
+  <title>AI Journal Analysis - Mental Health Tracker | BERT Sentiment Analysis</title>
+  <meta name="description" content="AI-powered journal with BERT sentiment analysis. Write naturally while our AI analyzes your emotions and provides intelligent mental health insights.">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/api.js?v=2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js?v=2" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="mood-tracking.html">Mood Tracking</a></li>
+          <li><a href="journal.html" class="active">AI Journal</a></li>
+          <li><a href="progress.html">Analytics</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- AI Journal Hero -->
+  <section class="dashboard-hero">
+    <div class="container">
+      <h1>AI-Powered Journal Analysis</h1>
+      <p>Write naturally while our BERT AI analyzes your emotions and provides intelligent mental health insights</p>
+    </div>
+  </section>
+
+  <!-- AI Journal Interface -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-2">
+        <!-- Journal Writing Area -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <h2>🤖 AI Journal Entry</h2>
+              <p>Write your thoughts naturally. Our BERT AI will analyze your emotions in real-time.</p>
+            </div>
+            <div class="card-body">
+              <form id="journalForm">
+                <div class="form-group">
+                  <label for="journalEntry">What's on your mind today?</label>
+                  <textarea id="journalEntry" name="journalEntry" rows="8" placeholder="Write about your day, feelings, thoughts, or anything you'd like to reflect on. Our AI will analyze the emotional tone of your writing..." class="form-input"></textarea>
+                  <small style="color: var(--text-secondary);">💡 Tip: Write naturally - the AI understands context and emotions better with detailed entries</small>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">Analyze with AI</button>
+                <p class="auth-status text-center" id="journalStatus"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Analysis Results -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <h2>🧠 AI Sentiment Analysis</h2>
+              <p>Real-time emotional analysis powered by BERT</p>
+            </div>
+            <div class="card-body">
+              <div id="aiAnalysisResults" style="text-align: center; padding: var(--spacing-8);">
+                <div style="font-size: var(--font-size-4xl); margin-bottom: var(--spacing-4);">🤖</div>
+                <h3>Ready to Analyze</h3>
+                <p style="color: var(--text-secondary);">Write a journal entry to see AI-powered sentiment analysis</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Insights -->
+          <div class="card" style="margin-top: var(--spacing-6);">
+            <div class="card-header">
+              <h2>💡 AI Insights</h2>
+              <p>Personalized recommendations based on your emotional patterns</p>
+            </div>
+            <div class="card-body">
+              <div id="aiInsights" style="text-align: center; padding: var(--spacing-6);">
+                <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-4);">💭</div>
+                <p style="color: var(--text-secondary);">AI insights will appear here after analysis</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent AI Analysis -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <h2 class="text-center">Recent AI Analysis</h2>
+      <p class="text-center" style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-8);">Your emotional patterns analyzed by BERT AI</p>
+      
+      <div class="grid grid-cols-3">
+        <div class="card text-center">
+          <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-4);">😊</div>
+          <h3>Today</h3>
+          <p style="color: var(--text-secondary);">Positive Sentiment</p>
+          <div style="background: #d1fae5; color: #065f46; padding: var(--spacing-2); border-radius: var(--radius-lg); font-size: var(--font-size-sm); margin-top: var(--spacing-2);">
+            85% Positive
+          </div>
+        </div>
+        <div class="card text-center">
+          <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-4);">😐</div>
+          <h3>Yesterday</h3>
+          <p style="color: var(--text-secondary);">Neutral Sentiment</p>
+          <div style="background: #fef3c7; color: #92400e; padding: var(--spacing-2); border-radius: var(--radius-lg); font-size: var(--font-size-sm); margin-top: var(--spacing-2);">
+            60% Neutral
+          </div>
+        </div>
+        <div class="card text-center">
+          <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-4);">😔</div>
+          <h3>2 days ago</h3>
+          <p style="color: var(--text-secondary);">Negative Sentiment</p>
+          <div style="background: #fee2e2; color: #991b1b; padding: var(--spacing-2); border-radius: var(--radius-lg); font-size: var(--font-size-sm); margin-top: var(--spacing-2);">
+            70% Negative
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Technology Info -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-2">
+        <div>
+          <h2>Powered by Advanced AI</h2>
+          <p>Our journal analysis uses cutting-edge BERT (Bidirectional Encoder Representations from Transformers) models fine-tuned specifically for mental health sentiment analysis.</p>
+          
+          <div style="margin-top: var(--spacing-6);">
+            <div class="card" style="margin-bottom: var(--spacing-4);">
+              <h3>🤖 BERT Sentiment Analysis</h3>
+              <p>Advanced natural language processing that understands context and emotional nuances in your writing.</p>
+            </div>
+            <div class="card" style="margin-bottom: var(--spacing-4);">
+              <h3>📊 Pattern Recognition</h3>
+              <p>Machine learning algorithms identify emotional patterns and trends over time to provide personalized insights.</p>
+            </div>
+            <div class="card">
+              <h3>🔒 Privacy-First</h3>
+              <p>Your data is processed securely with end-to-end encryption. AI analysis happens locally when possible.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <h3>AI Analysis Features</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="display: flex; align-items: center; gap: var(--spacing-3); margin-bottom: var(--spacing-3);">
+                <span style="color: var(--accent-color); font-size: var(--font-size-xl);">✓</span>
+                <span>Real-time sentiment scoring (Positive/Neutral/Negative)</span>
+              </li>
+              <li style="display: flex; align-items: center; gap: var(--spacing-3); margin-bottom: var(--spacing-3);">
+                <span style="color: var(--accent-color); font-size: var(--font-size-xl);">✓</span>
+                <span>Emotional pattern detection</span>
+              </li>
+              <li style="display: flex; align-items: center; gap: var(--spacing-3); margin-bottom: var(--spacing-3);">
+                <span style="color: var(--accent-color); font-size: var(--font-size-xl);">✓</span>
+                <span>Stress and anxiety indicators</span>
+              </li>
+              <li style="display: flex; align-items: center; gap: var(--spacing-3); margin-bottom: var(--spacing-3);">
+                <span style="color: var(--accent-color); font-size: var(--font-size-xl);">✓</span>
+                <span>Personalized recommendations</span>
+              </li>
+              <li style="display: flex; align-items: center; gap: var(--spacing-3); margin-bottom: var(--spacing-3);">
+                <span style="color: var(--accent-color); font-size: var(--font-size-xl);">✓</span>
+                <span>Trend analysis and insights</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="dashboard.html">Dashboard</a></p>
+          <p><a href="mood-tracking.html">Mood Tracking</a></p>
+          <p><a href="journal.html">AI Journal</a></p>
+          <p><a href="progress.html">Analytics</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>AI Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

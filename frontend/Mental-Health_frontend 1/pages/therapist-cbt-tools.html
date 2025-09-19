@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapist CBT Tools - AI Mental Health Tracker | Client Therapy</title>
+  <meta name="description" content="Professional CBT tools and exercises for therapists to guide clients through cognitive behavioral therapy. AI-powered client progress tracking and session management.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="therapist-dashboard.html">Dashboard</a></li>
+          <li><a href="client-reports.html">Client Reports</a></li>
+          <li><a href="content-moderation.html">Content Moderation</a></li>
+          <li><a href="system-analytics.html">Analytics</a></li>
+          <li><a href="assessments.html">AI Assessments</a></li>
+          <li><a href="therapist-resources.html">Resources</a></li>
+          <li><a href="user-management.html">Clients</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Therapist CBT Hero -->
+  <section class="dashboard-hero">
+    <div class="container">
+      <div class="section-header">
+        <h1>🧠 Therapist CBT Tools</h1>
+        <p>Professional cognitive behavioral therapy resources and client session management</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CBT Intervention Categories -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-4">
+        <!-- Anxiety Interventions -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">😰</div>
+          <h3>Anxiety Interventions</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">CBT for anxiety</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #3b82f6;">12</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Techniques</div>
+          </div>
+        </div>
+
+        <!-- Depression Treatment -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🌅</div>
+          <h3>Depression Treatment</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Behavioral activation</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #10b981;">8</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Protocols</div>
+          </div>
+        </div>
+
+        <!-- Trauma Therapy -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🕊️</div>
+          <h3>Trauma Therapy</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Trauma-informed CBT</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #f59e0b;">6</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Methods</div>
+          </div>
+        </div>
+
+        <!-- Group CBT -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">👥</div>
+          <h3>Group CBT</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Group interventions</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #8b5cf6;">5</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Programs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client CBT Sessions -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Client CBT Session Management</h2>
+        <p>Track and guide clients through cognitive behavioral therapy interventions</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- Active CBT Sessions -->
+        <div class="card">
+          <div class="card-header">
+            <h3>👥 Active CBT Sessions</h3>
+            <p>Current cognitive behavioral therapy sessions in progress</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #3b82f6;">
+                <div style="width: 50px; height: 50px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">👤</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Alex K. - Thought Challenging</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Session 4/8 • Anxiety Protocol</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">In Progress</span>
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Individual</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="joinCBTSession('alex')">Join Session</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #10b981;">
+                <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">👤</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Maria S. - Behavioral Activation</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Session 6/10 • Depression Treatment</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">In Progress</span>
+                    <span style="background: #fef3c7; color: #92400e; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Weekly</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="joinCBTSession('maria')">Join Session</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #8b5cf6;">
+                <div style="width: 50px; height: 50px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">👥</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Group CBT - Social Anxiety</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Session 3/12 • 6 participants</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">In Progress</span>
+                    <span style="background: #fce7f3; color: #be185d; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Group</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="joinCBTSession('group')">Join Session</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CBT Intervention Library -->
+        <div class="card">
+          <div class="card-header">
+            <h3>📚 CBT Intervention Library</h3>
+            <p>Evidence-based cognitive behavioral therapy techniques and protocols</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #3b82f6;">
+                <div style="width: 50px; height: 50px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">📝</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Thought Record Worksheet</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Structured thought challenging exercise</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">15 min</span>
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Individual</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="useCBTIntervention('thought-record')">Use Tool</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #10b981;">
+                <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">📝</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Behavioral Activation Plan</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Activity scheduling for depression treatment</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">20 min</span>
+                    <span style="background: #fef3c7; color: #92400e; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Weekly</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="useCBTIntervention('behavioral-activation')">Use Tool</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #8b5cf6;">
+                <div style="width: 50px; height: 50px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">📝</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Exposure Hierarchy</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Gradual exposure planning for anxiety</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">25 min</span>
+                    <span style="background: #fce7f3; color: #be185d; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Anxiety</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="useCBTIntervention('exposure-hierarchy')">Use Tool</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive CBT Tools -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Interactive CBT Tools</h2>
+        <p>Professional tools for guiding clients through cognitive behavioral therapy exercises</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- Thought Challenging Tool -->
+        <div class="card">
+          <div class="card-header">
+            <h3>💭 Thought Challenging Worksheet</h3>
+            <p>Guide clients through cognitive restructuring exercises</p>
+          </div>
+          <div class="card-body">
+            <div id="therapistThoughtChallenging">
+              <div class="form-group">
+                <label for="clientName">Client Name:</label>
+                <input type="text" id="clientName" class="form-input" placeholder="Enter client name">
+              </div>
+              
+              <div class="form-group">
+                <label for="negativeThought">Negative Thought:</label>
+                <textarea id="negativeThought" class="form-input" rows="3" placeholder="What negative thought is the client having?"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="evidenceFor">Evidence FOR this thought:</label>
+                <textarea id="evidenceFor" class="form-input" rows="2" placeholder="What evidence supports this thought?"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="evidenceAgainst">Evidence AGAINST this thought:</label>
+                <textarea id="evidenceAgainst" class="form-input" rows="2" placeholder="What evidence contradicts this thought?"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="balancedThought">Balanced, realistic thought:</label>
+                <textarea id="balancedThought" class="form-input" rows="2" placeholder="What's a more balanced way to think about this?"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="therapistNotes">Therapist Notes:</label>
+                <textarea id="therapistNotes" class="form-input" rows="3" placeholder="Record observations, client responses, and therapeutic insights..."></textarea>
+              </div>
+              
+              <button class="btn btn-primary w-full" onclick="analyzeClientThought()">Analyze & Save</button>
+              <div id="thoughtAnalysis" style="margin-top: var(--spacing-4); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); display: none;">
+                <h4>AI Analysis & Recommendations:</h4>
+                <p id="analysisResult"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Behavioral Activation Tool -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🎯 Behavioral Activation Planner</h3>
+            <p>Help clients plan and track positive activities</p>
+          </div>
+          <div class="card-body">
+            <div id="therapistBehavioralActivation">
+              <div class="form-group">
+                <label for="clientNameBA">Client Name:</label>
+                <input type="text" id="clientNameBA" class="form-input" placeholder="Enter client name">
+              </div>
+              
+              <div class="form-group">
+                <label>Current mood level (1-10):</label>
+                <input type="range" min="1" max="10" value="5" id="moodRating" class="w-full" style="margin: var(--spacing-2) 0;">
+                <div style="display: flex; justify-content: space-between; font-size: var(--font-size-sm); color: var(--text-secondary);">
+                  <span>Very Low (1)</span>
+                  <span id="currentMood">5</span>
+                  <span>Very High (10)</span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>Activities that bring joy:</label>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-2); margin-bottom: var(--spacing-4);">
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-2); background: var(--background-secondary); border-radius: var(--radius-md); cursor: pointer;">
+                    <input type="checkbox" value="exercise"> Exercise
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-2); background: var(--background-secondary); border-radius: var(--radius-md); cursor: pointer;">
+                    <input type="checkbox" value="reading"> Reading
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-2); background: var(--background-secondary); border-radius: var(--radius-md); cursor: pointer;">
+                    <input type="checkbox" value="music"> Music
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-2); background: var(--background-secondary); border-radius: var(--radius-md); cursor: pointer;">
+                    <input type="checkbox" value="nature"> Nature
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-2); background: var(--background-secondary); border-radius: var(--radius-md); cursor: pointer;">
+                    <input type="checkbox" value="cooking"> Cooking
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); padding: var(--spacing-2); background: var(--background-secondary); border-radius: var(--radius-md); cursor: pointer;">
+                    <input type="checkbox" value="social"> Social Time
+                  </label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="plannedActivity">Activity for this week:</label>
+                <input type="text" id="plannedActivity" class="form-input" placeholder="What activity will the client do this week?">
+              </div>
+              
+              <div class="form-group">
+                <label for="therapistNotesBA">Therapist Notes:</label>
+                <textarea id="therapistNotesBA" class="form-input" rows="3" placeholder="Record client's responses and therapeutic observations..."></textarea>
+              </div>
+              
+              <button class="btn btn-primary w-full" onclick="createClientActivityPlan()">Create Plan & Save</button>
+              <div id="activityPlan" style="margin-top: var(--spacing-4); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); display: none;">
+                <h4>Client Activity Plan:</h4>
+                <p id="planResult"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Progress Tracking -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>📊 Client Progress Tracking</h2>
+          <p>Monitor client progress through CBT interventions and therapeutic outcomes</p>
+        </div>
+        <div class="card-body">
+          <div class="grid grid-cols-4">
+            <div class="text-center">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--primary-color);">24</div>
+              <div style="color: var(--text-secondary);">Active Clients</div>
+            </div>
+            <div class="text-center">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--accent-color);">156</div>
+              <div style="color: var(--text-secondary);">CBT Sessions This Month</div>
+            </div>
+            <div class="text-center">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--secondary-color);">78%</div>
+              <div style="color: var(--text-secondary);">Average Progress</div>
+            </div>
+            <div class="text-center">
+              <div style="font-size: var(--font-size-3xl); font-weight: 700; color: #10b981;">4.6</div>
+              <div style="color: var(--text-secondary);">Client Satisfaction</div>
+            </div>
+          </div>
+          
+          <!-- Client Progress Chart -->
+          <div style="margin-top: var(--spacing-6);">
+            <h3 style="margin-bottom: var(--spacing-4);">Client Progress Overview</h3>
+            <div style="background: var(--background-primary); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-4);">
+                <div style="text-center;">
+                  <div style="font-size: var(--font-size-2xl); font-weight: 700; color: #3b82f6; margin-bottom: var(--spacing-2);">Anxiety</div>
+                  <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); margin-bottom: var(--spacing-2);">
+                    <div style="width: 75%; height: 100%; background: linear-gradient(90deg, #3b82f6, #1d4ed8); border-radius: var(--radius-full);"></div>
+                  </div>
+                  <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">75% improvement</div>
+                </div>
+                <div style="text-center;">
+                  <div style="font-size: var(--font-size-2xl); font-weight: 700; color: #10b981; margin-bottom: var(--spacing-2);">Depression</div>
+                  <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); margin-bottom: var(--spacing-2);">
+                    <div style="width: 68%; height: 100%; background: linear-gradient(90deg, #10b981, #059669); border-radius: var(--radius-full);"></div>
+                  </div>
+                  <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">68% improvement</div>
+                </div>
+                <div style="text-center;">
+                  <div style="font-size: var(--font-size-2xl); font-weight: 700; color: #8b5cf6; margin-bottom: var(--spacing-2);">Trauma</div>
+                  <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); margin-bottom: var(--spacing-2);">
+                    <div style="width: 82%; height: 100%; background: linear-gradient(90deg, #8b5cf6, #7c3aed); border-radius: var(--radius-full);"></div>
+                  </div>
+                  <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">82% improvement</div>
+                </div>
+                <div style="text-center;">
+                  <div style="font-size: var(--font-size-2xl); font-weight: 700; color: #f59e0b; margin-bottom: var(--spacing-2);">Overall</div>
+                  <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); margin-bottom: var(--spacing-2);">
+                    <div style="width: 78%; height: 100%; background: linear-gradient(90deg, #f59e0b, #d97706); border-radius: var(--radius-full);"></div>
+                  </div>
+                  <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">78% improvement</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="therapist-dashboard.html">Dashboard</a></p>
+          <p><a href="client-reports.html">Client Reports</a></p>
+          <p><a href="content-moderation.html">Content Moderation</a></p>
+          <p><a href="system-analytics.html">Analytics</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>AI Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Therapist CBT Tools Functionality
+    function joinCBTSession(clientId) {
+      console.log('Joining CBT session for:', clientId);
+      alert(`Joining ${clientId}'s CBT session...`);
+    }
+
+    function useCBTIntervention(interventionType) {
+      console.log('Using CBT intervention:', interventionType);
+      alert(`Loading ${interventionType} CBT intervention...`);
+    }
+
+    function analyzeClientThought() {
+      const clientName = document.getElementById('clientName').value;
+      const negativeThought = document.getElementById('negativeThought').value;
+      const evidenceFor = document.getElementById('evidenceFor').value;
+      const evidenceAgainst = document.getElementById('evidenceAgainst').value;
+      const balancedThought = document.getElementById('balancedThought').value;
+      const therapistNotes = document.getElementById('therapistNotes').value;
+      
+      if (!clientName || !negativeThought) {
+        alert('Please enter client name and negative thought.');
+        return;
+      }
+      
+      // Simulate AI analysis for therapist
+      const analysis = `
+        <strong>Client:</strong> ${clientName}<br><br>
+        <strong>Thought Analysis:</strong><br>
+        • Negative thought: "${negativeThought}"<br>
+        • Evidence for: ${evidenceFor || 'Limited evidence identified'}<br>
+        • Evidence against: ${evidenceAgainst || 'Strong contradictory evidence'}<br>
+        • Balanced thought: ${balancedThought || 'Client needs guidance on balanced thinking'}<br><br>
+        <strong>Therapeutic Recommendations:</strong><br>
+        • Focus on evidence evaluation skills<br>
+        • Practice cognitive restructuring techniques<br>
+        • Monitor thought patterns over next session<br><br>
+        <strong>Therapist Notes:</strong> ${therapistNotes || 'No additional notes recorded'}
+      `;
+      
+      document.getElementById('analysisResult').innerHTML = analysis;
+      document.getElementById('thoughtAnalysis').style.display = 'block';
+    }
+
+    function createClientActivityPlan() {
+      const clientName = document.getElementById('clientNameBA').value;
+      const mood = document.getElementById('moodRating').value;
+      const selectedActivities = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+      const plannedActivity = document.getElementById('plannedActivity').value;
+      const therapistNotes = document.getElementById('therapistNotesBA').value;
+      
+      if (!clientName || !plannedActivity) {
+        alert('Please enter client name and planned activity.');
+        return;
+      }
+      
+      const plan = `
+        <strong>Client:</strong> ${clientName}<br><br>
+        <strong>Activity Plan:</strong><br>
+        Current mood: ${mood}/10<br>
+        Preferred activities: ${selectedActivities.join(', ') || 'None selected'}<br>
+        Planned activity: ${plannedActivity}<br><br>
+        <strong>Therapeutic Guidance:</strong><br>
+        ${mood < 5 ? 'Focus on low-energy, achievable activities. Start small and build momentum.' : 
+          mood < 8 ? 'Great mood level! Encourage challenging but enjoyable activities.' : 
+          'Excellent mood! Perfect time for new experiences and social activities.'}<br><br>
+        <strong>Therapist Notes:</strong> ${therapistNotes || 'No additional notes recorded'}
+      `;
+      
+      document.getElementById('planResult').innerHTML = plan;
+      document.getElementById('activityPlan').style.display = 'block';
+    }
+
+    // Mood rating update
+    document.getElementById('moodRating').addEventListener('input', function() {
+      document.getElementById('currentMood').textContent = this.value;
+    });
+  </script>
+</body>
+</html>

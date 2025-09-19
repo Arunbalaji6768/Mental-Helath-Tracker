@@ -1,0 +1,30 @@
+# Normalize line endings and stop LF/CRLF warnings
+* text=auto
+
+# Use LF in source files
+*.py   text eol=lf
+*.js   text eol=lf
+*.ts   text eol=lf
+*.css  text eol=lf
+*.scss text eol=lf
+*.html text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.ini  text eol=lf
+*.cfg  text eol=lf
+
+# Windows scripts can stay CRLF
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
+# Binary files
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.woff binary
+*.woff2 binary
+*.ttf  binary

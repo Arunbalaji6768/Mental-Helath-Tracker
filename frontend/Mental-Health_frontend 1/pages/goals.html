@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goals & Habits - Mental Health Monitor</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">MH Monitor</div>
+    <nav>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="mood-tracking.html">Mood Tracking</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="goals.html" class="active">Goals</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="logout.html" class="btn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Goals Section -->
+  <section class="goals-section">
+    <div class="goals-container">
+      <h1>Set Your Goals & Habits</h1>
+
+      <!-- Add Goal -->
+      <form id="goalForm">
+        <div class="form-group">
+          <label for="goalInput">New Goal</label>
+          <input type="text" id="goalInput" placeholder="Enter your goal (e.g., meditate daily)">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Goal</button>
+      </form>
+
+      <!-- Goals List -->
+      <div id="goalsList" class="goals-list">
+        <!-- Goals will appear dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mental Health Monitor. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

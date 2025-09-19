@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Tracking - Mental Health Monitor | Track Your Daily Mood</title>
+  <meta name="description" content="Track your daily mood and emotions with Mental Health Monitor's intuitive mood tracking tools and analytics.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Mental Health Monitor</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="mood-tracking.html" class="active">Mood Tracking</a></li>
+          <li><a href="journal.html">Journal</a></li>
+          <li><a href="progress.html">Progress</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mood Tracking Hero -->
+  <section class="dashboard-hero">
+    <div class="container">
+      <h1>Track Your Mood</h1>
+      <p>Log your daily emotions and track patterns in your mental wellness journey</p>
+    </div>
+  </section>
+
+  <!-- Mood Tracking Form -->
+  <section class="section">
+    <div class="container">
+      <div style="max-width: 600px; margin: 0 auto;">
+        <div class="card">
+          <div class="card-header text-center">
+            <h2>How are you feeling today?</h2>
+            <p>Rate your current mood and add any notes about your day</p>
+          </div>
+          <div class="card-body">
+            <form id="moodForm">
+              <!-- Mood Rating -->
+              <div class="form-group">
+                <label>Mood Rating (1-10) *</label>
+                <div style="text-align: center; margin: var(--spacing-6) 0;">
+                  <div style="font-size: var(--font-size-4xl); font-weight: 700; color: var(--primary-color); margin-bottom: var(--spacing-4);" id="moodValue">5</div>
+                  <input type="range" id="moodRating" name="moodRating" min="1" max="10" value="5" style="width: 100%; height: 8px; background: var(--background-accent); border-radius: var(--radius-full); outline: none;">
+                  <div style="display: flex; justify-content: space-between; margin-top: var(--spacing-2); font-size: var(--font-size-sm); color: var(--text-secondary);">
+                    <span>😔 Very Low</span>
+                    <span>😊 Very High</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Notes -->
+              <div class="form-group">
+                <label for="moodNotes">Add Notes (Optional)</label>
+                <textarea id="moodNotes" name="moodNotes" rows="4" placeholder="Write about your day, what's affecting your mood, or anything else you'd like to remember..." class="form-input"></textarea>
+              </div>
+
+              <!-- Symptoms -->
+              <div class="form-group">
+                <label>Track Symptoms (Optional)</label>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-3);">
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); cursor: pointer; padding: var(--spacing-2); border-radius: var(--radius-lg); transition: background-color var(--transition-fast);">
+                    <input type="checkbox" name="symptoms" value="Stress" style="width: auto;">
+                    <span>😰 Stress</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); cursor: pointer; padding: var(--spacing-2); border-radius: var(--radius-lg); transition: background-color var(--transition-fast);">
+                    <input type="checkbox" name="symptoms" value="Anxiety" style="width: auto;">
+                    <span>😰 Anxiety</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); cursor: pointer; padding: var(--spacing-2); border-radius: var(--radius-lg); transition: background-color var(--transition-fast);">
+                    <input type="checkbox" name="symptoms" value="Depression" style="width: auto;">
+                    <span>😔 Depression</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); cursor: pointer; padding: var(--spacing-2); border-radius: var(--radius-lg); transition: background-color var(--transition-fast);">
+                    <input type="checkbox" name="symptoms" value="Sleep Issues" style="width: auto;">
+                    <span>😴 Sleep Issues</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Triggers -->
+              <div class="form-group">
+                <label>Tag Triggers (Optional)</label>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-3);">
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); cursor: pointer; padding: var(--spacing-2); border-radius: var(--radius-lg); transition: background-color var(--transition-fast);">
+                    <input type="checkbox" name="triggers" value="Work" style="width: auto;">
+                    <span>💼 Work</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); cursor: pointer; padding: var(--spacing-2); border-radius: var(--radius-lg); transition: background-color var(--transition-fast);">
+                    <input type="checkbox" name="triggers" value="Family" style="width: auto;">
+                    <span>👨‍👩‍👧‍👦 Family</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: var(--spacing-2); cursor: pointer; padding: var(--spacing-2); border-radius: var(--radius-lg); transition: background-color var(--transition-fast);">
+                    <input type="checkbox" name="triggers" value="Social" style="width: auto;">
+                    <span>👥 Social</span>
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-full">Save Mood Entry</button>
+              <p id="moodStatus" class="mood-status text-center"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Mood History -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <h2 class="text-center">Recent Mood History</h2>
+      <div class="grid grid-cols-4">
+        <div class="card text-center">
+          <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">😊</div>
+          <h3>Today</h3>
+          <p style="color: var(--text-secondary);">Not logged yet</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">🙂</div>
+          <h3>Yesterday</h3>
+          <p style="color: var(--text-secondary);">6/10</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">😐</div>
+          <h3>2 days ago</h3>
+          <p style="color: var(--text-secondary);">5/10</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-2);">😊</div>
+          <h3>3 days ago</h3>
+          <p style="color: var(--text-secondary);">7/10</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Mental Health Monitor</h3>
+          <p>Your personal wellness companion for tracking and improving mental health.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="dashboard.html">Dashboard</a></p>
+          <p><a href="mood-tracking.html">Mood Tracking</a></p>
+          <p><a href="journal.html">Journal</a></p>
+          <p><a href="progress.html">Progress</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <p><a href="contact.html">Contact Us</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+          <p><a href="profile.html">Profile Settings</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Account</h3>
+          <p><a href="profile.html">My Profile</a></p>
+          <p><a href="goals.html">My Goals</a></p>
+          <p><a href="index.html">Logout</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mental Health Monitor. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapist Meditation Tools - AI Mental Health Tracker | Client Sessions</title>
+  <meta name="description" content="Professional meditation tools for therapists to guide clients through mindfulness sessions. AI-powered client progress tracking and session management.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/common.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="therapist-dashboard.html">Dashboard</a></li>
+          <li><a href="client-reports.html">Client Reports</a></li>
+          <li><a href="content-moderation.html">Content Moderation</a></li>
+          <li><a href="system-analytics.html">Analytics</a></li>
+          <li><a href="assessments.html">AI Assessments</a></li>
+          <li><a href="therapist-resources.html">Resources</a></li>
+          <li><a href="user-management.html">Clients</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Therapist Meditation Hero -->
+  <section class="dashboard-hero">
+    <div class="container">
+      <div class="section-header">
+        <h1>🧘‍♀️ Therapist Meditation Tools</h1>
+        <p>Professional meditation resources and client session management for therapeutic practice</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Session Categories -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-4">
+        <!-- Anxiety Management -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">😌</div>
+          <h3>Anxiety Management</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Client anxiety relief</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #3b82f6;">8</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Sessions</div>
+          </div>
+        </div>
+
+        <!-- Trauma Recovery -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🕊️</div>
+          <h3>Trauma Recovery</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Gentle healing</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #8b5cf6;">5</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Sessions</div>
+          </div>
+        </div>
+
+        <!-- Depression Support -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">🌅</div>
+          <h3>Depression Support</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Mood elevation</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #f59e0b;">6</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Sessions</div>
+          </div>
+        </div>
+
+        <!-- Group Sessions -->
+        <div class="card text-center">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">👥</div>
+          <h3>Group Sessions</h3>
+          <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Group therapy</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-2); border-radius: var(--radius-lg); margin-top: var(--spacing-3);">
+            <div style="font-size: var(--font-size-lg); font-weight: 700; color: #10b981;">4</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-xs);">Templates</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Session Management -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Client Session Management</h2>
+        <p>Track and manage meditation sessions for your clients with AI-powered insights</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+        <!-- Active Client Sessions -->
+        <div class="card">
+          <div class="card-header">
+            <h3>👥 Active Client Sessions</h3>
+            <p>Current meditation sessions in progress</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #3b82f6;">
+                <div style="width: 50px; height: 50px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">👤</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Arun - Anxiety Session</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">4-7-8 Breathing • 15 minutes remaining</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">In Progress</span>
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Session 3/8</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="joinClientSession('sarah')">Join Session</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #10b981;">
+                <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">👤</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Surya - Group Session</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Mindfulness Body Scan • 8 participants</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">In Progress</span>
+                    <span style="background: #fef3c7; color: #92400e; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Group Therapy</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="joinClientSession('michael')">Join Session</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #8b5cf6;">
+                <div style="width: 50px; height: 50px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">👤</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Shanjeev - Trauma Recovery</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Gentle Grounding • 20 minutes remaining</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">In Progress</span>
+                    <span style="background: #fce7f3; color: #be185d; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Session 2/5</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="joinClientSession('emma')">Join Session</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Session Templates -->
+        <div class="card">
+          <div class="card-header">
+            <h3>📋 Session Templates</h3>
+            <p>Pre-designed meditation sessions for different therapeutic needs</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #3b82f6;">
+                <div style="width: 50px; height: 50px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">📝</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Anxiety Relief Protocol</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">4-7-8 breathing + progressive relaxation</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">20 min</span>
+                    <span style="background: #dcfce7; color: #166534; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Individual</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="useTemplate('anxiety')">Use Template</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #8b5cf6;">
+                <div style="width: 50px; height: 50px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">📝</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Trauma-Informed Grounding</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">5-4-3-2-1 technique + body awareness</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">15 min</span>
+                    <span style="background: #fce7f3; color: #be185d; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Trauma</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="useTemplate('trauma')">Use Template</button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid #10b981;">
+                <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-xl);">📝</div>
+                <div style="flex: 1;">
+                  <div style="font-weight: 600; margin-bottom: var(--spacing-1);">Group Mindfulness Circle</div>
+                  <div style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Loving-kindness meditation for groups</div>
+                  <div style="display: flex; gap: var(--spacing-2);">
+                    <span style="background: #dbeafe; color: #1e40af; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">30 min</span>
+                    <span style="background: #fef3c7; color: #92400e; padding: var(--spacing-1) var(--spacing-2); border-radius: var(--radius-sm); font-size: var(--font-size-xs);">Group</span>
+                  </div>
+                </div>
+                <button class="btn btn-primary" onclick="useTemplate('group')">Use Template</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Progress Analytics -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Client Progress Analytics</h2>
+        <p>AI-powered insights into client meditation practice and therapeutic outcomes</p>
+      </div>
+      
+      <div class="grid grid-cols-3">
+        <!-- Session Completion Rates -->
+        <div class="card">
+          <div class="card-header">
+            <h3>📊 Session Completion</h3>
+            <p>Client engagement and completion rates</p>
+          </div>
+          <div class="card-body">
+            <div style="text-align: center; margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-4xl); font-weight: 700; color: var(--primary-color); margin-bottom: var(--spacing-2);">87%</div>
+              <div style="color: var(--text-secondary);">Average Completion Rate</div>
+            </div>
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                <span style="font-size: var(--font-size-sm);">Anxiety Sessions</span>
+                <span style="font-weight: 600;">92%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 92%; height: 100%; background: linear-gradient(90deg, #3b82f6, #1d4ed8); border-radius: var(--radius-full);"></div>
+              </div>
+            </div>
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                <span style="font-size: var(--font-size-sm);">Trauma Recovery</span>
+                <span style="font-weight: 600;">78%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 78%; height: 100%; background: linear-gradient(90deg, #8b5cf6, #7c3aed); border-radius: var(--radius-full);"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                <span style="font-size: var(--font-size-sm);">Group Sessions</span>
+                <span style="font-weight: 600;">91%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 91%; height: 100%; background: linear-gradient(90deg, #10b981, #059669); border-radius: var(--radius-full);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Client Satisfaction -->
+        <div class="card">
+          <div class="card-header">
+            <h3>⭐ Client Satisfaction</h3>
+            <p>Feedback and satisfaction scores</p>
+          </div>
+          <div class="card-body">
+            <div style="text-align: center; margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-4xl); font-weight: 700; color: var(--accent-color); margin-bottom: var(--spacing-2);">4.7</div>
+              <div style="color: var(--text-secondary);">Average Rating</div>
+            </div>
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="font-size: var(--font-size-sm); margin-bottom: var(--spacing-2);">Recent Feedback:</div>
+              <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); font-size: var(--font-size-sm); color: var(--text-secondary);">
+                "The guided meditation sessions have been incredibly helpful for managing my anxiety. The AI insights help me understand my progress better."
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: var(--font-size-sm);">
+              <span>Very Helpful: 68%</span>
+              <span>Helpful: 24%</span>
+              <span>Neutral: 8%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Therapeutic Outcomes -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🎯 Therapeutic Outcomes</h3>
+            <p>Measured improvements in client wellbeing</p>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                <span style="font-size: var(--font-size-sm);">Anxiety Reduction</span>
+                <span style="font-weight: 600; color: #10b981;">+23%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 75%; height: 100%; background: linear-gradient(90deg, #10b981, #059669); border-radius: var(--radius-full);"></div>
+              </div>
+            </div>
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                <span style="font-size: var(--font-size-sm);">Sleep Quality</span>
+                <span style="font-weight: 600; color: #3b82f6;">+18%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 60%; height: 100%; background: linear-gradient(90deg, #3b82f6, #1d4ed8); border-radius: var(--radius-full);"></div>
+              </div>
+            </div>
+            <div style="margin-bottom: var(--spacing-4);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                <span style="font-size: var(--font-size-sm);">Mood Stability</span>
+                <span style="font-weight: 600; color: #8b5cf6;">+31%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 80%; height: 100%; background: linear-gradient(90deg, #8b5cf6, #7c3aed); border-radius: var(--radius-full);"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-2);">
+                <span style="font-size: var(--font-size-sm);">Overall Wellbeing</span>
+                <span style="font-weight: 600; color: #f59e0b;">+27%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: var(--background-secondary); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 70%; height: 100%; background: linear-gradient(90deg, #f59e0b, #d97706); border-radius: var(--radius-full);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Session Timer & Controls -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>🕐 Session Timer & Controls</h2>
+          <p>Professional timer and session management tools for therapeutic practice</p>
+        </div>
+        <div class="card-body">
+          <div style="max-width: 600px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: var(--spacing-6);">
+              <div style="width: 200px; height: 200px; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); border-radius: 50%; margin: 0 auto var(--spacing-6); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-4xl); font-weight: 700;" id="sessionTimer">
+                00:00
+              </div>
+              <div style="margin-bottom: var(--spacing-6);">
+                <label style="display: block; margin-bottom: var(--spacing-2); font-weight: 600;">Session Duration (minutes)</label>
+                <input type="range" min="5" max="90" value="30" id="durationSlider" style="width: 100%; margin-bottom: var(--spacing-2);">
+                <div style="display: flex; justify-content: space-between; font-size: var(--font-size-sm); color: var(--text-secondary);">
+                  <span>5 min</span>
+                  <span id="selectedDuration">30 min</span>
+                  <span>90 min</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: var(--spacing-4); justify-content: center; margin-bottom: var(--spacing-4);">
+                <button class="btn btn-primary" id="startSession" onclick="startTherapySession()">Start Session</button>
+                <button class="btn btn-secondary" id="pauseSession" onclick="pauseSession()" disabled>Pause</button>
+                <button class="btn btn-accent" id="stopSession" onclick="stopSession()" disabled>End Session</button>
+              </div>
+              <p id="sessionStatus" style="color: var(--text-secondary); font-size: var(--font-size-sm);">Ready to begin therapy session</p>
+            </div>
+            
+            <!-- Session Notes -->
+            <div style="margin-top: var(--spacing-6);">
+              <label style="display: block; margin-bottom: var(--spacing-2); font-weight: 600;">Session Notes</label>
+              <textarea id="sessionNotes" class="form-input" rows="4" placeholder="Record observations, client responses, and therapeutic insights during the session..."></textarea>
+              <button class="btn btn-secondary" onclick="saveSessionNotes()" style="margin-top: var(--spacing-3);">Save Notes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="therapist-dashboard.html">Dashboard</a></p>
+          <p><a href="client-reports.html">Client Reports</a></p>
+          <p><a href="content-moderation.html">Content Moderation</a></p>
+          <p><a href="system-analytics.html">Analytics</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>AI Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Therapist Session Management
+    let sessionInterval;
+    let currentTime = 0;
+    let isRunning = false;
+    let isPaused = false;
+
+    function joinClientSession(clientId) {
+      console.log('Joining client session:', clientId);
+      alert(`Joining ${clientId}'s meditation session...`);
+    }
+
+    function useTemplate(templateType) {
+      console.log('Using template:', templateType);
+      alert(`Loading ${templateType} meditation template...`);
+    }
+
+    function startTherapySession() {
+      const duration = document.getElementById('durationSlider').value;
+      currentTime = duration * 60; // Convert to seconds
+      isRunning = true;
+      isPaused = false;
+      
+      document.getElementById('startSession').disabled = true;
+      document.getElementById('pauseSession').disabled = false;
+      document.getElementById('stopSession').disabled = false;
+      document.getElementById('sessionStatus').textContent = 'Therapy session in progress...';
+      
+      sessionInterval = setInterval(updateSessionTimer, 1000);
+    }
+
+    function pauseSession() {
+      if (isPaused) {
+        isPaused = false;
+        sessionInterval = setInterval(updateSessionTimer, 1000);
+        document.getElementById('pauseSession').textContent = 'Pause';
+        document.getElementById('sessionStatus').textContent = 'Session resumed...';
+      } else {
+        isPaused = true;
+        clearInterval(sessionInterval);
+        document.getElementById('pauseSession').textContent = 'Resume';
+        document.getElementById('sessionStatus').textContent = 'Session paused...';
+      }
+    }
+
+    function stopSession() {
+      isRunning = false;
+      isPaused = false;
+      clearInterval(sessionInterval);
+      currentTime = 0;
+      
+      document.getElementById('startSession').disabled = false;
+      document.getElementById('pauseSession').disabled = true;
+      document.getElementById('stopSession').disabled = true;
+      document.getElementById('pauseSession').textContent = 'Pause';
+      document.getElementById('sessionStatus').textContent = 'Session completed! Notes saved.';
+      
+      updateTimerDisplay();
+    }
+
+    function updateSessionTimer() {
+      if (currentTime > 0) {
+        currentTime--;
+        updateTimerDisplay();
+      } else {
+        stopSession();
+      }
+    }
+
+    function updateTimerDisplay() {
+      const minutes = Math.floor(currentTime / 60);
+      const seconds = currentTime % 60;
+      document.getElementById('sessionTimer').textContent = 
+        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    function saveSessionNotes() {
+      const notes = document.getElementById('sessionNotes').value;
+      if (notes.trim()) {
+        localStorage.setItem('sessionNotes', notes);
+        alert('Session notes saved successfully!');
+      } else {
+        alert('Please enter some session notes before saving.');
+      }
+    }
+
+    // Duration slider update
+    document.getElementById('durationSlider').addEventListener('input', function() {
+      document.getElementById('selectedDuration').textContent = this.value + ' min';
+    });
+
+    // Load saved notes
+    window.addEventListener('load', function() {
+      const savedNotes = localStorage.getItem('sessionNotes');
+      if (savedNotes) {
+        document.getElementById('sessionNotes').value = savedNotes;
+      }
+    });
+  </script>
+</body>
+</html>

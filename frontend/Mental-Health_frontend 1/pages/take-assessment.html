@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Take Assessment - AI Mental Health Tracker</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../js/api.js"></script>
+  <script src="../js/assessments.js" defer></script>
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="journal.html">AI Journal</a></li>
+          <li><a href="progress.html">Analytics</a></li>
+          <li><a href="assessments.html" class="active">AI Assessments</a></li>
+        </ul>
+      </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="card">
+        <div class="card-header">
+          <h1 id="assessTitle">Assessment</h1>
+          <p id="assessSubtitle">Answer five quick questions. Results show instantly and can be saved to your journal.</p>
+        </div>
+        <div class="card-body">
+          <form id="assessmentForm" class="form">
+            <div id="questions"></div>
+            <div style="display:flex; gap: var(--spacing-3); margin-top: var(--spacing-4);">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" id="saveToJournal" class="btn btn-secondary" disabled>Save result to Journal</button>
+            </div>
+            <p id="assessmentStatus" class="auth-status"></p>
+          </form>
+        </div>
+      </div>
+
+      <div id="resultCard" class="card" style="margin-top: var(--spacing-6); display:none;">
+        <div class="card-header">
+          <h2>Result</h2>
+          <p>AI summary and scoring</p>
+        </div>
+        <div class="card-body" id="resultBody"></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

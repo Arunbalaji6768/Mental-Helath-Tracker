@@ -1,0 +1,85 @@
+{
+  "info": {
+    "name": "Mental Health Tracker API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "mht-collection-001"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:5000/health"
+      }
+    },
+    {
+      "name": "Signup",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"demo\",\n  \"password\": \"DemoPass123\",\n  \"email\": \"demo@example.com\"\n}"
+        },
+        "url": "http://127.0.0.1:5000/auth/signup"
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"demo\",\n  \"password\": \"DemoPass123\"\n}"
+        },
+        "url": "http://127.0.0.1:5000/auth/login"
+      },
+      "response": []
+    },
+    {
+      "name": "Journal - Add Entry",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"I felt stressed but improved in the evening.\",\n  \"mood_rating\": 6,\n  \"tags\": [\"stress\", \"evening\"]\n}"
+        },
+        "url": "http://127.0.0.1:5000/journal/add_entry"
+      }
+    },
+    {
+      "name": "Journal - Get Entries",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "http://127.0.0.1:5000/journal/get_entries"
+      }
+    },
+    {
+      "name": "Analytics - Insights",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "http://127.0.0.1:5000/analytics/insights"
+      }
+    }
+  ],
+  "variable": [
+    { "key": "token", "value": "" }
+  ]
+}
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Fix Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; }
+        .success { color: green; }
+        .error { color: red; }
+        button { padding: 10px 15px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Authentication Fix Test</h1>
+    
+    <div class="test-section">
+        <h3>1. Clear All Auth Data</h3>
+        <button onclick="clearAuthData()">Clear All Auth Data</button>
+        <div id="clearResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>2. Test Login</h3>
+        <input type="text" id="testEmail" placeholder="Email/Username" value="prarunbalaji853@gmail.com">
+        <input type="password" id="testPassword" placeholder="Password">
+        <button onclick="testLogin()">Test Login</button>
+        <div id="loginResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>3. Check Token</h3>
+        <button onclick="checkToken()">Check Token in localStorage</button>
+        <div id="tokenResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>4. Test Journal Entry</h3>
+        <textarea id="testJournal" placeholder="Test journal entry" rows="3">I feel great today! This is a positive test entry.</textarea>
+        <button onclick="testJournal()">Test Journal Entry</button>
+        <div id="journalResult"></div>
+    </div>
+
+    <script src="frontend/Mental-Health_frontend 1/js/api.js"></script>
+    <script>
+        function clearAuthData() {
+            window.api.clearAllAuthData();
+            document.getElementById('clearResult').innerHTML = '<span class="success">✓ All auth data cleared</span>';
+        }
+        
+        async function testLogin() {
+            const email = document.getElementById('testEmail').value;
+            const password = document.getElementById('testPassword').value;
+            const resultDiv = document.getElementById('loginResult');
+            
+            if (!email || !password) {
+                resultDiv.innerHTML = '<span class="error">Please enter email and password</span>';
+                return;
+            }
+            
+            try {
+                resultDiv.innerHTML = 'Logging in...';
+                const response = await window.api.login(email, password);
+                if (response.token) {
+                    resultDiv.innerHTML = '<span class="success">✓ Login successful! Token received: ' + response.token.substring(0, 20) + '...</span>';
+                } else {
+                    resultDiv.innerHTML = '<span class="error">✗ Login failed: No token received</span>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = '<span class="error">✗ Login failed: ' + error.message + '</span>';
+            }
+        }
+        
+        function checkToken() {
+            const token = localStorage.getItem('authToken');
+            const resultDiv = document.getElementById('tokenResult');
+            
+            if (token) {
+                resultDiv.innerHTML = '<span class="success">✓ Token found: ' + token.substring(0, 30) + '...</span>';
+            } else {
+                resultDiv.innerHTML = '<span class="error">✗ No token found in localStorage</span>';
+            }
+        }
+        
+        async function testJournal() {
+            const text = document.getElementById('testJournal').value;
+            const resultDiv = document.getElementById('journalResult');
+            
+            if (!text) {
+                resultDiv.innerHTML = '<span class="error">Please enter journal text</span>';
+                return;
+            }
+            
+            try {
+                resultDiv.innerHTML = 'Saving journal entry...';
+                const response = await window.api.createJournalEntry({ text: text });
+                resultDiv.innerHTML = '<span class="success">✓ Journal entry saved! Sentiment: ' + (response.sentiment || 'N/A') + '</span>';
+            } catch (error) {
+                resultDiv.innerHTML = '<span class="error">✗ Journal save failed: ' + error.message + '</span>';
+            }
+        }
+    </script>
+</body>
+</html>

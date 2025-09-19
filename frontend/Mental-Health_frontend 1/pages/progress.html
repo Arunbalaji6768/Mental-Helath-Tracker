@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Analytics - Mental Health Tracker | Progress & Insights Dashboard</title>
+  <meta name="description" content="Comprehensive AI-powered mental health analytics with BERT sentiment analysis, mood trends, and personalized insights for your wellness journey.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/common.js" defer></script>
+  <script src="../js/analytics.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">🧠 AI Mental Health Tracker</a>
+      <nav id="main-nav">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="mood-tracking.html">Mood Tracking</a></li>
+          <li><a href="journal.html">AI Journal</a></li>
+          <li><a href="progress.html" class="active">Analytics</a></li>
+          <li><a href="assessments.html">AI Assessments</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="profile.html">Profile</a></li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+      </ul>
+    </nav>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Analytics Hero -->
+  <section class="dashboard-hero">
+    <div class="container">
+      <div class="section-header">
+        <h1>AI-Powered Analytics Dashboard</h1>
+        <p>Comprehensive insights into your mental wellness journey powered by BERT sentiment analysis</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Metrics -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-4">
+        <!-- Overall Wellness Score -->
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">📊</div>
+          <h3>Wellness Score</h3>
+          <p style="color: var(--text-secondary);">Overall Health</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); margin-top: var(--spacing-4);">
+            <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--primary-color);">78%</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">+5% from last week</div>
+          </div>
+        </div>
+
+        <!-- Mood Stability -->
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-color), var(--secondary-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">😊</div>
+          <h3>Mood Stability</h3>
+          <p style="color: var(--text-secondary);">Consistency</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); margin-top: var(--spacing-4);">
+            <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--accent-color);">85%</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Very Stable</div>
+          </div>
+        </div>
+
+        <!-- AI Analysis Count -->
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">🤖</div>
+          <h3>AI Analyses</h3>
+          <p style="color: var(--text-secondary);">This Month</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); margin-top: var(--spacing-4);">
+            <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--secondary-color);">156</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Journal Entries</div>
+          </div>
+        </div>
+
+        <!-- Streak -->
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; margin: 0 auto var(--spacing-4); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl);">🔥</div>
+          <h3>Current Streak</h3>
+          <p style="color: var(--text-secondary);">Days Active</p>
+          <div style="background: var(--background-secondary); padding: var(--spacing-3); border-radius: var(--radius-lg); margin-top: var(--spacing-4);">
+            <div style="font-size: var(--font-size-3xl); font-weight: 700; color: #10b981;">12</div>
+            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Keep it up!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Analytics Charts -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>AI-Powered Mental Health Analytics</h2>
+        <p>Deep insights from your BERT sentiment analysis and mood patterns</p>
+      </div>
+      
+      <div class="grid grid-cols-2">
+      <!-- Mood Trends Chart -->
+        <div class="card">
+          <div class="card-header">
+            <h3>📈 Mood Trends (Last 30 Days)</h3>
+            <p>AI-analyzed emotional patterns over time</p>
+          </div>
+          <div class="card-body">
+            <canvas id="moodChart" style="height: 300px;"></canvas>
+          </div>
+        </div>
+
+        <!-- Sentiment Analysis -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🧠 BERT Sentiment Analysis</h3>
+            <p>AI-powered emotional tone detection</p>
+          </div>
+          <div class="card-body">
+            <canvas id="sentimentChart" style="height: 300px;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Analytics -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-3">
+        <!-- Sleep vs Mood Correlation -->
+        <div class="card">
+          <div class="card-header">
+            <h3>😴 Sleep vs Mood</h3>
+            <p>Correlation analysis</p>
+          </div>
+          <div class="card-body">
+            <canvas id="sleepMoodChart" style="height: 250px;"></canvas>
+          </div>
+        </div>
+
+        <!-- Stress Levels -->
+        <div class="card">
+          <div class="card-header">
+            <h3>😤 Stress Patterns</h3>
+            <p>Weekly stress analysis</p>
+          </div>
+          <div class="card-body">
+            <canvas id="stressChart" style="height: 250px;"></canvas>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Insights & Recommendations -->
+  <section class="section" style="background: var(--background-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>AI Insights & Recommendations</h2>
+        <p>Personalized insights based on your BERT analysis patterns</p>
+      </div>
+
+      <div class="grid grid-cols-2">
+        <!-- Key Insights -->
+        <div class="card">
+          <div class="card-header">
+            <h3>💡 Key Insights</h3>
+            <p>AI-discovered patterns in your mental health data</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid var(--accent-color);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2);">📈 Positive Trend Detected</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Your mood has improved by 15% over the last 2 weeks. The AI detected more positive language in your journal entries.</div>
+              </div>
+              <div style="padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid var(--primary-color);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2);">⏰ Optimal Activity Time</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Your mood is consistently higher in the morning. Consider scheduling important tasks during this time.</div>
+              </div>
+              <div style="padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg); border-left: 4px solid var(--secondary-color);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2);">🔗 Sleep-Mood Connection</div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Strong correlation found between 7+ hours of sleep and positive mood scores. Prioritize sleep hygiene.</div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+        <!-- Personalized Recommendations -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🎯 AI Recommendations</h3>
+            <p>Personalized suggestions based on your patterns</p>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+              <div style="padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2); display: flex; align-items: center; gap: var(--spacing-2);">
+                  <span style="color: var(--accent-color);">🧘</span>
+                  <span>Meditation Practice</span>
+                </div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-3);">Based on your stress patterns, try 10-minute morning meditation sessions.</div>
+                <button class="btn btn-sm btn-primary">Start Practice</button>
+              </div>
+              <div style="padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2); display: flex; align-items: center; gap: var(--spacing-2);">
+                  <span style="color: var(--primary-color);">📝</span>
+                  <span>Journaling Focus</span>
+                </div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-3);">Write about gratitude and positive experiences to boost your mood scores.</div>
+                <button class="btn btn-sm btn-primary">Start Writing</button>
+              </div>
+              <div style="padding: var(--spacing-4); background: var(--background-primary); border-radius: var(--radius-lg);">
+                <div style="font-weight: 600; margin-bottom: var(--spacing-2); display: flex; align-items: center; gap: var(--spacing-2);">
+                  <span style="color: var(--secondary-color);">🏃</span>
+                  <span>Exercise Routine</span>
+                </div>
+                <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-3);">Light exercise in the morning could improve your daily mood by 20%.</div>
+                <button class="btn btn-sm btn-primary">View Exercises</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Export & Share -->
+  <section class="section">
+    <div class="container">
+      <div class="card text-center">
+        <div class="card-header">
+          <h2>📊 Export Your Analytics</h2>
+          <p>Download comprehensive reports of your mental health journey</p>
+        </div>
+        <div class="card-body">
+          <div class="grid grid-cols-3">
+            <button class="btn btn-primary" onclick="exportProgress('pdf')">
+              <div style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-2);">📄</div>
+              <div>PDF Report</div>
+              <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Complete analytics</div>
+            </button>
+            <button class="btn btn-secondary" onclick="exportProgress('csv')">
+              <div style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-2);">📊</div>
+              <div>CSV Data</div>
+              <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Raw data export</div>
+            </button>
+            <button class="btn btn-accent" onclick="shareProgress()">
+              <div style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-2);">🔗</div>
+              <div>Share Progress</div>
+              <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Share with therapist</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AI Mental Health Tracker</h3>
+          <p>Advanced BERT-powered sentiment analysis for intelligent mental wellness monitoring.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="dashboard.html">Dashboard</a></p>
+          <p><a href="mood-tracking.html">Mood Tracking</a></p>
+          <p><a href="journal.html">AI Journal</a></p>
+          <p><a href="progress.html">Analytics</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>AI Technology</h3>
+          <p><a href="about.html">How It Works</a></p>
+          <p><a href="contact.html">Contact</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p>Follow us for AI and mental health insights</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AI Mental Health Tracker. Powered by BERT & Machine Learning.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

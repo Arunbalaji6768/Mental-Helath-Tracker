@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Login Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .debug-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+        button { padding: 10px 15px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Login Page Debug Tool</h1>
+    
+    <div class="debug-section">
+        <h3>1. Check Current Authentication State</h3>
+        <button onclick="checkAuthState()">Check Auth State</button>
+        <div id="authState"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>2. Clear All Authentication Data</h3>
+        <button onclick="clearAllAuth()">Clear All Auth Data</button>
+        <div id="clearResult"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>3. Test Login Page Access</h3>
+        <button onclick="testLoginPage()">Open Login Page</button>
+        <div id="loginTest"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>4. Check JavaScript Errors</h3>
+        <button onclick="checkJSErrors()">Check for JS Errors</button>
+        <div id="jsErrors"></div>
+    </div>
+
+    <script>
+        function checkAuthState() {
+            const result = document.getElementById('authState');
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const authToken = localStorage.getItem('authToken');
+            const userName = localStorage.getItem('userName');
+            const userEmail = localStorage.getItem('userEmail');
+            
+            result.innerHTML = `
+                <div class="info">Current Authentication State:</div>
+                <div>isLoggedIn: <strong>${isLoggedIn || 'null'}</strong></div>
+                <div>authToken: <strong>${authToken ? authToken.substring(0, 20) + '...' : 'null'}</strong></div>
+                <div>userName: <strong>${userName || 'null'}</strong></div>
+                <div>userEmail: <strong>${userEmail || 'null'}</strong></div>
+            `;
+        }
+        
+        function clearAllAuth() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userType');
+            localStorage.removeItem('rememberMe');
+            
+            document.getElementById('clearResult').innerHTML = '<div class="success">✓ All authentication data cleared</div>';
+        }
+        
+        function testLoginPage() {
+            const result = document.getElementById('loginTest');
+            try {
+                // Try to open the login page
+                window.open('frontend/Mental-Health_frontend 1/pages/login.html', '_blank');
+                result.innerHTML = '<div class="success">✓ Login page opened in new tab</div>';
+            } catch (error) {
+                result.innerHTML = `<div class="error">✗ Error opening login page: ${error.message}</div>`;
+            }
+        }
+        
+        function checkJSErrors() {
+            const result = document.getElementById('jsErrors');
+            // Check if there are any global errors
+            const hasErrors = window.onerror ? 'Yes' : 'No';
+            result.innerHTML = `
+                <div class="info">JavaScript Error Check:</div>
+                <div>Global error handler: <strong>${hasErrors}</strong></div>
+                <div>Console errors: <strong>Check browser console (F12)</strong></div>
+            `;
+        }
+        
+        // Run initial check
+        checkAuthState();
+    </script>
+</body>
+</html>
