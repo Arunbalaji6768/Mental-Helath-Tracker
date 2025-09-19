@@ -31,15 +31,13 @@ app.config.from_object(Config)
 default_origins = [
     "http://127.0.0.1:5500",
     "http://localhost:5500",
+    "https://mental-helath-tracker.vercel.app",
 ]
-env_origins = os.environ.get("CORS_ORIGINS")
-if env_origins:
-    try:
-        origins = [o.strip() for o in env_origins.split(",") if o.strip()]
-    except Exception:
-        origins = default_origins
-else:
-    origins = default_origins
+
+origins = [
+    "https://mental-helath-tracker.vercel.app",
+    "https://mental-helath-tracker-7o9ktr75o-arunbalajis-projects.vercel.app"
+]
 
 CORS(
     app,
