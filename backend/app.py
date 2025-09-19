@@ -16,9 +16,9 @@ from datetime import datetime
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler('app.log'),
+        logging.FileHandler("app.log"),
         logging.StreamHandler()
     ]
 )
@@ -42,9 +42,8 @@ if env_origins:
 else:
     origins = default_origins
 
-# Add wildcard rule for Vercel preview subdomains
-# Flask-CORS supports regex origins
-origins.append(r"https://mental-helath-tracker-.*\.vercel\.app")
+# Add wildcard rule for Vercel preview subdomains (regex supported with `re:` prefix)
+origins.append(r"re:https://mental-helath-tracker-.*\.vercel\.app")
 
 CORS(
     app,
@@ -56,8 +55,8 @@ CORS(
 
 # Rate limiting (disabled for local/demo to avoid 429 during rapid tests)
 limiter = Limiter(
-    app=app,
     key_func=get_remote_address,
+    app=app,
     default_limits=[]
 )
 
@@ -65,12 +64,13 @@ limiter = Limiter(
 @limiter.request_filter
 def skip_preflight_and_local():
     try:
-        if request.method == 'OPTIONS':
+        if request.method == "OPTIONS":
             return True
         return request.remote_addr in ("127.0.0.1", "::1")
     except Exception:
         return False
 
+# Initialize extensions
 bcrypt.init_app(app)
 db.init_app(app)
 jwt = JWTManager(app)
@@ -82,48 +82,49 @@ app.register_blueprint(analytics_bp, url_prefix="/analytics")
 app.register_blueprint(events_bp, url_prefix="/events")
 
 # Health check endpoint
-@app.route('/health', methods=['GET'])
+@app.route("/health", methods=["GET"])
 def health_check():
     return jsonify({
-        'status': 'healthy',
-        'timestamp': datetime.utcnow().isoformat(),
-        'service': 'Mental Health Tracker API',
-        'version': '1.0.0'
+        "status": "healthy",
+        "timestamp": datetime.utcnow().isoformat(),
+        "service": "Mental Health Tracker API",
+        "version": "1.0.0"
     })
 
 # Root endpoint
-@app.route('/', methods=['GET'])
+@app.route("/", methods=["GET"])
 def root():
     return jsonify({
-        'message': 'Mental Health Tracker API',
-        'version': '1.0.0',
-        'endpoints': {
-            'health': '/health',
-            'auth': '/auth/*',
-            'journal': '/journal/*',
-            'analytics': '/analytics/*'
+        "message": "Mental Health Tracker API",
+        "version": "1.0.0",
+        "endpoints": {
+            "health": "/health",
+            "auth": "/auth/*",
+            "journal": "/journal/*",
+            "analytics": "/analytics/*",
+            "events": "/events/*"
         },
-        'documentation': 'Use /health to check API status'
+        "documentation": "Use /health to check API status"
     })
 
 # Error handlers
 @app.errorhandler(404)
 def not_found(error):
-    return jsonify({'error': 'Endpoint not found'}), 404
+    return jsonify({"error": "Endpoint not found"}), 404
 
 @app.errorhandler(500)
 def internal_error(error):
-    logger.error(f'Internal server error: {error}')
-    return jsonify({'error': 'Internal server error'}), 500
+    logger.error(f"Internal server error: {error}")
+    return jsonify({"error": "Internal server error"}), 500
 
 @app.errorhandler(429)
 def ratelimit_handler(e):
-    return jsonify({'error': 'Rate limit exceeded. Please try again later.'}), 429
+    return jsonify({"error": "Rate limit exceeded. Please try again later."}), 429
 
 # Request logging middleware
 @app.before_request
 def log_request():
-    logger.info(f'{request.method} {request.path} - {request.remote_addr}')
+    logger.info(f"{request.method} {request.path} - {request.remote_addr}")
 
 # Initialize database
 with app.app_context():
@@ -137,4 +138,4 @@ if __name__ == "__main__":
     logger.info("Starting Mental Health Tracker API...")
     port = int(os.environ.get("PORT", 5000))
     debug = os.environ.get("FLASK_DEBUG", "false").lower() == "true"
-    app.run(debug=debug, host='0.0.0.0', port=port)
+    app.run(debug=debug, host="0.0.0.0", port=port)
