@@ -27,17 +27,24 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Enable CORS for frontend. In production, read allowed origins from env CORS_ORIGINS (comma-separated).
+# Default origins (local + production)
 default_origins = [
     "http://127.0.0.1:5500",
     "http://localhost:5500",
-    "https://mental-helath-tracker.vercel.app",
+    "http://localhost:3000",
+    "https://mental-helath-tracker.vercel.app"
 ]
 
-origins = [
-    "https://mental-helath-tracker.vercel.app",
-    "https://mental-helath-tracker-7o9ktr75o-arunbalajis-projects.vercel.app"
-]
+# Load from ENV if available
+env_origins = os.environ.get("CORS_ORIGINS")
+if env_origins:
+    origins = [o.strip() for o in env_origins.split(",") if o.strip()]
+else:
+    origins = default_origins
+
+# Add wildcard rule for Vercel preview subdomains
+# Flask-CORS supports regex origins
+origins.append(r"https://mental-helath-tracker-.*\.vercel\.app")
 
 CORS(
     app,
@@ -47,11 +54,11 @@ CORS(
     expose_headers=["Content-Type", "Authorization"]
 )
 
-# Rate limiting (disabled for local expo/demo to avoid 429 during rapid tests)
+# Rate limiting (disabled for local/demo to avoid 429 during rapid tests)
 limiter = Limiter(
     app=app,
     key_func=get_remote_address,
-    default_limits=[]  # no global limits in demo
+    default_limits=[]
 )
 
 # Skip limiting for CORS preflight and local dev
@@ -60,7 +67,6 @@ def skip_preflight_and_local():
     try:
         if request.method == 'OPTIONS':
             return True
-        # Allow localhost traffic freely during demo
         return request.remote_addr in ("127.0.0.1", "::1")
     except Exception:
         return False
