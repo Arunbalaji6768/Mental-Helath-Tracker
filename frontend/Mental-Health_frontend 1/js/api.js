@@ -2,7 +2,12 @@
 class MentalHealthAPI {
     constructor() {
         const host = (typeof window !== 'undefined' && window.location && window.location.hostname) ? window.location.hostname : 'localhost';
+        // Default for local development
         this.baseURL = `http://${host}:5000`;
+        // Production override: when hosted on Vercel (or any non-local host), use the Render API
+        if (host !== 'localhost' && host !== '127.0.0.1') {
+            this.baseURL = 'https://mental-helath-tracker.onrender.com';
+        }
         this.token = localStorage.getItem('authToken');
     }
 
