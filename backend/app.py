@@ -42,13 +42,22 @@ if env_origins:
 else:
     origins = default_origins
 
-# Add wildcard rule for Vercel preview subdomains (regex supported with `re:` prefix)
+# Explicitly allow extra Vercel preview domains
+extra_vercel_origins = [
+    "https://mental-helath-tracker.vercel.app",
+    "https://mental-helath-tracker-7o9ktr75o-arunbalajis-projects.vercel.app",
+    "https://mental-helath-tracker-r1q42fw3w-arunbalajis-projects.vercel.app"
+]
+origins.extend(extra_vercel_origins)
+
+# Wildcard regex for standard Vercel preview subdomains
 origins.append(r"re:https://mental-helath-tracker-.*\.vercel\.app")
 
+# Configure CORS
 CORS(
     app,
     resources={r"/*": {"origins": origins}},
-    supports_credentials=False,
+    supports_credentials=True,  # Allow JWT/cookie auth
     allow_headers=["Content-Type", "Authorization"],
     expose_headers=["Content-Type", "Authorization"]
 )
