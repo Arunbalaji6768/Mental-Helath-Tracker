@@ -92,13 +92,13 @@ def analyze_text(text: str) -> Tuple[str, float]:
                 label = 'NEGATIVE'
                 score = max(score, 0.65)
             elif label == 'NEUTRAL':
-                # Only flip NEUTRAL to POS/NEG if strong cues exist; otherwise keep NEUTRAL
+                # Flip NEUTRAL to POSITIVE if any positive word is present, unless strong negative words are also present
                 if any(w in tl for w in pos_words) and not any(w in tl for w in neg_words):
                     label = 'POSITIVE'
-                    score = max(score, 0.7)
+                    score = max(score, 0.8)  # More confident
                 elif any(w in tl for w in neg_words) and not any(w in tl for w in pos_words):
                     label = 'NEGATIVE'
-                    score = max(score, 0.7)
+                    score = max(score, 0.8)
                 elif any(w in tl for w in neu_words):
                     label = 'NEUTRAL'
                     score = 0.5
