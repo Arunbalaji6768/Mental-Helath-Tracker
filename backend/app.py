@@ -45,31 +45,29 @@ else:
 # Explicitly allow extra Vercel preview domains
 extra_vercel_origins = [
     "https://mental-helath-tracker.vercel.app",
+    "https://mental-helath-tracker-git-main-arunbalajis-projects.vercel.app",
+    "https://mental-helath-tracker-1ouuwyn3u-arunbalajis-projects.vercel.app",
     "https://mental-helath-tracker-7o9ktr75o-arunbalajis-projects.vercel.app",
     "https://mental-helath-tracker-r1q42fw3w-arunbalajis-projects.vercel.app"
 ]
 origins.extend(extra_vercel_origins)
 
-# Wildcard regex for standard Vercel preview subdomains
-origins.append(r"re:https://mental-helath-tracker-.*\.vercel\.app")
-
 # Configure CORS
 CORS(
     app,
     resources={r"/*": {"origins": origins}},
-    supports_credentials=True,  # Allow JWT/cookie auth
+    supports_credentials=True,
     allow_headers=["Content-Type", "Authorization"],
     expose_headers=["Content-Type", "Authorization"]
 )
 
-# Rate limiting (disabled for local/demo to avoid 429 during rapid tests)
+# Rate limiting
 limiter = Limiter(
     key_func=get_remote_address,
     app=app,
     default_limits=[]
 )
 
-# Skip limiting for CORS preflight and local dev
 @limiter.request_filter
 def skip_preflight_and_local():
     try:
