@@ -223,7 +223,7 @@ python migrate_sqlite_to_postgres.py
 
 ## 👨‍💻 Developer
 
-**Arun** - Full-Stack Developer & AI Engineer
+**Arun, Rishi, Surya** - Full-Stack Developer & AI Engineer
 
 ---
 
