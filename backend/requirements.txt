@@ -4,6 +4,7 @@ flask-bcrypt
 flask-jwt-extended
 Flask-Limiter==3.8.0
 psycopg2-binary
+psycopg[binary]
 flask-sqlalchemy
 numpy
 requests
