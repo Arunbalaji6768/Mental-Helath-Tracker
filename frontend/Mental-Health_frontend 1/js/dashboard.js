@@ -10,7 +10,7 @@ function setupRealtimeUpdates() {
   try {
     const token = localStorage.getItem('authToken');
     if (!token) return;
-    const url = `http://localhost:5000/events/stream?jwt=${encodeURIComponent(token)}`;
+    const url = `${(window.api && window.api.baseURL) || "http://localhost:5000"}/events/stream?jwt=${encodeURIComponent(token)}`;
     let es = new EventSource(url, { withCredentials: false });
 
     es.onmessage = (evt) => {
