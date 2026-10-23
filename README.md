@@ -2,6 +2,7 @@
 
 A comprehensive full-stack application for tracking mental health with AI-powered sentiment analysis.
 
+🔗 **Live app:** https://mental-helath-tracker.vercel.app  
 🔗 **Live API:** https://mental-helath-tracker.onrender.com ([health check](https://mental-helath-tracker.onrender.com/health))
 
 > Hosted on Render's free tier, so the first request after a period of inactivity can take about a minute.
