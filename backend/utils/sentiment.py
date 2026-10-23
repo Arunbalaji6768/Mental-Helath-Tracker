@@ -1,42 +1,107 @@
 import os
 import logging
+import threading
+import tempfile
 from typing import Tuple
 
-from transformers import pipeline, AutoTokenizer, AutoModelForSequenceClassification
+import numpy as np
+import requests
 
 logger = logging.getLogger(__name__)
 
+# Quantized ONNX export of distilbert-base-uncased-finetuned-sst-2-english.
+# Runs on onnxruntime (~150 MB RAM) instead of PyTorch + transformers (~800 MB),
+# so it fits on Render's free 512 MB instances.
+_HF_BASE = "https://huggingface.co/Xenova/distilbert-base-uncased-finetuned-sst-2-english/resolve/main"
+_MODEL_URL = f"{_HF_BASE}/onnx/model_quantized.onnx"
+_TOKENIZER_URL = f"{_HF_BASE}/tokenizer.json"
+_CACHE_DIR = os.environ.get("SENTIMENT_CACHE_DIR", os.path.join(tempfile.gettempdir(), "mht_sentiment"))
+_LABELS = ["NEGATIVE", "POSITIVE"]  # SST-2 output order
+
 _nlp_pipeline = None
+_load_failed = False
+_load_lock = threading.Lock()
+
+
+def _download(url: str, dest: str) -> None:
+    if os.path.exists(dest) and os.path.getsize(dest) > 0:
+        return
+    logger.info(f"Downloading {url}")
+    tmp = dest + ".part"
+    with requests.get(url, stream=True, timeout=120) as r:
+        r.raise_for_status()
+        with open(tmp, "wb") as f:
+            for chunk in r.iter_content(1024 * 1024):
+                f.write(chunk)
+    os.replace(tmp, dest)
+
+
+class _OnnxSentiment:
+    """Callable that mimics a transformers sentiment pipeline: text -> [{'label', 'score'}]."""
+
+    def __init__(self, model_path: str, tokenizer_path: str):
+        import onnxruntime as ort
+        from tokenizers import Tokenizer
+
+        opts = ort.SessionOptions()
+        opts.intra_op_num_threads = 1
+        opts.inter_op_num_threads = 1
+        self.session = ort.InferenceSession(model_path, sess_options=opts, providers=["CPUExecutionProvider"])
+        self.input_names = {i.name for i in self.session.get_inputs()}
+        self.tokenizer = Tokenizer.from_file(tokenizer_path)
+        self.tokenizer.enable_truncation(max_length=512)
+
+    def __call__(self, text: str):
+        enc = self.tokenizer.encode(text)
+        feeds = {
+            "input_ids": np.array([enc.ids], dtype=np.int64),
+            "attention_mask": np.array([enc.attention_mask], dtype=np.int64),
+        }
+        feeds = {k: v for k, v in feeds.items() if k in self.input_names}
+        logits = self.session.run(None, feeds)[0][0]
+        logits = logits - np.max(logits)
+        probs = np.exp(logits) / np.exp(logits).sum()
+        idx = int(np.argmax(probs))
+        return [{"label": _LABELS[idx], "score": float(probs[idx])}]
+
 
 def _load_pipeline():
-    """Lazy-load and cache a Transformers sentiment pipeline.
-    Preference order:
-    1) Local fine-tuned model in dataset/model_out
-    2) Public SST-2 model 'distilbert-base-uncased-finetuned-sst-2-english'
-    """
-    global _nlp_pipeline
+    """Lazy-load and cache the ONNX sentiment model (downloaded once, cached on disk)."""
+    global _nlp_pipeline, _load_failed
     if _nlp_pipeline is not None:
         return _nlp_pipeline
+    if _load_failed:
+        return None
 
-    # From backend/utils -> ../../dataset/model_out
-    model_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'dataset', 'model_out'))
-    model_name = None
-
-    try:
-        if os.path.isdir(model_dir) and os.path.exists(os.path.join(model_dir, 'config.json')):
-            logger.info(f"Loading local fine-tuned model from: {model_dir}")
-            tokenizer = AutoTokenizer.from_pretrained(model_dir)
-            model = AutoModelForSequenceClassification.from_pretrained(model_dir)
-            _nlp_pipeline = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
-        else:
-            model_name = 'distilbert-base-uncased-finetuned-sst-2-english'
-            logger.info(f"Loading fallback model: {model_name}")
-            _nlp_pipeline = pipeline('sentiment-analysis', model=model_name)
-    except Exception as e:
-        logger.exception(f"Failed to initialize sentiment pipeline (model={model_name or model_dir}). Falling back to simple rule-based neutral.")
-        _nlp_pipeline = None
-
+    with _load_lock:
+        if _nlp_pipeline is not None:
+            return _nlp_pipeline
+        try:
+            os.makedirs(_CACHE_DIR, exist_ok=True)
+            model_path = os.path.join(_CACHE_DIR, "model_quantized.onnx")
+            tok_path = os.path.join(_CACHE_DIR, "tokenizer.json")
+            _download(_MODEL_URL, model_path)
+            _download(_TOKENIZER_URL, tok_path)
+            _nlp_pipeline = _OnnxSentiment(model_path, tok_path)
+            logger.info("ONNX DistilBERT sentiment model loaded")
+        except Exception:
+            logger.exception("Failed to initialize ONNX sentiment model. Falling back to NEUTRAL.")
+            _nlp_pipeline = None
+            _load_failed = True
     return _nlp_pipeline
+
+
+def warm_up() -> None:
+    """Load the model in a background thread at startup and log a self-test result."""
+    def _run():
+        nlp = _load_pipeline()
+        if nlp is None:
+            logger.error("Sentiment warm-up FAILED: model unavailable")
+            return
+        pos = nlp("I am so happy and grateful today")[0]
+        neg = nlp("I feel terrible and hopeless")[0]
+        logger.info(f"Sentiment warm-up OK: positive-test={pos['label']}({pos['score']:.2f}) negative-test={neg['label']}({neg['score']:.2f})")
+    threading.Thread(target=_run, name="sentiment-warmup", daemon=True).start()
 
 
 def analyze_text(text: str) -> Tuple[str, float]:

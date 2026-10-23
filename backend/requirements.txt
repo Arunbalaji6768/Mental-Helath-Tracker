@@ -5,8 +5,7 @@ flask-jwt-extended
 Flask-Limiter==3.8.0
 psycopg2-binary
 flask-sqlalchemy
-transformers
-torch
-datasets
-pandas
-scikit-learn
+numpy
+requests
+onnxruntime
+tokenizers

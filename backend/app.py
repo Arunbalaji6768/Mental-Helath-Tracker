@@ -139,6 +139,13 @@ with app.app_context():
     except Exception as e:
         logger.error(f"Database initialization failed: {e}")
 
+# Warm up the sentiment model in the background so the port binds immediately
+try:
+    from utils.sentiment import warm_up
+    warm_up()
+except Exception as e:
+    logger.error(f"Sentiment warm-up could not start: {e}")
+
 if __name__ == "__main__":
     logger.info("Starting Mental Health Tracker API...")
     port = int(os.environ.get("PORT", 5000))
